@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Português">
+<meta name="theme-color" content="#1f4e8c">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Português (PT) lernen</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--tx:#1d1d1b;--mut:#6b6a66;--ac:#2f6f5e;--acx:#fff;--bd:#e2e0d9;--bad:#b3402f;--ok:#2f6f5e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161715;--card:#222320;--tx:#efeee9;--mut:#9a9890;--ac:#5fb59c;--acx:#10211b;--bd:#34352f;--bad:#e07a68;--ok:#5fb59c}}
+:root[data-theme="dark"]{--bg:#161715;--card:#222320;--tx:#efeee9;--mut:#9a9890;--ac:#5fb59c;--acx:#10211b;--bd:#34352f;--bad:#e07a68;--ok:#5fb59c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.45 -apple-system,system-ui,"Segoe UI",sans-serif;min-height:100vh}
+main{max-width:480px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:4px 0 2px}h2{font-size:15px;color:var(--mut);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.mut{color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px 18px;margin:12px 0}
+.big{font-size:28px;font-weight:600;text-align:center;margin:8px 0}
+.btn{display:block;width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;text-align:left}
+.btn.p{background:var(--ac);color:var(--acx);border-color:var(--ac);text-align:center}
+.btn.ok{border-color:var(--ok);box-shadow:inset 0 0 0 1px var(--ok)}
+.btn.no{border-color:var(--bad);box-shadow:inset 0 0 0 1px var(--bad)}
+.btn[disabled]{opacity:.55}.btn.lock{opacity:.5}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.bar{height:6px;background:var(--bd);border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
+.fb{margin-top:10px;font-size:15px}.tag{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.back{background:none;border:none;color:var(--ac);font:inherit;padding:4px 0}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:16px}td,th{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left}th{color:var(--mut);font-size:13px;font-weight:500}.nt{font-size:15px;color:var(--mut);margin:8px 0}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.st div{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px;text-align:center}.st b{display:block;font-size:20px}.st span{font-size:12px}.dy{display:flex;gap:3px}.dy i{flex:1;height:8px;border-radius:2px;background:var(--bd)}.dy i.on{background:var(--ac)}
+:root{--bg:#f7f4ee;--card:#fffdf9;--tx:#1b2433;--mut:#6f7684;--ac:#1f4e8c;--acx:#fff;--bd:#e8e2d6;--bad:#c0503f;--ok:#2e7d5b;--sh:0 1px 2px rgba(27,36,51,.05),0 8px 24px rgba(27,36,51,.07)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1320;--card:#161d30;--tx:#eef0f6;--mut:#8f98ad;--ac:#7fa8e6;--acx:#0b1222;--bd:#242d45;--bad:#ef8b7a;--ok:#6cc79b;--sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35)}}
+body{background:radial-gradient(1200px 500px at 50% -10%,color-mix(in srgb,var(--ac) 14%,transparent),transparent),var(--bg);-webkit-font-smoothing:antialiased}
+h1{font:600 30px/1.15 ui-serif,"New York",Georgia,serif;letter-spacing:-.01em;margin:10px 0 4px}
+h2{font-size:12px;letter-spacing:.12em;margin:26px 0 10px}
+.card{border-radius:24px;padding:26px 20px;box-shadow:var(--sh);border-color:transparent}
+.big{font:600 30px/1.2 ui-serif,"New York",Georgia,serif}
+.btn{border-radius:16px;padding:15px 16px;box-shadow:var(--sh);border-color:transparent;transition:transform .15s ease,box-shadow .2s ease,background .2s}
+.btn:active{transform:scale(.97)}
+.btn.p{border-radius:999px;font-weight:600}
+.bar{height:8px;border-radius:99px}.bar i{border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+input{border-radius:16px;padding:15px}input:focus{outline:2px solid var(--ac);outline-offset:1px}
+.st div{border-radius:18px;box-shadow:var(--sh);border-color:transparent}
+main>*{animation:in .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+main{padding-bottom:100px}
+h2{color:var(--ac)}
+.btn.p{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 65%,#2e8f6b))}
+.bar i{background:linear-gradient(90deg,var(--ac),#2e8f6b)}
+.st div:nth-child(1) b{color:#e8772e}.st div:nth-child(2) b{color:#2e8f6b}.st div:nth-child(3) b{color:#2a7fc1}
+.btn.cur{border:2px solid var(--ac);background:color-mix(in srgb,var(--ac) 10%,var(--card));animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--ac) 16%,transparent)}}
+.btn.sg{background:linear-gradient(135deg,#f6d365,#fda085);color:#3a2600;border-color:transparent}.btn.sg .mut{color:#5a3b00}
+.btn.s9{background:color-mix(in srgb,#2e8f6b 22%,var(--card))}.btn.s8{background:color-mix(in srgb,#2aa6a0 20%,var(--card))}.btn.s7{background:color-mix(in srgb,#2a7fc1 18%,var(--card))}
+.card.gold{background:linear-gradient(135deg,#f6d365,#fda085);color:#3a2600}.card.gold .mut{color:#5a3b00}
+.cf{position:fixed;top:-14px;width:9px;height:14px;border-radius:2px;z-index:20;pointer-events:none;animation:cf 2.8s ease-in forwards}
+@keyframes cf{to{transform:translateY(105vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.btn.cur{animation:none}}
+#tb{position:fixed;left:0;right:0;bottom:0;display:flex;gap:4px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 82%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--bd);z-index:5}
+#tb button{flex:1;background:none;border:none;color:var(--mut);font:inherit;font-size:12px;padding:6px 0;border-radius:12px;transition:color .2s,background .2s}
+#tb button b{display:block;font-size:20px;font-weight:400}
+#tb button.on{color:var(--ac);background:color-mix(in srgb,var(--ac) 12%,transparent)}
+.rf{background:var(--card);border-radius:18px;box-shadow:var(--sh);padding:4px 16px;margin:8px 0}
+.rf summary{padding:14px 0;font-weight:600;cursor:pointer;list-style:none}.rf summary::-webkit-details-marker{display:none}
+.rf summary:after{content:"›";float:right;transition:transform .2s}.rf[open] summary:after{transform:rotate(90deg)}
+select{width:100%;padding:12px;margin:6px 0;border-radius:16px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
+@media (prefers-reduced-motion:reduce){main>*{animation:none}*{transition:none!important}}
+
+:root[data-theme="dark"]{--bg:#0e1320;--card:#161d30;--tx:#eef0f6;--mut:#8f98ad;--ac:#7fa8e6;--acx:#0b1222;--bd:#242d45;--bad:#ef8b7a;--ok:#6cc79b;--sh:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35)}
+.chat{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.bb{max-width:86%;padding:10px 14px;border-radius:18px;box-shadow:var(--sh);background:var(--card);align-self:flex-start;line-height:1.35}
+.bb.me{align-self:flex-end;background:var(--ac);color:var(--acx)}
+.bb.sys{align-self:center;max-width:100%;font-size:13px;color:var(--mut);background:none;box-shadow:none;text-align:center}
+.bb .bd{font-size:13px;opacity:.7;margin-top:3px}.bb .who{font-size:11px;opacity:.65;margin-bottom:2px}
+.bb .fx{font-size:13px;margin-top:5px;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,.2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chips button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 12px;font:inherit;font-size:14px}
+.ci{display:flex;gap:8px;position:sticky;bottom:78px}.ci input{flex:1}.ci button{border:none;border-radius:16px;background:var(--ac);color:var(--acx);font:inherit;padding:0 18px}
+.seg{display:flex;gap:4px;background:var(--bd);padding:4px;border-radius:14px;margin:12px 0;overflow-x:auto}
+.seg button{flex:1;white-space:nowrap;border:none;background:none;color:var(--mut);font:inherit;font-size:13px;padding:8px 10px;border-radius:10px}
+.seg button.on{background:var(--card);color:var(--tx);box-shadow:var(--sh)}
+.tk{padding:2px 1px;border-radius:6px;cursor:pointer}.tk.sel{background:color-mix(in srgb,var(--ac) 25%,transparent)}
+.bdg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.bdg div{background:var(--card);border-radius:16px;box-shadow:var(--sh);padding:10px 6px;text-align:center;font-size:13px}.bdg b{display:block;font-size:28px;font-weight:400}.bdg .off{opacity:.3;filter:grayscale(1)}
+.item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.ib{background:none;border:none;font-size:20px;padding:4px 8px;color:var(--tx)}
+
+/* ===== v4 modern ===== */
+:root{--bg:#f3f4fb;--card:#ffffff;--tx:#141a2e;--mut:#6a7189;--ac:#5b5bf0;--ac2:#8b5cf6;--acx:#fff;--bd:#e5e7f3;--bad:#e5484d;--ok:#12a594;--sh:0 1px 2px rgba(20,26,46,.04),0 10px 30px -10px rgba(60,60,160,.18);--r:22px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d17;--card:#151827;--tx:#eceefb;--mut:#8d93ad;--ac:#8b8bff;--ac2:#a78bfa;--acx:#0b0d17;--bd:#252a40;--bad:#ff7b80;--ok:#3dd6c3;--sh:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -12px rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{--bg:#0b0d17;--card:#151827;--tx:#eceefb;--mut:#8d93ad;--ac:#8b8bff;--ac2:#a78bfa;--acx:#0b0d17;--bd:#252a40;--bad:#ff7b80;--ok:#3dd6c3;--sh:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -12px rgba(0,0,0,.6)}
+body{background:radial-gradient(700px 380px at 90% -5%,color-mix(in srgb,var(--ac2) 20%,transparent),transparent),radial-gradient(600px 360px at -10% 8%,color-mix(in srgb,var(--ok) 14%,transparent),transparent),var(--bg);background-attachment:fixed;font-family:-apple-system,"SF Pro Text","Inter",system-ui,sans-serif;letter-spacing:-.005em}
+h1{font:800 30px/1.1 -apple-system,"SF Pro Display","Inter",system-ui,sans-serif;letter-spacing:-.03em;margin:14px 0 6px}
+h2{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin:28px 0 10px}
+.big{font:700 28px/1.2 -apple-system,"SF Pro Display","Inter",system-ui,sans-serif;letter-spacing:-.02em}
+.card{border-radius:var(--r);box-shadow:var(--sh);background:var(--card);border:1px solid color-mix(in srgb,var(--bd) 60%,transparent)}
+.btn{border-radius:18px;background:var(--card);border:1px solid color-mix(in srgb,var(--bd) 70%,transparent);box-shadow:var(--sh);padding:16px 18px;font-weight:500}
+.btn:active{transform:scale(.975)}
+.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:none;border-radius:18px;font-weight:650;box-shadow:0 12px 24px -10px color-mix(in srgb,var(--ac) 70%,transparent)}
+.bar{height:8px;background:color-mix(in srgb,var(--ac) 12%,var(--bd))}.bar i{background:linear-gradient(90deg,var(--ac),var(--ac2))}
+input,select{border-radius:16px;background:var(--card);border:1px solid var(--bd);padding:14px 16px}
+input:focus,select:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 18%,transparent)}
+.st div{border-radius:20px;background:var(--card);box-shadow:var(--sh);border:none;padding:14px 8px}
+.st div:nth-child(1) b{color:#f97316}.st div:nth-child(2) b{color:var(--ok)}.st div:nth-child(3) b{color:var(--ac)}
+.st b{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.dy i.on{background:linear-gradient(135deg,var(--ac),var(--ac2))}
+.btn.cur{border:none;background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 16%,var(--card)),color-mix(in srgb,var(--ac2) 12%,var(--card)));box-shadow:0 0 0 2px var(--ac),var(--sh)}
+.btn.s7{background:color-mix(in srgb,var(--ac) 10%,var(--card))}.btn.s8{background:color-mix(in srgb,#06b6d4 14%,var(--card))}.btn.s9{background:color-mix(in srgb,var(--ok) 18%,var(--card))}
+.btn.sg{background:linear-gradient(135deg,#fde68a,#fbbf77);color:#3a2600}
+.ln{display:flex;align-items:center;gap:12px;min-width:0}.ln em{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 14px -apple-system,system-ui,sans-serif;font-style:normal;background:color-mix(in srgb,var(--ac) 14%,transparent);color:var(--ac)}
+.btn.sg .ln em{background:rgba(255,255,255,.55);color:#7a4a00}.btn.lock .ln em{background:var(--bd);color:var(--mut)}
+#tb{left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:6px;border-radius:28px;border:1px solid color-mix(in srgb,var(--bd) 60%,transparent);background:color-mix(in srgb,var(--card) 78%,transparent);-webkit-backdrop-filter:blur(22px) saturate(1.6);backdrop-filter:blur(22px) saturate(1.6);box-shadow:0 18px 40px -14px rgba(30,30,90,.35)}
+#tb button{border-radius:22px;padding:7px 0;font-weight:600;font-size:11px}
+#tb button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
+main{padding-bottom:120px}
+.rf{border-radius:20px;border:none}.seg{background:color-mix(in srgb,var(--ac) 10%,var(--bd));border-radius:16px}.seg button.on{background:var(--card);color:var(--ac);font-weight:700}
+.bb{border-radius:20px 20px 20px 6px;border:none}.bb.me{border-radius:20px 20px 6px 20px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
+.chips button{background:var(--card);box-shadow:var(--sh);border:none;color:var(--ac);font-weight:600}
+.ci{bottom:92px;padding:6px;background:color-mix(in srgb,var(--card) 85%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;box-shadow:var(--sh)}.ci input{border:none;background:transparent;box-shadow:none}.ci button{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-radius:16px;font-weight:650}
+.bdg div{border-radius:20px}.nt{border-radius:14px}
+table{border-radius:14px}th{text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+.back{font-weight:600;color:var(--ac);padding:6px 0}
+.tag{font-weight:700;letter-spacing:.08em}
+
+/* audio controls */
+.ctl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px 0 18px;padding:10px;border-radius:20px;background:color-mix(in srgb,var(--ac) 7%,transparent)}
+.ctl:after{content:"";flex-basis:100%;height:0}
+#pl,#sl,.cb{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:auto;margin:0;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;background:transparent;color:var(--ac);border:1.5px solid color-mix(in srgb,var(--ac) 45%,transparent);box-shadow:none}
+.ctl #pl{background:var(--ac);color:var(--acx);border-color:transparent}
+.cb.skip{color:var(--mut);border-style:dashed;border-color:var(--bd);font-weight:500;font-size:13px}
+.card>#pl,.card>#sl{display:flex;margin:10px auto}
+#op{margin-top:6px}#op .btn{text-align:left}
+
+.ch{margin:14px 0 6px}.ch>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:18px;background:var(--card);box-shadow:var(--sh);font-weight:700;font-size:16px;letter-spacing:-.01em;margin-bottom:6px}
+.ch>summary::-webkit-details-marker{display:none}.ch>summary span{font-size:13px;font-weight:600;color:var(--mut)}
+.ch>summary:after{content:"›";margin-left:10px;color:var(--ac);font-size:22px;line-height:1;transition:transform .2s}.ch[open]>summary:after{transform:rotate(90deg)}
+.ch>summary span{margin-left:auto}
+.tw{border-bottom:1.5px dotted color-mix(in srgb,var(--ac) 60%,transparent);cursor:pointer;border-radius:4px}.tw.sel{background:color-mix(in srgb,var(--ac) 22%,transparent)}
+#wsh{display:none;position:fixed;left:14px;right:14px;bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:30;padding:16px 18px;border-radius:22px;background:var(--card);box-shadow:0 20px 50px -12px rgba(20,20,60,.45);border:1px solid var(--bd);animation:in .25s both}
+#wsh .w{font:700 20px -apple-system,system-ui,sans-serif;margin-bottom:4px}#wsh .x{position:absolute;right:12px;top:10px;background:none;border:none;color:var(--mut);font-size:18px}
+#wsh .act{display:flex;gap:8px;margin-top:12px}#wsh .act button{flex:1;padding:10px;border-radius:999px;border:1.5px solid color-mix(in srgb,var(--ac) 45%,transparent);background:none;color:var(--ac);font:inherit;font-weight:600;font-size:14px}
+.st div span{display:block;margin-top:2px}.st div span.mut{line-height:1.25}
+
+/* v5: Slide-Schalter + Gold nur für Pokal/100% */
+input[type=checkbox]:not([switch]){-webkit-appearance:none;appearance:none;position:relative;flex:none;width:52px!important;height:32px;padding:0!important;margin:0!important;border-radius:999px;border:0;background:color-mix(in srgb,var(--mut) 38%,var(--card));cursor:pointer;transition:background .22s ease;-webkit-tap-highlight-color:transparent}
+input[type=checkbox]:not([switch])::after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.28),0 2px 6px rgba(0,0,0,.12);transition:transform .22s cubic-bezier(.4,.2,.2,1)}
+input[type=checkbox]:not([switch]):checked{background:var(--ok)}
+input[type=checkbox]:not([switch]):checked::after{transform:translateX(20px)}
+input[type=checkbox]:not([switch]):focus-visible{outline:2px solid var(--ac);outline-offset:3px;box-shadow:none}
+input[type=checkbox]:not([switch]):focus{box-shadow:none}
+label.row{cursor:pointer}
+.btn.sg{background:color-mix(in srgb,var(--ok) 18%,var(--card));color:var(--tx);border-color:transparent}
+.btn.sg .mut{color:var(--mut)}
+.btn.sg .ln em{background:color-mix(in srgb,var(--ac) 14%,transparent);color:var(--ac)}
+.gd{display:inline-block;font-weight:700;color:#a86a00;background:linear-gradient(135deg,rgba(246,211,101,.38),rgba(253,160,133,.30));padding:3px 10px;border-radius:999px;white-space:nowrap}
+:root[data-theme="dark"] .gd{color:#ffd76a;background:rgba(246,211,101,.16)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gd{color:#ffd76a;background:rgba(246,211,101,.16)}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav id="tb"></nav>
+<script>
+var KEY="pt-pt-v1";
+var LS=[
+{lv:"A1",t:"Olá! – Sein (ser)",ov:"<table><tr><th>ser</th><th>Deutsch</th></tr><tr><td>eu sou</td><td>ich bin</td></tr><tr><td>tu és</td><td>du bist</td></tr><tr><td>ele / ela / você é</td><td>er / sie / Sie ist</td></tr><tr><td>nós somos</td><td>wir sind</td></tr><tr><td>eles / elas são</td><td>sie sind</td></tr><tr><td>vocês são</td><td>ihr seid (auch: Sie, Plural)</td></tr></table><div class=nt>Das Pronomen darf oft wegfallen („Sou alemão“). In Portugal ist „tu“ informell, höflich spricht man mit Namen oder „o senhor / a senhora“. „Vocês“ = ihr; „vós“ ist veraltet.</div>",ex:[
+{k:"c",p:"olá",d:"hallo"},{k:"c",p:"sim / não",d:"ja / nein"},{k:"c",p:"obrigado (m.) / obrigada (f.)",d:"danke",s:"obrigado"},{k:"c",p:"bom dia",d:"guten Morgen / guten Tag"},
+{k:"m",q:"Eu ___ alemão.",o:["sou","és","é"],a:0,n:"ser: eu sou, tu és, ele/ela é, nós somos, eles/elas são."},
+{k:"m",q:"Tu ___ de Lisboa?",o:["é","és","sou"],a:1,n:"Zu „tu“ gehört „és“."},
+{k:"m",q:"Nós ___ amigos.",o:["somos","são","sou"],a:0,n:"nós somos."},
+{k:"l",p:"Obrigado",o:["Danke","Bitte","Hallo"],a:0},
+{k:"c",p:"boa tarde",d:"guten Nachmittag"},{k:"c",p:"boa noite",d:"gute Nacht / guten Abend"},{k:"c",p:"Como se chama?",d:"Wie heißen Sie?"},
+{k:"m",q:"Ela ___ médica.",o:["é","sou","são"],a:0,n:"ele/ela → é."},
+{k:"m",q:"Eles ___ de Portugal.",o:["somos","são","és"],a:1,n:"eles/elas → são."},
+{k:"m",q:"Vocês ___ alemães?",o:["são","é","somos"],a:0,n:"vocês (ihr) → são."},
+{k:"l",p:"Boa noite",o:["Gute Nacht","Guten Morgen","Danke"],a:0},
+{k:"r",x:"Boa tarde! Eu sou a Maria. Sou médica. Sou de Portugal.",q:"Was ist Maria von Beruf?",o:["Ärztin","Lehrerin","Studentin"],a:0},
+{k:"w",q:"Wir sind Freunde.",a:["nos somos amigos","somos amigos"],n:"Somos amigos."},
+{k:"w",q:"Ich bin Deutscher.",a:["eu sou alemao","sou alemao"],n:"Eu sou alemão (Frau: alemã). Das „eu“ darf im Portugiesischen oft wegfallen."}]},
+{lv:"A1",t:"Haben (ter) & Alltag",ov:"<table><tr><th>ter</th><th>Deutsch</th></tr><tr><td>eu tenho</td><td>ich habe</td></tr><tr><td>tu tens</td><td>du hast</td></tr><tr><td>ele / ela tem</td><td>er / sie hat</td></tr><tr><td>nós temos</td><td>wir haben</td></tr><tr><td>eles / elas têm</td><td>sie haben</td></tr><tr><td>vocês têm</td><td>ihr habt</td></tr></table><div class=nt>Plural „têm“ trägt einen Zirkumflex, Singular „tem“ nicht. „Ter“ steht auch für Zustände: tenho fome (Hunger), tenho sede (Durst).</div>",ex:[
+{k:"c",p:"tenho",d:"ich habe"},{k:"c",p:"uma casa",d:"ein Haus"},{k:"c",p:"um gato",d:"ein Kater / eine Katze"},{k:"c",p:"pequeno / pequena",d:"klein"},
+{k:"m",q:"Eu ___ uma casa.",o:["tenho","tens","tem"],a:0,n:"ter: tenho, tens, tem, temos, têm."},
+{k:"m",q:"Eles ___ um gato.",o:["tem","têm","temos"],a:1,n:"Plural „eles“ → têm (mit Zirkumflex)."},
+{k:"l",p:"Tenho fome",o:["Ich habe Hunger","Ich habe Durst","Ich bin müde"],a:0},
+{k:"r",x:"Olá! Eu sou o João. Sou de Lisboa. Tenho uma casa pequena e um gato.",q:"Woher kommt João?",o:["Lissabon","Porto","Faro"],a:0},
+{k:"c",p:"o tempo",d:"die Zeit / das Wetter"},{k:"c",p:"um ano",d:"ein Jahr"},{k:"c",p:"muito",d:"viel / sehr"},{k:"c",p:"grande",d:"groß"},
+{k:"m",q:"Tu ___ tempo?",o:["tens","tenho","temos"],a:0,n:"tu → tens."},
+{k:"m",q:"Nós ___ muito trabalho.",o:["têm","temos","tem"],a:1,n:"nós → temos."},
+{k:"m",q:"Vocês ___ uma casa grande?",o:["tem","têm","temos"],a:1,n:"vocês (ihr) → têm."},
+{k:"l",p:"Ele tem um gato",o:["Er hat einen Kater","Er hat ein Haus","Er hat Zeit"],a:0},
+{k:"w",q:"Wir haben viel Zeit.",a:["nos temos muito tempo","temos muito tempo"],n:"Temos muito tempo."},
+{k:"w",q:"Ich habe ein Haus.",a:["eu tenho uma casa","tenho uma casa"],n:"Tenho uma casa."}]},
+{lv:"A1",t:"Artikel & Geschlecht",ov:"<table><tr><th></th><th>m. Sg.</th><th>f. Sg.</th><th>m. Pl.</th><th>f. Pl.</th></tr><tr><td>bestimmt</td><td>o</td><td>a</td><td>os</td><td>as</td></tr><tr><td>unbestimmt</td><td>um</td><td>uma</td><td>uns</td><td>umas</td></tr></table><div class=nt>Plural meist mit -s (livro → livros). Adjektive passen sich an: pequeno / pequena / pequenos / pequenas. Typisch: Nomen auf -o sind meist maskulin, auf -a meist feminin.</div>",ex:[
+{k:"c",p:"o livro",d:"das Buch (m.)"},{k:"c",p:"a casa",d:"das Haus (f.)"},{k:"c",p:"os amigos / as amigas",d:"die Freunde / die Freundinnen"},
+{k:"m",q:"___ casa é pequena.",o:["O","A","Os"],a:1,n:"casa ist feminin → a. Bestimmt: o, a, os, as. Unbestimmt: um, uma, uns, umas."},
+{k:"m",q:"Eu tenho ___ amiga.",o:["um","uma","o"],a:1,n:"amiga ist feminin → uma."},
+{k:"m",q:"___ amigos são alemães.",o:["As","Os","A"],a:1,n:"Maskulin Plural → os."},
+{k:"l",p:"A casa é pequena",o:["Das Haus ist klein","Das Buch ist klein","Das Haus ist groß"],a:0},
+{k:"c",p:"o homem / a mulher",d:"der Mann / die Frau"},{k:"c",p:"bom / boa",d:"gut"},
+{k:"m",q:"O livro é ___.",o:["bom","boa","bons"],a:0,n:"Das Adjektiv passt sich an: livro (m.) → bom."},
+{k:"m",q:"A casa é ___.",o:["bom","boa","bonito"],a:1,n:"casa (f.) → boa."},
+{k:"m",q:"Eu tenho ___ livros.",o:["um","uns","uma"],a:1,n:"Plural maskulin → uns."},
+{k:"r",x:"O João tem um livro. A Ana tem uma casa. Os amigos são bons.",q:"Was hat Ana?",o:["Ein Haus","Ein Buch","Einen Kater"],a:0},
+{k:"l",p:"Os amigos são bons",o:["Die Freunde sind gut","Die Freundin ist gut","Das Haus ist gut"],a:0},
+{k:"w",q:"Die Frau ist gut.",a:["a mulher e boa"],n:"A mulher é boa."},
+{k:"w",q:"Das Buch ist gut.",a:["o livro e bom"],n:"O livro é bom."}]},
+{lv:"A1",t:"Befinden (estar) & Höflichkeit",ov:"<table><tr><th>estar</th><th>Deutsch</th></tr><tr><td>eu estou</td><td>ich bin (gerade)</td></tr><tr><td>tu estás</td><td>du bist</td></tr><tr><td>ele / ela está</td><td>er / sie ist</td></tr><tr><td>nós estamos</td><td>wir sind</td></tr><tr><td>eles / elas estão</td><td>sie sind</td></tr><tr><td>vocês estão</td><td>ihr seid</td></tr></table><table><tr><th>ser</th><th>estar</th></tr><tr><td>Identität, Herkunft, Beruf</td><td>Zustand, Befinden, Ort</td></tr><tr><td>Sou alemão.</td><td>Estou cansado.</td></tr></table>",ex:[
+{k:"c",p:"Como está?",d:"Wie geht es Ihnen?"},{k:"c",p:"Estou bem.",d:"Mir geht es gut."},{k:"c",p:"de nada",d:"gern geschehen"},{k:"c",p:"até logo",d:"bis später"},
+{k:"m",q:"Eu ___ cansado.",o:["sou","estou","tenho"],a:1,n:"estar für Zustände (müde, hier), ser für Identität. estar: estou, estás, está, estamos, estão."},
+{k:"m",q:"Nós ___ em casa.",o:["estamos","somos","estão"],a:0,n:"Ort → estar."},
+{k:"l",p:"Até amanhã",o:["Bis morgen","Bis später","Guten Abend"],a:0},
+{k:"r",x:"A Ana está em casa. Está cansada, mas está feliz. Tem um livro novo.",q:"Wie geht es Ana?",o:["Müde, aber glücklich","Traurig","Hungrig"],a:0},
+{k:"c",p:"Obrigado, e você?",d:"Danke, und Ihnen?"},{k:"c",p:"feliz",d:"glücklich"},{k:"c",p:"cansado / cansada",d:"müde"},
+{k:"m",q:"Tu ___ bem?",o:["estás","estou","está"],a:0,n:"tu → estás."},
+{k:"m",q:"Eles ___ felizes.",o:["está","estão","estamos"],a:1,n:"eles → estão."},
+{k:"m",q:"Vocês ___ cansados?",o:["estão","está","estamos"],a:0,n:"vocês (ihr) → estão."},
+{k:"m",q:"A Ana ___ médica.",o:["está","é","tem"],a:1,n:"Beruf → ser."},
+{k:"l",p:"Estou cansado",o:["Ich bin müde","Ich bin glücklich","Ich habe Hunger"],a:0},
+{k:"w",q:"Wir sind zu Hause.",a:["nos estamos em casa","estamos em casa"],n:"Estamos em casa."},
+{k:"w",q:"Mir geht es gut.",a:["estou bem","eu estou bem"],n:"Estou bem."}]},
+{lv:"A1",t:"🎧 Hörlektion: Mini-Podcast",ov:"<table><tr><th>Hilfswort</th><th>Deutsch</th></tr><tr><td>hoje</td><td>heute</td></tr><tr><td>um pouco</td><td>ein bisschen</td></tr><tr><td>porquê?</td><td>warum?</td></tr><tr><td>de noite</td><td>nachts</td></tr><tr><td>trinta</td><td>dreißig</td></tr><tr><td>até à próxima</td><td>bis zum nächsten Mal</td></tr></table><div class=nt>Höre die Folge zuerst ganz, ohne mitzulesen, und beantworte dann die Fragen. Du kannst sie beliebig oft wiederholen. Das Transkript gibt es erst nach der Lektion.</div>",pod:[["Olá! Bem-vindos ao nosso podcast. Eu sou a Rita.","Hallo! Willkommen bei unserem Podcast. Ich bin Rita."],["E eu sou o Pedro. Hoje falamos de nós.","Und ich bin Pedro. Heute sprechen wir über uns."],["Eu sou de Lisboa e tenho trinta anos.","Ich komme aus Lissabon und bin dreißig Jahre alt."],["Eu sou do Porto. Tenho um gato e uma casa pequena.","Ich bin aus Porto. Ich habe einen Kater und ein kleines Haus."],["Como estás hoje, Pedro?","Wie geht es dir heute, Pedro?"],["Estou bem, obrigado! Mas estou um pouco cansado.","Mir geht es gut, danke! Aber ich bin ein bisschen müde."],["Porquê?","Warum?"],["O gato não dorme de noite!","Der Kater schläft nachts nicht!"],["Até à próxima!","Bis zum nächsten Mal!"]],ex:[{k:"p"},
+{k:"q",q:"Woher kommt Rita?",o:["Lissabon","Porto","Faro"],a:0},
+{k:"q",q:"Wie alt ist Rita?",o:["30","13","40"],a:0},
+{k:"q",q:"Was hat Pedro?",o:["Einen Kater und ein kleines Haus","Einen Hund und ein großes Haus","Zwei Katzen"],a:0},
+{k:"q",q:"Wie geht es Pedro?",o:["Gut, aber ein bisschen müde","Er ist krank","Sehr traurig"],a:0},
+{k:"q",q:"Warum ist Pedro müde?",o:["Der Kater schläft nachts nicht","Er arbeitet viel","Er hat Hunger"],a:0}]},
+{lv:"A1",t:"Regelmäßige Verben (-ar, -er, -ir)",ov:"<table><tr><th></th><th>falar</th><th>comer</th><th>partir</th></tr><tr><td>eu</td><td>falo</td><td>como</td><td>parto</td></tr><tr><td>tu</td><td>falas</td><td>comes</td><td>partes</td></tr><tr><td>ele / ela / você</td><td>fala</td><td>come</td><td>parte</td></tr><tr><td>nós</td><td>falamos</td><td>comemos</td><td>partimos</td></tr><tr><td>eles / elas / vocês</td><td>falam</td><td>comem</td><td>partem</td></tr></table><div class=nt>Stamm = Infinitiv ohne -ar / -er / -ir, dann die Endung anhängen. Verneinung: „não“ steht vor dem Verb (Não falo inglês).</div>",ex:[
+{k:"c",p:"falar",d:"sprechen"},{k:"c",p:"comer",d:"essen"},{k:"c",p:"beber",d:"trinken"},{k:"c",p:"viver",d:"leben / wohnen"},{k:"c",p:"trabalhar",d:"arbeiten"},{k:"c",p:"o café",d:"der Kaffee"},
+{k:"m",q:"Eu ___ português.",o:["falo","falas","fala"],a:0,n:"eu → -o."},
+{k:"m",q:"Tu ___ muito. (comer)",o:["come","comes","como"],a:1,n:"tu → -es bei -er-Verben."},
+{k:"m",q:"Nós ___ em Lisboa. (viver)",o:["vivemos","vivem","vivo"],a:0,n:"nós → -emos."},
+{k:"m",q:"Eles ___ em Lisboa. (trabalhar)",o:["trabalha","trabalham","trabalhamos"],a:1,n:"eles → -am."},
+{k:"m",q:"Ela não ___ café. (beber)",o:["bebe","bebo","bebem"],a:0,n:"ela → -e."},
+{k:"l",p:"Eu falo português",o:["Ich spreche Portugiesisch","Ich lerne Portugiesisch","Ich esse gern"],a:0},
+{k:"l",p:"Não como carne",o:["Ich esse kein Fleisch","Ich esse viel Fleisch","Ich trinke kein Wasser"],a:0},
+{k:"r",x:"O Pedro vive no Porto, mas trabalha em Lisboa. Fala português e inglês. Não bebe café.",q:"Wo arbeitet Pedro?",o:["In Lissabon","In Porto","In Faro"],a:0},
+{k:"w",q:"Ich spreche Portugiesisch.",a:["eu falo portugues","falo portugues"],n:"Falo português."},
+{k:"w",q:"Wir wohnen in Lissabon.",a:["nos vivemos em lisboa","vivemos em lisboa"],n:"Vivemos em Lisboa."},
+{k:"w",q:"Sie arbeiten viel.",a:["eles trabalham muito","elas trabalham muito","trabalham muito","voces trabalham muito"],n:"Eles trabalham muito."}]},
+{lv:"A1",t:"Zahlen, Uhrzeit & Wochentage",ov:"<table><tr><th>1–5</th><th>6–10</th></tr><tr><td>1 um / uma</td><td>6 seis</td></tr><tr><td>2 dois / duas</td><td>7 sete</td></tr><tr><td>3 três</td><td>8 oito</td></tr><tr><td>4 quatro</td><td>9 nove</td></tr><tr><td>5 cinco</td><td>10 dez</td></tr></table><table><tr><th>Wochentage</th><th>Uhrzeit</th></tr><tr><td>segunda-feira (Mo)</td><td>Que horas são?</td></tr><tr><td>terça-feira (Di)</td><td>É uma hora.</td></tr><tr><td>quarta-feira (Mi)</td><td>São três horas.</td></tr><tr><td>quinta-feira (Do)</td><td>Às três horas = um drei Uhr</td></tr><tr><td>sexta-feira (Fr)</td><td></td></tr><tr><td>sábado (Sa) · domingo (So)</td><td></td></tr></table><div class=nt>Ab „20“: vinte, trinta (30). Bei 1 und 2 gibt es m./f.: um / uma, dois / duas.</div>",ex:[
+{k:"c",p:"dois / duas",d:"zwei"},{k:"c",p:"dez",d:"zehn"},{k:"c",p:"a segunda-feira",d:"der Montag"},{k:"c",p:"o sábado",d:"der Samstag"},{k:"c",p:"a hora",d:"die Stunde / Uhr"},
+{k:"m",q:"___ três horas.",o:["São","É","Está"],a:0,n:"Ab zwei Uhr Plural: São … horas."},
+{k:"m",q:"___ uma hora.",o:["São","É","Tem"],a:1,n:"Eins ist Singular: É uma hora."},
+{k:"m",q:"Tenho ___ livros. (2)",o:["dois","duas","doze"],a:0,n:"livros ist maskulin → dois."},
+{k:"m",q:"Tenho ___ casas. (2)",o:["dois","duas","dez"],a:1,n:"casas ist feminin → duas."},
+{k:"l",p:"São cinco horas",o:["Es ist fünf Uhr","Es ist sechs Uhr","Es ist ein Uhr"],a:0},
+{k:"l",p:"Hoje é sexta-feira",o:["Heute ist Freitag","Heute ist Samstag","Morgen ist Freitag"],a:0},
+{k:"r",x:"Hoje é sábado. São dez horas. A Ana está em casa. Tem dois gatos.",q:"Wie viele Katzen hat Ana?",o:["Zwei","Drei","Eine"],a:0},
+{k:"w",q:"Es ist sieben Uhr.",a:["sao sete horas"],n:"São sete horas."},
+{k:"w",q:"Heute ist Montag.",a:["hoje e segunda feira","hoje e segunda"],n:"Hoje é segunda-feira."}]},
+{lv:"A1",t:"Fragen, Verneinung & Bestellen",ov:"<table><tr><th>Fragewort</th><th>Deutsch</th></tr><tr><td>quem</td><td>wer</td></tr><tr><td>o que</td><td>was</td></tr><tr><td>onde</td><td>wo</td></tr><tr><td>quando</td><td>wann</td></tr><tr><td>porquê / porque</td><td>warum</td></tr><tr><td>quanto</td><td>wie viel</td></tr><tr><td>como</td><td>wie</td></tr></table><div class=nt>Ja/Nein-Fragen haben die gleiche Wortstellung wie Aussagen, nur die Stimme geht nach oben: Tens fome? Beim Bestellen höflich: „Queria um café, por favor.“ In Lissabon heißt der Espresso oft „uma bica“.</div>",ex:[
+{k:"c",p:"onde",d:"wo"},{k:"c",p:"quando",d:"wann"},{k:"c",p:"Quanto custa?",d:"Was kostet das?"},{k:"c",p:"Queria …",d:"Ich hätte gern …"},{k:"c",p:"a conta",d:"die Rechnung"},{k:"c",p:"a água",d:"das Wasser"},
+{k:"m",q:"___ está o livro? (wo)",o:["Onde","Quem","Quando"],a:0,n:"onde = wo; Ort → estar."},
+{k:"m",q:"___ custa o café? (wie viel)",o:["Quanto","Como","Quem"],a:0,n:"quanto = wie viel."},
+{k:"m",q:"Eu ___ tenho tempo. (nicht)",o:["não","sim","nem"],a:0,n:"não steht vor dem Verb."},
+{k:"m",q:"Queria ___ café, por favor.",o:["um","uma","os"],a:0,n:"café ist maskulin → um."},
+{k:"l",p:"Onde está o livro?",o:["Wo ist das Buch?","Wer hat das Buch?","Wann kommt das Buch?"],a:0},
+{k:"l",p:"A conta, por favor",o:["Die Rechnung, bitte","Ein Wasser, bitte","Wie viel kostet das?"],a:0},
+{k:"r",x:"Boa tarde. Queria um café e uma água, por favor. … Não, obrigado. A conta, por favor.",q:"Was bestellt der Gast?",o:["Kaffee und Wasser","Tee und Brot","Nur Wasser"],a:0},
+{k:"w",q:"Ich hätte gern ein Wasser, bitte.",a:["queria uma agua por favor","queria uma agua"],n:"Queria uma água, por favor."},
+{k:"w",q:"Wo ist das Haus?",a:["onde esta a casa","onde e a casa"],n:"Onde está a casa?"}]},
+{lv:"A1",t:"Präpositionen mit Artikel & Besitz",ov:"<table><tr><th></th><th>o</th><th>a</th><th>os</th><th>as</th></tr><tr><td>de (von)</td><td>do</td><td>da</td><td>dos</td><td>das</td></tr><tr><td>em (in)</td><td>no</td><td>na</td><td>nos</td><td>nas</td></tr><tr><td>a (zu)</td><td>ao</td><td>à</td><td>aos</td><td>às</td></tr></table><table><tr><th>mein</th><th>dein</th><th>unser</th></tr><tr><td>o meu / a minha</td><td>o teu / a tua</td><td>o nosso / a nossa</td></tr></table><div class=nt>Präposition und Artikel verschmelzen: de + o = do, em + a = na. Besitzwörter stehen in Portugal meist mit Artikel (o meu livro, a minha casa). „seu / sua“ = sein, ihr, Ihr.</div>",ex:[
+{k:"c",p:"a mesa",d:"der Tisch"},{k:"c",p:"o meu / a minha",d:"mein / meine"},{k:"c",p:"o teu / a tua",d:"dein / deine"},{k:"c",p:"o nosso / a nossa",d:"unser / unsere"},{k:"c",p:"do Porto",d:"aus Porto"},
+{k:"m",q:"O livro está ___ mesa.",o:["na","no","da"],a:0,n:"em + a = na („auf dem Tisch“)."},
+{k:"m",q:"Sou ___ Porto.",o:["do","de","no"],a:0,n:"de + o = do (Porto steht mit Artikel)."},
+{k:"m",q:"A casa ___ Pedro é pequena.",o:["do","de","no"],a:0,n:"de + o = do."},
+{k:"m",q:"___ casa é pequena. (meine)",o:["A minha","O meu","A meu"],a:0,n:"casa ist feminin → a minha."},
+{k:"m",q:"O ___ livro é bom. (dein)",o:["teu","tua","meu"],a:0,n:"livro ist maskulin → teu."},
+{k:"l",p:"O meu gato é pequeno",o:["Mein Kater ist klein","Dein Kater ist klein","Mein Kater ist groß"],a:0},
+{k:"l",p:"O livro está na mesa",o:["Das Buch liegt auf dem Tisch","Das Buch ist im Haus","Der Tisch ist klein"],a:0},
+{k:"r",x:"Esta é a minha casa. Está no Porto. O meu gato está na mesa.",q:"Wo ist der Kater?",o:["Auf dem Tisch","Im Porto","Im Haus"],a:0},
+{k:"w",q:"Mein Buch ist gut.",a:["o meu livro e bom"],n:"O meu livro é bom."},
+{k:"w",q:"Ich bin aus Porto.",a:["sou do porto","eu sou do porto"],n:"Sou do Porto."},
+{k:"w",q:"Das Buch liegt auf dem Tisch.",a:["o livro esta na mesa"],n:"O livro está na mesa."}]},
+{lv:"A1",t:"Wichtige Verben: ir, fazer, poder, querer",ov:"<table><tr><th></th><th>ir</th><th>fazer</th><th>poder</th><th>querer</th></tr><tr><td>eu</td><td>vou</td><td>faço</td><td>posso</td><td>quero</td></tr><tr><td>tu</td><td>vais</td><td>fazes</td><td>podes</td><td>queres</td></tr><tr><td>ele / ela</td><td>vai</td><td>faz</td><td>pode</td><td>quer</td></tr><tr><td>nós</td><td>vamos</td><td>fazemos</td><td>podemos</td><td>queremos</td></tr><tr><td>eles / vocês</td><td>vão</td><td>fazem</td><td>podem</td><td>querem</td></tr></table><div class=nt>Zukunft mit „ir + Infinitiv“: Vou comer = ich werde essen. „ir a“ / „ir para“: Vamos para casa.</div>",ex:[
+{k:"c",p:"ir",d:"gehen / fahren"},{k:"c",p:"fazer",d:"machen / tun"},{k:"c",p:"poder",d:"können / dürfen"},{k:"c",p:"querer",d:"wollen"},{k:"c",p:"o trabalho",d:"die Arbeit"},
+{k:"m",q:"Eu ___ ao trabalho. (ir)",o:["vou","vais","vai"],a:0,n:"eu → vou."},
+{k:"m",q:"Tu ___ um café? (querer)",o:["quero","queres","quer"],a:1,n:"tu → queres."},
+{k:"m",q:"Nós ___ falar. (poder)",o:["podemos","podem","posso"],a:0,n:"nós → podemos."},
+{k:"m",q:"Ela ___ o café. (fazer)",o:["faço","faz","fazem"],a:1,n:"ela → faz."},
+{k:"m",q:"Eles ___ ao Porto. (ir)",o:["vai","vamos","vão"],a:2,n:"eles → vão."},
+{k:"m",q:"Eu ___ comer. (Zukunft: ich werde essen)",o:["vou","vais","vão"],a:0,n:"ir + Infinitiv."},
+{k:"l",p:"Eu quero um café",o:["Ich möchte einen Kaffee","Ich kann einen Kaffee machen","Ich gehe zum Kaffee"],a:0},
+{k:"l",p:"Vamos para casa",o:["Wir gehen nach Hause","Wir sind zu Hause","Wir haben ein Haus"],a:0},
+{k:"r",x:"Hoje é sábado. A Ana quer ir ao Porto. O Pedro não pode, porque trabalha.",q:"Warum kann Pedro nicht mitgehen?",o:["Er arbeitet","Er ist krank","Er hat kein Geld"],a:0},
+{k:"w",q:"Ich will einen Kaffee.",a:["eu quero um cafe","quero um cafe"],n:"Quero um café."},
+{k:"w",q:"Wir gehen nach Hause.",a:["nos vamos para casa","vamos para casa"],n:"Vamos para casa."}]},
+{lv:"A1",t:"Familie, Farben & Beschreiben",ov:"<table><tr><th>m.</th><th>f.</th></tr><tr><td>o pai</td><td>a mãe</td></tr><tr><td>o irmão</td><td>a irmã</td></tr><tr><td>o filho</td><td>a filha</td></tr><tr><td>o avô</td><td>a avó</td></tr></table><table><tr><th>Farbe</th><th>Plural</th></tr><tr><td>vermelho / vermelha (rot)</td><td>vermelhos / vermelhas</td></tr><tr><td>verde (grün)</td><td>verdes</td></tr><tr><td>azul (blau)</td><td>azuis</td></tr></table><div class=nt>Adjektive stehen meist nach dem Nomen und passen sich an: a casa branca, os gatos pretos. Adjektive auf -e oder -l haben keine eigene weibliche Form.</div>",ex:[
+{k:"c",p:"a família",d:"die Familie"},{k:"c",p:"o pai / a mãe",d:"der Vater / die Mutter"},{k:"c",p:"o irmão / a irmã",d:"der Bruder / die Schwester"},{k:"c",p:"branco / branca",d:"weiß"},{k:"c",p:"preto / preta",d:"schwarz"},{k:"c",p:"alto / baixo",d:"groß / klein (Körpergröße)"},
+{k:"m",q:"A casa é ___. (weiß)",o:["branca","branco","brancos"],a:0,n:"casa ist feminin → branca."},
+{k:"m",q:"O meu irmão ___ trinta anos.",o:["tem","é","está"],a:0,n:"Alter mit ter: tem trinta anos."},
+{k:"m",q:"Os livros são ___. (grün)",o:["verde","verdes","verda"],a:1,n:"Plural → verdes."},
+{k:"l",p:"A minha mãe é médica",o:["Meine Mutter ist Ärztin","Meine Schwester ist Ärztin","Meine Mutter ist müde"],a:0},
+{k:"l",p:"Tenho um irmão e uma irmã",o:["Ich habe einen Bruder und eine Schwester","Ich habe zwei Brüder","Ich habe eine Familie"],a:0},
+{k:"r",x:"A minha família é pequena. O meu pai é alto e a minha mãe é baixa. Tenho uma irmã. A casa da minha irmã é azul.",q:"Welche Farbe hat das Haus der Schwester?",o:["Blau","Rot","Grün"],a:0},
+{k:"w",q:"Meine Schwester ist klein.",a:["a minha irma e pequena","a minha irma e baixa"],n:"A minha irmã é pequena / baixa."},
+{k:"w",q:"Ich habe einen Bruder.",a:["tenho um irmao","eu tenho um irmao"],n:"Tenho um irmão."}]},
+{lv:"A1",t:"Essen, Einkaufen & gostar de",ov:"<table><tr><th>gostar de</th><th>Deutsch</th></tr><tr><td>eu gosto de</td><td>ich mag</td></tr><tr><td>tu gostas de</td><td>du magst</td></tr><tr><td>ele / ela gosta de</td><td>er / sie mag</td></tr><tr><td>nós gostamos de</td><td>wir mögen</td></tr><tr><td>eles / vocês gostam de</td><td>sie / ihr mögt</td></tr></table><table><tr><th>o pão</th><th>Brot</th></tr><tr><td>o queijo</td><td>Käse</td></tr><tr><td>o peixe</td><td>Fisch</td></tr><tr><td>a carne</td><td>Fleisch</td></tr><tr><td>a fruta</td><td>Obst</td></tr><tr><td>o leite</td><td>Milch</td></tr></table><div class=nt>„Gostar“ verlangt immer „de“; mit Artikel verschmilzt es: gosto do queijo, gosto da fruta. Typisch portugiesisch: bacalhau (Stockfisch) und pastel de nata.</div>",ex:[
+{k:"c",p:"gostar de",d:"mögen"},{k:"c",p:"o pão",d:"das Brot"},{k:"c",p:"o queijo",d:"der Käse"},{k:"c",p:"o peixe",d:"der Fisch"},{k:"c",p:"a fruta",d:"das Obst"},
+{k:"m",q:"Eu ___ de peixe.",o:["gosto","gostas","gosta"],a:0,n:"eu → gosto."},
+{k:"m",q:"Nós ___ de queijo.",o:["gostam","gostamos","gosto"],a:1,n:"nós → gostamos."},
+{k:"m",q:"Ela gosta ___ café.",o:["do","no","ao"],a:0,n:"de + o = do."},
+{k:"m",q:"Eu não ___ de carne.",o:["gosto","gostam","gostamos"],a:0,n:"não + Verb."},
+{k:"l",p:"Gosto de peixe",o:["Ich mag Fisch","Ich esse Fisch","Ich will Fisch"],a:0},
+{k:"l",p:"Quanto custa o queijo?",o:["Wie viel kostet der Käse?","Wo ist der Käse?","Ich mag Käse"],a:0},
+{k:"r",x:"A Rita gosta de fruta e de pão. Não gosta de peixe. Hoje quer pão, queijo e fruta.",q:"Was mag Rita nicht?",o:["Fisch","Obst","Brot"],a:0},
+{k:"w",q:"Ich mag Käse.",a:["eu gosto de queijo","gosto de queijo"],n:"Gosto de queijo."},
+{k:"w",q:"Wir mögen Fisch.",a:["nos gostamos de peixe","gostamos de peixe"],n:"Gostamos de peixe."},
+{k:"w",q:"Ich hätte gern ein Brot.",a:["queria um pao","queria um pao por favor"],n:"Queria um pão."}]},
+{lv:"A1",t:"Stadt & Orientierung",ov:"<table><tr><th>a rua</th><th>die Straße</th></tr><tr><td>a estação</td><td>der Bahnhof</td></tr><tr><td>a farmácia</td><td>die Apotheke</td></tr><tr><td>o banco</td><td>die Bank</td></tr><tr><td>a casa de banho</td><td>die Toilette</td></tr></table><table><tr><th>à direita</th><th>rechts</th></tr><tr><td>à esquerda</td><td>links</td></tr><tr><td>em frente</td><td>geradeaus</td></tr><tr><td>perto (de) / longe (de)</td><td>nah / weit</td></tr></table><div class=nt>„Onde fica …?“ = Wo befindet sich …? Typische Antworten: „Siga em frente“ (geradeaus), „Vire à direita“ (rechts abbiegen).</div>",ex:[
+{k:"c",p:"Desculpe",d:"Entschuldigung"},{k:"c",p:"a rua",d:"die Straße"},{k:"c",p:"a estação",d:"der Bahnhof"},{k:"c",p:"à direita / à esquerda",d:"rechts / links"},{k:"c",p:"perto / longe",d:"nah / weit"},
+{k:"m",q:"Onde ___ a estação?",o:["fica","ficam","ficas"],a:0,n:"a estação (Singular) → fica."},
+{k:"m",q:"Vire ___ direita.",o:["à","ao","na"],a:0,n:"a + a = à."},
+{k:"m",q:"A farmácia fica ___ da estação. (nah)",o:["perto","longe","frente"],a:0,n:"perto de + a = perto da."},
+{k:"l",p:"Vire à esquerda",o:["Biegen Sie links ab","Biegen Sie rechts ab","Gehen Sie geradeaus"],a:0},
+{k:"l",p:"Siga em frente",o:["Gehen Sie geradeaus","Gehen Sie zurück","Bleiben Sie hier"],a:0},
+{k:"r",x:"Desculpe, onde fica a farmácia? Siga em frente e vire à direita. Fica perto da estação.",q:"Wo ist die Apotheke?",o:["Rechts abbiegen, nahe dem Bahnhof","Links, weit weg","Direkt am Hotel"],a:0},
+{k:"w",q:"Wo ist der Bahnhof?",a:["onde fica a estacao","onde e a estacao","onde esta a estacao"],n:"Onde fica a estação?"},
+{k:"w",q:"Biegen Sie rechts ab.",a:["vire a direita"],n:"Vire à direita."},
+{k:"w",q:"Entschuldigung, wo ist die Apotheke?",a:["desculpe onde fica a farmacia","desculpe onde e a farmacia","desculpe onde esta a farmacia"],n:"Desculpe, onde fica a farmácia?"}]},
+{lv:"A1",t:"Wetter & Tagesablauf",ov:"<table><tr><th>Wetter</th><th>Deutsch</th></tr><tr><td>Faz sol</td><td>Die Sonne scheint</td></tr><tr><td>Faz frio / calor</td><td>Es ist kalt / heiß</td></tr><tr><td>Está a chover</td><td>Es regnet (gerade)</td></tr></table><table><tr><th>estar a + Infinitiv</th><th>Deutsch</th></tr><tr><td>Estou a trabalhar</td><td>Ich arbeite gerade</td></tr><tr><td>Estás a comer</td><td>Du isst gerade</td></tr><tr><td>Estamos a falar</td><td>Wir sprechen gerade</td></tr></table><div class=nt>In Portugal bildet man die Verlaufsform mit „estar a + Infinitiv“ (nicht mit -ndo wie in Brasilien). Tageszeiten: de manhã (morgens), à tarde (nachmittags), à noite (abends/nachts).</div>",ex:[
+{k:"c",p:"Faz calor",d:"Es ist heiß"},{k:"c",p:"Faz frio",d:"Es ist kalt"},{k:"c",p:"Está a chover",d:"Es regnet"},{k:"c",p:"de manhã",d:"morgens"},{k:"c",p:"almoçar / jantar",d:"zu Mittag / zu Abend essen"},
+{k:"m",q:"Hoje ___ sol.",o:["faz","tem","é"],a:0,n:"Wetter oft mit fazer: faz sol, faz frio."},
+{k:"m",q:"Eu estou ___ comer.",o:["a","de","em"],a:0,n:"estar a + Infinitiv."},
+{k:"m",q:"Eles estão ___ falar.",o:["a","para","do"],a:0,n:"estar a + Infinitiv."},
+{k:"m",q:"Nós ___ à noite. (jantar)",o:["jantamos","jantam","janto"],a:0,n:"nós → -amos."},
+{k:"l",p:"Está a chover",o:["Es regnet gerade","Es ist kalt","Die Sonne scheint"],a:0},
+{k:"l",p:"Faz frio hoje",o:["Heute ist es kalt","Heute ist es heiß","Heute regnet es"],a:0},
+{k:"r",x:"De manhã faz frio, mas à tarde faz sol. A Rita está a trabalhar. À noite janta em casa.",q:"Wie ist das Wetter am Nachmittag?",o:["Sonnig","Regnerisch","Kalt"],a:0},
+{k:"w",q:"Es ist heiß.",a:["faz calor"],n:"Faz calor."},
+{k:"w",q:"Ich arbeite gerade.",a:["estou a trabalhar","eu estou a trabalhar"],n:"Estou a trabalhar."},
+{k:"w",q:"Wir essen zu Abend.",a:["nos jantamos","jantamos"],n:"Jantamos."}]},
+{lv:"A1",t:"🎧 Hörlektion 2: Um dia em Lisboa",ov:"<table><tr><th>Hilfswort</th><th>Deutsch</th></tr><tr><td>o centro</td><td>das Zentrum</td></tr><tr><td>a pastelaria</td><td>die Konditorei</td></tr><tr><td>depois</td><td>danach</td></tr><tr><td>boa ideia</td><td>gute Idee</td></tr><tr><td>até logo</td><td>bis später</td></tr></table><div class=nt>Wieder zuerst nur zuhören, dann die Fragen. Das Transkript gibt es am Ende.</div>",pod:[["Bom dia, Pedro! Hoje faz sol em Lisboa.","Guten Morgen, Pedro! Heute scheint in Lissabon die Sonne."],["Bom dia, Rita! Vamos ao centro?","Guten Morgen, Rita! Gehen wir ins Zentrum?"],["Sim! Eu quero um café e um pastel de nata.","Ja! Ich möchte einen Kaffee und ein Pastel de Nata."],["Eu gosto muito de pastel de nata. Onde fica a pastelaria?","Ich mag Pastel de Nata sehr. Wo ist die Konditorei?"],["Está perto da estação. Vamos!","Sie ist in der Nähe des Bahnhofs. Los geht’s!"],["São dez horas. Tenho tempo.","Es ist zehn Uhr. Ich habe Zeit."],["Depois eu vou trabalhar. Tu estás a trabalhar hoje?","Danach gehe ich arbeiten. Arbeitest du heute?"],["Eu não! Hoje é sábado. Mas à noite jantamos em casa.","Ich nicht! Heute ist Samstag. Aber abends essen wir zu Hause."],["Boa ideia! Até logo!","Gute Idee! Bis später!"]],ex:[{k:"p"},
+{k:"q",q:"Wie ist das Wetter?",o:["Sonnig","Regnerisch","Kalt"],a:0},
+{k:"q",q:"Was möchte Rita?",o:["Kaffee und Pastel de Nata","Wasser und Brot","Tee"],a:0},
+{k:"q",q:"Wo ist die Konditorei?",o:["Nahe dem Bahnhof","Weit weg","Am Hotel"],a:0},
+{k:"q",q:"Wie spät ist es?",o:["Zehn Uhr","Drei Uhr","Zwölf Uhr"],a:0},
+{k:"q",q:"Was machen die beiden am Abend?",o:["Zu Hause zu Abend essen","Ins Restaurant gehen","Arbeiten"],a:0}]}
+];
+LS.push.apply(LS,[
+{lv:"A2",t:"Pretérito Perfeito: regelmäßig",ov:"<table><tr><th></th><th>falar</th><th>comer</th><th>partir</th></tr><tr><td>eu</td><td>falei</td><td>comi</td><td>parti</td></tr><tr><td>tu</td><td>falaste</td><td>comeste</td><td>partiste</td></tr><tr><td>ele / ela / você</td><td>falou</td><td>comeu</td><td>partiu</td></tr><tr><td>nós</td><td>falámos</td><td>comemos</td><td>partimos</td></tr><tr><td>eles / elas / vocês</td><td>falaram</td><td>comeram</td><td>partiram</td></tr></table><div class=nt>Das Perfeito beschreibt eine abgeschlossene Handlung in der Vergangenheit („Ontem comi peixe“ = Gestern habe ich Fisch gegessen). Signalwörter: ontem (gestern), anteontem (vorgestern), na semana passada (letzte Woche), há dois dias (vor zwei Tagen). In Portugal hat „nós“ bei -ar-Verben einen Akzent (falámos), um es vom Präsens (falamos) zu unterscheiden.</div>",ex:[
+{k:"c",p:"ontem",d:"gestern"},{k:"c",p:"anteontem",d:"vorgestern"},{k:"c",p:"a semana passada",d:"letzte Woche"},{k:"c",p:"há dois dias",d:"vor zwei Tagen"},{k:"c",p:"comprar",d:"kaufen"},{k:"c",p:"jantar",d:"zu Abend essen"},{k:"c",p:"chegar",d:"ankommen"},{k:"c",p:"vender",d:"verkaufen"},
+{k:"m",q:"Ontem eu ___ peixe. (comer)",o:["comi","como","comeu"],a:0,n:"eu → -i bei -er-Verben."},
+{k:"m",q:"Tu ___ em Lisboa ontem? (jantar)",o:["jantaste","jantas","jantou"],a:0,n:"tu → -aste bei -ar-Verben."},
+{k:"m",q:"Ele ___ o comboio. (apanhar)",o:["apanhou","apanha","apanhei"],a:0,n:"ele → -ou bei -ar-Verben."},
+{k:"m",q:"Nós ___ muito ontem. (trabalhar)",o:["trabalhámos","trabalhamos","trabalharam"],a:0,n:"nós → -ámos (Perfeito) statt -amos (Präsens)."},
+{k:"m",q:"Eles ___ a casa. (vender)",o:["venderam","vendem","vendeu"],a:0,n:"eles → -eram bei -er-Verben."},
+{k:"m",q:"Ela ___ às oito. (partir)",o:["partiu","parte","parti"],a:0,n:"ela → -iu bei -ir-Verben."},
+{k:"m",q:"Na semana passada eu ___ um livro. (comprar)",o:["comprei","compro","comprou"],a:0,n:"eu → -ei bei -ar-Verben."},
+{k:"l",p:"Ontem comprei um livro",o:["Gestern habe ich ein Buch gekauft","Ich kaufe heute ein Buch","Er hat ein Buch verkauft"],a:0},
+{k:"l",p:"Eles chegaram tarde",o:["Sie sind spät angekommen","Sie kommen früh an","Sie sind früh gegangen"],a:0},
+{k:"l",p:"Jantámos em casa",o:["Wir haben zu Hause zu Abend gegessen","Wir essen im Restaurant","Wir haben gefrühstückt"],a:0},
+{k:"r",x:"Ontem o Pedro acordou cedo. Bebeu um café, comeu pão e saiu de casa às oito. Chegou ao trabalho às nove.",q:"Wann kam Pedro bei der Arbeit an?",o:["Um neun","Um acht","Um sieben"],a:0},
+{k:"w",q:"Gestern habe ich Fisch gegessen.",a:["ontem comi peixe","comi peixe ontem","eu comi peixe ontem","ontem eu comi peixe"],n:"Ontem comi peixe."},
+{k:"w",q:"Wir haben in Lissabon gearbeitet.",a:["trabalhamos em lisboa","nos trabalhamos em lisboa"],n:"Trabalhámos em Lisboa."},
+{k:"w",q:"Sie haben Wasser getrunken.",a:["eles beberam agua","elas beberam agua","beberam agua"],n:"Eles beberam água."}]},
+
+{lv:"A2",t:"Pretérito Perfeito: unregelmäßig",ov:"<table><tr><th></th><th>ser / ir</th><th>ter</th><th>estar</th><th>fazer</th></tr><tr><td>eu</td><td>fui</td><td>tive</td><td>estive</td><td>fiz</td></tr><tr><td>tu</td><td>foste</td><td>tiveste</td><td>estiveste</td><td>fizeste</td></tr><tr><td>ele / ela</td><td>foi</td><td>teve</td><td>esteve</td><td>fez</td></tr><tr><td>nós</td><td>fomos</td><td>tivemos</td><td>estivemos</td><td>fizemos</td></tr><tr><td>eles / elas</td><td>foram</td><td>tiveram</td><td>estiveram</td><td>fizeram</td></tr></table><table><tr><th></th><th>ver</th><th>dar</th><th>dizer</th><th>vir</th></tr><tr><td>eu</td><td>vi</td><td>dei</td><td>disse</td><td>vim</td></tr><tr><td>tu</td><td>viste</td><td>deste</td><td>disseste</td><td>vieste</td></tr><tr><td>ele / ela</td><td>viu</td><td>deu</td><td>disse</td><td>veio</td></tr><tr><td>nós</td><td>vimos</td><td>demos</td><td>dissemos</td><td>viemos</td></tr><tr><td>eles / elas</td><td>viram</td><td>deram</td><td>disseram</td><td>vieram</td></tr></table><div class=nt>„ser“ und „ir“ haben im Perfeito dieselben Formen: „Fui professor“ (ich war Lehrer) und „Fui a Lisboa“ (ich bin nach Lissabon gefahren). Der Zusammenhang zeigt, was gemeint ist. Weiteres Verb: poder → pude, pudeste, pôde, pudemos, puderam.</div>",ex:[
+{k:"c",p:"ver",d:"sehen"},{k:"c",p:"dizer",d:"sagen"},{k:"c",p:"dar",d:"geben"},{k:"c",p:"vir",d:"kommen"},{k:"c",p:"o fim de semana",d:"das Wochenende"},{k:"c",p:"a praia",d:"der Strand"},{k:"c",p:"o filme",d:"der Film"},{k:"c",p:"o presente",d:"das Geschenk"},
+{k:"m",q:"Ontem eu ___ à praia. (ir)",o:["fui","fiz","fomos"],a:0,n:"eu fui (ir)."},
+{k:"m",q:"Ela ___ muito trabalho. (ter)",o:["teve","tem","tive"],a:0,n:"ela teve."},
+{k:"m",q:"Nós ___ um filme. (ver)",o:["vimos","vemos","viram"],a:0,n:"nós vimos (Perfeito) – vemos ist Präsens."},
+{k:"m",q:"Tu ___ o trabalho? (fazer)",o:["fizeste","fazes","fez"],a:0,n:"tu fizeste."},
+{k:"m",q:"Eles ___ em casa. (estar)",o:["estiveram","estão","esteve"],a:0,n:"eles estiveram."},
+{k:"m",q:"Ele ___ que sim. (dizer)",o:["disse","diz","disseram"],a:0,n:"ele disse."},
+{k:"m",q:"Eu ___ um presente à Ana. (dar)",o:["dei","dou","deu"],a:0,n:"eu dei."},
+{k:"l",p:"Fui à praia no sábado",o:["Ich bin am Samstag zum Strand gegangen","Ich gehe am Samstag zum Strand","Ich war am Sonntag zu Hause"],a:0},
+{k:"l",p:"Vimos um filme",o:["Wir haben einen Film gesehen","Wir sehen einen Film","Wir haben ein Buch gelesen"],a:0},
+{k:"l",p:"Ela fez o jantar",o:["Sie hat das Abendessen gemacht","Sie macht das Frühstück","Sie hat das Mittagessen gekauft"],a:0},
+{k:"r",x:"No sábado fui à praia com a minha família. Fizemos um piquenique e vimos o mar. Foi um dia muito bom.",q:"Mit wem ging die Person zum Strand?",o:["Mit der Familie","Mit Freunden","Allein"],a:0},
+{k:"w",q:"Ich war gestern zu Hause.",a:["ontem estive em casa","estive em casa ontem","eu estive em casa ontem","ontem eu estive em casa"],n:"Ontem estive em casa."},
+{k:"w",q:"Wir haben einen Film gesehen.",a:["vimos um filme","nos vimos um filme"],n:"Vimos um filme."},
+{k:"w",q:"Ich habe das gemacht.",a:["eu fiz isso","fiz isso","eu fiz isto","fiz isto"],n:"Fiz isso."}]},
+
+{lv:"A2",t:"Uhrzeit & Tagesablauf",ov:"<table><tr><th>Uhrzeit</th><th>Portugiesisch</th></tr><tr><td>1:00</td><td>É uma hora.</td></tr><tr><td>2:00</td><td>São duas horas.</td></tr><tr><td>3:15</td><td>São três e um quarto.</td></tr><tr><td>3:30</td><td>São três e meia.</td></tr><tr><td>2:45</td><td>São três menos um quarto.</td></tr><tr><td>12:00</td><td>É meio-dia.</td></tr><tr><td>0:00</td><td>É meia-noite.</td></tr></table><div class=nt>Frage: „Que horas são?“ (Wie spät ist es?) und „A que horas …?“ (Um wie viel Uhr …?) – Antwort mit „à / às“: „Às oito.“ Achtung: „oito e meia“ ist 8:30, also deutsch „halb neun“. Im Alltag sagt man oft die 24-Stunden-Zeit: „São quinze horas.“</div>",ex:[
+{k:"c",p:"acordar",d:"aufwachen"},{k:"c",p:"almoçar",d:"zu Mittag essen"},{k:"c",p:"dormir",d:"schlafen"},{k:"c",p:"o pequeno-almoço",d:"das Frühstück"},{k:"c",p:"cedo",d:"früh"},{k:"c",p:"meio-dia",d:"Mittag (12 Uhr)"},{k:"c",p:"meia-noite",d:"Mitternacht"},{k:"c",p:"tomar duche",d:"duschen"},
+{k:"m",q:"3:30 → São três ___.",o:["e meia","e um quarto","menos um quarto"],a:0,n:"e meia = halb (nach drei)."},
+{k:"m",q:"1:00 → ___ uma hora.",o:["É","São","Está"],a:0,n:"Bei 1 Uhr: „É uma hora“ (Singular)."},
+{k:"m",q:"2:45 → São três ___ um quarto.",o:["menos","e","às"],a:0,n:"menos um quarto = Viertel vor."},
+{k:"m",q:"___ que horas almoças? – À uma.",o:["A","Em","De"],a:0,n:"„A que horas …?“"},
+{k:"m",q:"12:00 → É ___.",o:["meio-dia","meia-noite","meia hora"],a:0,n:"meio-dia = Mittag."},
+{k:"m",q:"Eu ___ às sete. (acordar)",o:["acordo","acordas","acorda"],a:0,n:"eu acordo."},
+{k:"l",p:"São oito e meia",o:["Es ist halb neun","Es ist halb acht","Es ist acht Uhr"],a:0},
+{k:"l",p:"Almoço à uma hora",o:["Ich esse um eins zu Mittag","Ich frühstücke um eins","Ich esse um zwei zu Abend"],a:0},
+{k:"l",p:"Acordo cedo",o:["Ich wache früh auf","Ich schlafe spät","Ich komme spät an"],a:0},
+{k:"r",x:"O Pedro acorda às sete. Toma o pequeno-almoço às sete e meia e vai para o trabalho. Almoça ao meio-dia e janta às oito. Dorme à meia-noite.",q:"Wann frühstückt Pedro?",o:["Um halb acht","Um sieben","Um acht"],a:0},
+{k:"w",q:"Es ist halb drei.",a:["sao duas e meia","sao duas horas e meia"],n:"São duas e meia."},
+{k:"w",q:"Ich esse um eins zu Mittag.",a:["almoco a uma","almoco a uma hora","eu almoco a uma","eu almoco a uma hora"],n:"Almoço à uma."},
+{k:"w",q:"Um wie viel Uhr isst du zu Abend?",a:["a que horas jantas","a que horas tu jantas"],n:"A que horas jantas?"}]},
+
+{lv:"A2",t:"Reflexivverben",ov:"<table><tr><th></th><th>levantar-se</th><th>Pronomen</th></tr><tr><td>eu</td><td>levanto-me</td><td>me</td></tr><tr><td>tu</td><td>levantas-te</td><td>te</td></tr><tr><td>ele / ela / você</td><td>levanta-se</td><td>se</td></tr><tr><td>nós</td><td>levantamo-nos</td><td>nos</td></tr><tr><td>eles / elas / vocês</td><td>levantam-se</td><td>se</td></tr></table><div class=nt>In Portugal steht das Pronomen normalerweise nach dem Verb, mit Bindestrich: „Levanto-me às sete.“ Nach „não“, „já“, „também“, „sempre“ und „que“ steht es davor: „Não me levanto cedo.“ Wichtige Verben: chamar-se (heißen), levantar-se (aufstehen), deitar-se (ins Bett gehen), sentar-se (sich setzen), lavar-se (sich waschen). „Como te chamas?“ – „Chamo-me Pedro.“</div>",ex:[
+{k:"c",p:"levantar-se",d:"aufstehen"},{k:"c",p:"deitar-se",d:"ins Bett gehen"},{k:"c",p:"chamar-se",d:"heißen"},{k:"c",p:"sentar-se",d:"sich setzen"},{k:"c",p:"lavar-se",d:"sich waschen"},{k:"c",p:"às vezes",d:"manchmal"},
+{k:"m",q:"Eu ___ às sete. (levantar-se)",o:["levanto-me","levanto-se","me levanto"],a:0,n:"Pronomen folgt dem Verb: levanto-me."},
+{k:"m",q:"Tu ___ tarde. (deitar-se)",o:["deitas-te","deitas-me","deita-se"],a:0,n:"tu → te."},
+{k:"m",q:"Ela chama-___ Ana.",o:["se","me","te"],a:0,n:"ele / ela → se."},
+{k:"m",q:"Nós sentamo-___ à mesa.",o:["nos","se","me"],a:0,n:"nós → nos (das -s der Endung fällt weg)."},
+{k:"m",q:"Eu não ___ levanto cedo.",o:["me","se","te"],a:0,n:"Nach „não“ steht das Pronomen vor dem Verb."},
+{k:"m",q:"Eles lavam-___.",o:["se","nos","te"],a:0,n:"eles → se."},
+{k:"l",p:"Levanto-me às sete",o:["Ich stehe um sieben auf","Ich gehe um sieben ins Bett","Ich esse um sieben"],a:0},
+{k:"l",p:"Como te chamas?",o:["Wie heißt du?","Wie geht es dir?","Woher kommst du?"],a:0},
+{k:"l",p:"Eles deitam-se tarde",o:["Sie gehen spät ins Bett","Sie stehen spät auf","Sie kommen früh"],a:0},
+{k:"r",x:"A Maria levanta-se às seis. Lava-se e toma o pequeno-almoço. Não se deita tarde, deita-se às dez.",q:"Wann geht Maria ins Bett?",o:["Um zehn","Um elf","Um zwölf"],a:0},
+{k:"w",q:"Ich stehe früh auf.",a:["levanto me cedo","eu levanto me cedo"],n:"Levanto-me cedo."},
+{k:"w",q:"Er heißt Pedro.",a:["ele chama se pedro","chama se pedro"],n:"Ele chama-se Pedro."},
+{k:"w",q:"Wir gehen spät ins Bett.",a:["deitamo nos tarde","nos deitamo nos tarde"],n:"Deitamo-nos tarde."},
+{k:"w",q:"Ich stehe nicht früh auf.",a:["nao me levanto cedo","eu nao me levanto cedo"],n:"Não me levanto cedo."}]},
+
+{lv:"A2",t:"🎧 Hörlektion 3: O fim de semana",ov:"<table><tr><th>Hilfswort</th><th>Deutsch</th></tr><tr><td>o fim de semana</td><td>das Wochenende</td></tr><tr><td>grelhado</td><td>gegrillt</td></tr><tr><td>ficar</td><td>bleiben</td></tr><tr><td>cozinhar</td><td>kochen</td></tr><tr><td>sair</td><td>ausgehen</td></tr><tr><td>alguma coisa</td><td>etwas</td></tr></table><div class=nt>Zuerst nur zuhören, dann die Fragen. Achte auf das Perfeito. Das Transkript gibt es am Ende.</div>",pod:[["Olá, Pedro! Como foi o teu fim de semana?","Hallo, Pedro! Wie war dein Wochenende?"],["Foi muito bom, Rita! No sábado fui à praia com a minha irmã.","Es war sehr gut, Rita! Am Samstag war ich mit meiner Schwester am Strand."],["Que bom! Fizeram alguma coisa especial?","Wie schön! Habt ihr etwas Besonderes gemacht?"],["Comemos peixe grelhado e bebemos um vinho branco.","Wir haben gegrillten Fisch gegessen und einen Weißwein getrunken."],["E no domingo? Trabalhaste?","Und am Sonntag? Hast du gearbeitet?"],["Não, fiquei em casa. Cozinhei e vi um filme.","Nein, ich bin zu Hause geblieben. Ich habe gekocht und einen Film gesehen."],["E tu, Rita? Saíste com os amigos?","Und du, Rita? Bist du mit Freunden ausgegangen?"],["Sim! Jantámos num restaurante novo no centro.","Ja! Wir haben in einem neuen Restaurant im Zentrum zu Abend gegessen."],["Gostaste da comida?","Hat dir das Essen geschmeckt?"],["Muito! Foi um fim de semana perfeito.","Sehr! Es war ein perfektes Wochenende."]],ex:[{k:"p"},
+{k:"q",q:"Mit wem war Pedro am Strand?",o:["Mit seiner Schwester","Mit Rita","Allein"],a:0},
+{k:"q",q:"Was haben sie gegessen?",o:["Gegrillten Fisch","Suppe","Pizza"],a:0},
+{k:"q",q:"Was machte Pedro am Sonntag?",o:["Kochen und einen Film sehen","Arbeiten","Zum Strand gehen"],a:0},
+{k:"q",q:"Wo aß Rita zu Abend?",o:["In einem neuen Restaurant","Zu Hause","Bei Pedro"],a:0},
+{k:"q",q:"Wie fand Rita das Wochenende?",o:["Perfekt","Langweilig","Anstrengend"],a:0}]},
+
+{lv:"A2",t:"Zahlen bis 1000, Datum & Preise",ov:"<table><tr><th>Zahl</th><th>Portugiesisch</th><th>Zahl</th><th>Portugiesisch</th></tr><tr><td>100</td><td>cem</td><td>600</td><td>seiscentos</td></tr><tr><td>101</td><td>cento e um</td><td>700</td><td>setecentos</td></tr><tr><td>200</td><td>duzentos</td><td>800</td><td>oitocentos</td></tr><tr><td>300</td><td>trezentos</td><td>900</td><td>novecentos</td></tr><tr><td>400</td><td>quatrocentos</td><td>1000</td><td>mil</td></tr><tr><td>500</td><td>quinhentos</td><td>2000</td><td>dois mil</td></tr></table><table><tr><th>Monate</th><th></th><th></th></tr><tr><td>janeiro</td><td>fevereiro</td><td>março</td></tr><tr><td>abril</td><td>maio</td><td>junho</td></tr><tr><td>julho</td><td>agosto</td><td>setembro</td></tr><tr><td>outubro</td><td>novembro</td><td>dezembro</td></tr></table><div class=nt>Monate schreibt man klein. Datum: „É dia cinco de maio“ oder „Estamos a cinco de maio“. Preis: „Custa doze euros e cinquenta.“ Ordnungszahlen: primeiro, segundo, terceiro, quarto, quinto. Ab 100 steht „e“ zwischen den Teilen: trezentos e vinte e cinco.</div>",ex:[
+{k:"c",p:"cem",d:"hundert"},{k:"c",p:"duzentos",d:"zweihundert"},{k:"c",p:"quinhentos",d:"fünfhundert"},{k:"c",p:"mil",d:"tausend"},{k:"c",p:"o mês",d:"der Monat"},{k:"c",p:"o ano",d:"das Jahr"},{k:"c",p:"primeiro",d:"erster"},{k:"c",p:"o cêntimo",d:"der Cent"},
+{k:"m",q:"200 = ___",o:["duzentos","doiscentos","duzentas"],a:0,n:"200 = duzentos."},
+{k:"m",q:"500 = ___",o:["quinhentos","cincocentos","quinze"],a:0,n:"500 = quinhentos."},
+{k:"m",q:"101 = ___ e um",o:["cento","cem","centos"],a:0,n:"Nur 100 allein heißt „cem“, danach „cento e …“."},
+{k:"m",q:"2000 = dois ___",o:["mil","milhão","cem"],a:0,n:"mil bleibt unverändert."},
+{k:"m",q:"É dia cinco ___ maio.",o:["de","em","a"],a:0,n:"Datum: dia + Zahl + de + Monat."},
+{k:"m",q:"Quanto ___ o café? – Custa um euro.",o:["custa","custo","custas"],a:0,n:"custa (3. Person Singular)."},
+{k:"m",q:"Dezembro vem depois de ___.",o:["novembro","janeiro","outubro"],a:0,n:"novembro → dezembro."},
+{k:"l",p:"Custa trezentos euros",o:["Es kostet dreihundert Euro","Es kostet dreißig Euro","Es kostet tausend Euro"],a:0},
+{k:"l",p:"Estamos a quinze de agosto",o:["Wir haben den 15. August","Wir haben den 5. Mai","Wir haben den 15. Juli"],a:0},
+{k:"l",p:"Setembro tem trinta dias",o:["Der September hat dreißig Tage","Der September hat einunddreißig Tage","Der Mai hat dreißig Tage"],a:0},
+{k:"r",x:"O meu aniversário é em março. Faço trinta anos no dia vinte e dois de março. Quero uma festa com os amigos e um bolo.",q:"Wann hat die Person Geburtstag?",o:["Am 22. März","Am 12. März","Am 22. Mai"],a:0},
+{k:"w",q:"Es kostet zweihundert Euro.",a:["custa duzentos euros","custa duzentos euro"],n:"Custa duzentos euros."},
+{k:"w",q:"Im Dezember.",a:["em dezembro"],n:"Em dezembro."},
+{k:"w",q:"Es kostet tausend Euro.",a:["custa mil euros","custa mil euro"],n:"Custa mil euros."}]},
+
+{lv:"A2",t:"Komparativ & Superlativ",ov:"<table><tr><th>Steigerung</th><th>Beispiel</th></tr><tr><td>mais … do que</td><td>Lisboa é maior do que o Porto.</td></tr><tr><td>menos … do que</td><td>O Porto é menos grande.</td></tr><tr><td>tão … como</td><td>Sou tão alto como o meu pai.</td></tr><tr><td>o / a mais …</td><td>É a cidade mais bonita.</td></tr></table><table><tr><th>Grundform</th><th>Komparativ</th></tr><tr><td>bom (gut)</td><td>melhor</td></tr><tr><td>mau (schlecht)</td><td>pior</td></tr><tr><td>grande (groß)</td><td>maior</td></tr><tr><td>pequeno (klein)</td><td>menor</td></tr><tr><td>muito / pouco</td><td>mais / menos</td></tr></table><div class=nt>Nach „mais“ und „menos“ steht „do que“ (oder kurz „que“). „Mais bom“ gibt es nicht, es heißt „melhor“. Superlativ: „o melhor café da cidade“ (der beste Kaffee der Stadt).</div>",ex:[
+{k:"c",p:"caro",d:"teuer"},{k:"c",p:"barato",d:"billig"},{k:"c",p:"bonito",d:"schön"},{k:"c",p:"feio",d:"hässlich"},{k:"c",p:"rápido",d:"schnell"},{k:"c",p:"lento",d:"langsam"},{k:"c",p:"alto",d:"groß (Person), hoch"},{k:"c",p:"a cidade",d:"die Stadt"},
+{k:"m",q:"O Porto é ___ pequeno do que Lisboa.",o:["menos","mais","tão"],a:0,n:"Porto ist kleiner → menos grande / mais pequeno."},
+{k:"m",q:"Este vinho é ___ do que aquele. (bom)",o:["melhor","mais bom","bom"],a:0,n:"bom → melhor."},
+{k:"m",q:"Hoje o tempo está ___. (schlechter)",o:["pior","mais mau","malhor"],a:0,n:"mau → pior."},
+{k:"m",q:"Ela é tão alta ___ ele.",o:["como","mais","de"],a:0,n:"tão … como = so … wie."},
+{k:"m",q:"Lisboa é a cidade ___ bonita de Portugal.",o:["mais","melhor","maior"],a:0,n:"a cidade mais bonita."},
+{k:"m",q:"A minha casa é ___ do que a tua. (grande)",o:["maior","mais grande","grande"],a:0,n:"grande → maior."},
+{k:"l",p:"O comboio é mais rápido do que o autocarro",o:["Der Zug ist schneller als der Bus","Der Bus ist schneller als der Zug","Der Zug ist so schnell wie der Bus"],a:0},
+{k:"l",p:"Este café é o melhor",o:["Dieser Kaffee ist der beste","Dieser Kaffee ist besser","Dieser Kaffee ist teuer"],a:0},
+{k:"l",p:"Sou tão alto como o meu pai",o:["Ich bin so groß wie mein Vater","Ich bin größer als mein Vater","Ich bin kleiner als mein Vater"],a:0},
+{k:"r",x:"Lisboa é maior do que o Porto, mas o Porto é mais barato. O vinho do Porto é o mais famoso de Portugal.",q:"Welche Stadt ist größer?",o:["Lissabon","Porto","Faro"],a:0},
+{k:"w",q:"Der Zug ist schneller als der Bus.",a:["o comboio e mais rapido do que o autocarro","o comboio e mais rapido que o autocarro"],n:"O comboio é mais rápido do que o autocarro."},
+{k:"w",q:"Das ist der beste Kaffee.",a:["e o melhor cafe","este e o melhor cafe","esse e o melhor cafe","isto e o melhor cafe"],n:"Este é o melhor café."},
+{k:"w",q:"Mein Haus ist größer als dein Haus.",a:["a minha casa e maior do que a tua","a minha casa e maior que a tua","a minha casa e maior do que a tua casa","a minha casa e maior que a tua casa"],n:"A minha casa é maior do que a tua."}]},
+
+{lv:"A2",t:"Pretérito Imperfeito",ov:"<table><tr><th></th><th>falar</th><th>comer / partir</th><th>ser</th><th>ter</th></tr><tr><td>eu</td><td>falava</td><td>comia</td><td>era</td><td>tinha</td></tr><tr><td>tu</td><td>falavas</td><td>comias</td><td>eras</td><td>tinhas</td></tr><tr><td>ele / ela</td><td>falava</td><td>comia</td><td>era</td><td>tinha</td></tr><tr><td>nós</td><td>falávamos</td><td>comíamos</td><td>éramos</td><td>tínhamos</td></tr><tr><td>eles / elas</td><td>falavam</td><td>comiam</td><td>eram</td><td>tinham</td></tr></table><div class=nt>Das Imperfeito beschreibt Gewohnheiten, Zustände und Hintergründe in der Vergangenheit: „Quando era criança, vivia no Porto.“ Das Perfeito dagegen nennt ein einzelnes, abgeschlossenes Ereignis: „Ontem fui à praia.“ Signalwörter für das Imperfeito: antigamente, sempre, todos os dias, quando era criança. Weitere Formen: ir → ia, estar → estava, ver → via, vir → vinha.</div>",ex:[
+{k:"c",p:"antigamente",d:"früher"},{k:"c",p:"a criança",d:"das Kind"},{k:"c",p:"sempre",d:"immer"},{k:"c",p:"todos os dias",d:"jeden Tag"},{k:"c",p:"a escola",d:"die Schule"},{k:"c",p:"a aldeia",d:"das Dorf"},{k:"c",p:"a avó",d:"die Oma"},{k:"c",p:"o bolo",d:"der Kuchen"},
+{k:"m",q:"Quando eu ___ criança, vivia no Porto. (ser)",o:["era","fui","sou"],a:0,n:"era (Imperfeito von ser)."},
+{k:"m",q:"Todos os dias eu ___ café. (beber)",o:["bebia","bebi","bebo"],a:0,n:"Gewohnheit → Imperfeito: bebia."},
+{k:"m",q:"Antigamente nós ___ em casa. (jantar)",o:["jantávamos","jantámos","jantamos"],a:0,n:"nós jantávamos."},
+{k:"m",q:"Ele ___ muito tempo. (ter)",o:["tinha","teve","tem"],a:0,n:"tinha (Imperfeito von ter)."},
+{k:"m",q:"Ontem eu ___ à praia. (ir)",o:["fui","ia","vou"],a:0,n:"Einzelnes Ereignis (ontem) → Perfeito: fui."},
+{k:"m",q:"Quando era criança, eles ___ sempre na escola. (estar)",o:["estavam","estão","estiveram"],a:0,n:"sempre → Imperfeito: estavam."},
+{k:"l",p:"Quando era criança, vivia em Lisboa",o:["Als Kind wohnte ich in Lissabon","Als Kind bin ich nach Lissabon gezogen","Ich wohne jetzt in Lissabon"],a:0},
+{k:"l",p:"Todos os dias comia pão",o:["Jeden Tag aß ich Brot","Gestern habe ich Brot gegessen","Ich esse gerade Brot"],a:0},
+{k:"l",p:"Era um dia de sol",o:["Es war ein sonniger Tag","Es ist ein sonniger Tag","Es war ein kalter Tag"],a:0},
+{k:"r",x:"Quando eu era criança, vivia numa aldeia pequena. Todos os dias ia à escola a pé. Aos domingos, a minha avó fazia bolo e nós comíamos todos juntos.",q:"Was machte die Großmutter sonntags?",o:["Sie backte Kuchen","Sie ging zur Schule","Sie arbeitete"],a:0},
+{k:"w",q:"Als Kind wohnte ich in Lissabon.",a:["quando era crianca vivia em lisboa","quando eu era crianca vivia em lisboa","quando era crianca eu vivia em lisboa"],n:"Quando era criança, vivia em Lisboa."},
+{k:"w",q:"Früher aßen wir jeden Tag Fisch.",a:["antigamente comiamos peixe todos os dias","comiamos peixe todos os dias"],n:"Antigamente comíamos peixe todos os dias."},
+{k:"w",q:"Es war ein schöner Tag.",a:["era um dia bonito","era um bonito dia"],n:"Era um dia bonito."}]},
+
+{lv:"A2",t:"Objektpronomen",ov:"<table><tr><th>Person</th><th>direkt</th><th>indirekt</th></tr><tr><td>ich</td><td>me</td><td>me</td></tr><tr><td>du</td><td>te</td><td>te</td></tr><tr><td>er / es</td><td>o</td><td>lhe</td></tr><tr><td>sie</td><td>a</td><td>lhe</td></tr><tr><td>wir</td><td>nos</td><td>nos</td></tr><tr><td>sie (Pl.)</td><td>os / as</td><td>lhes</td></tr></table><div class=nt>Meist folgt das Pronomen dem Verb mit Bindestrich: „Vejo-o.“ (Ich sehe ihn.) „Conheço-a.“ „Dou-lhe o livro.“ Nach „não“ steht es davor: „Não o vejo.“ Beim Infinitiv auf -r wird o / a zu lo / la: „Quero comprá-lo.“ (Ich will es kaufen.) „Quero vê-la.“ Das r fällt dabei weg.</div>",ex:[
+{k:"c",p:"conhecer",d:"kennen"},{k:"c",p:"encontrar",d:"treffen, finden"},{k:"c",p:"telefonar",d:"anrufen"},{k:"c",p:"ajudar",d:"helfen"},{k:"c",p:"convidar",d:"einladen"},{k:"c",p:"a festa",d:"die Party"},
+{k:"m",q:"Eu conheço a Ana. Conheço-___ bem.",o:["a","o","lhe"],a:0,n:"a = sie (direktes Objekt, weiblich)."},
+{k:"m",q:"Vejo o Pedro. Vejo-___.",o:["o","a","os"],a:0,n:"o = ihn."},
+{k:"m",q:"Conheces o Pedro? – Não ___ conheço.",o:["o","os","lhe"],a:0,n:"Nach „não“ steht das Pronomen vor dem Verb."},
+{k:"m",q:"Quero comprar o livro. Quero comprá-___.",o:["lo","o","lhe"],a:0,n:"Nach Infinitiv auf -r wird o zu lo."},
+{k:"m",q:"Dou-___ o livro. (ihr)",o:["lhe","a","se"],a:0,n:"Indirektes Objekt: lhe."},
+{k:"m",q:"Eles ajudam-___. (uns)",o:["nos","nós","os"],a:0,n:"nos = uns."},
+{k:"l",p:"Vejo-te amanhã",o:["Ich sehe dich morgen","Ich sehe ihn morgen","Ich rufe dich morgen an"],a:0},
+{k:"l",p:"Compro-o hoje",o:["Ich kaufe es heute","Ich verkaufe es heute","Ich habe es gestern gekauft"],a:0},
+{k:"l",p:"Dou-lhe um presente",o:["Ich gebe ihm ein Geschenk","Ich bekomme ein Geschenk","Ich kaufe ein Geschenk"],a:0},
+{k:"r",x:"A Ana tem um livro novo. Eu quero lê-lo. Hoje telefono-lhe e convido-a para um café.",q:"Wen lädt die Person zum Kaffee ein?",o:["Ana","Pedro","Rita"],a:0},
+{k:"w",q:"Ich sehe dich.",a:["vejo te","eu vejo te"],n:"Vejo-te."},
+{k:"w",q:"Ich kaufe es. (das Buch)",a:["compro o","eu compro o"],n:"Compro-o."},
+{k:"w",q:"Ich rufe ihn an.",a:["telefono lhe","eu telefono lhe","ligo lhe","eu ligo lhe"],n:"Telefono-lhe."}]},
+
+{lv:"A2",t:"Demonstrativa & Possessiva",ov:"<table><tr><th>Nähe</th><th>m. Sg.</th><th>f. Sg.</th><th>m. Pl.</th><th>f. Pl.</th><th>neutral</th></tr><tr><td>hier (bei mir)</td><td>este</td><td>esta</td><td>estes</td><td>estas</td><td>isto</td></tr><tr><td>dort (bei dir)</td><td>esse</td><td>essa</td><td>esses</td><td>essas</td><td>isso</td></tr><tr><td>weit weg</td><td>aquele</td><td>aquela</td><td>aqueles</td><td>aquelas</td><td>aquilo</td></tr></table><table><tr><th></th><th>m.</th><th>f.</th><th>m. Pl.</th><th>f. Pl.</th></tr><tr><td>mein</td><td>o meu</td><td>a minha</td><td>os meus</td><td>as minhas</td></tr><tr><td>dein</td><td>o teu</td><td>a tua</td><td>os teus</td><td>as tuas</td></tr><tr><td>unser</td><td>o nosso</td><td>a nossa</td><td>os nossos</td><td>as nossas</td></tr></table><div class=nt>Im Portugiesischen steht vor dem Possessivum meist der Artikel: „o meu livro“. „o seu“ kann er, sie oder Sie bedeuten; deutlicher: „o livro dele / dela“. Verschmelzungen: de + este = deste, em + esse = nesse, de + aquele = daquele.</div>",ex:[
+{k:"c",p:"este / esta",d:"dieser / diese"},{k:"c",p:"esse / essa",d:"dieser / diese (bei dir)"},{k:"c",p:"aquele / aquela",d:"jener / jene"},{k:"c",p:"isto",d:"dies (hier)"},{k:"c",p:"aquilo",d:"jenes (dort)"},{k:"c",p:"nosso",d:"unser"},{k:"c",p:"o carro",d:"das Auto"},{k:"c",p:"o homem",d:"der Mann"},{k:"c",p:"simpático",d:"nett"},
+{k:"m",q:"___ livro aqui é meu. (dieses)",o:["Este","Esse","Aquele"],a:0,n:"este = nah bei mir."},
+{k:"m",q:"___ casa lá longe é grande. (jene)",o:["Aquela","Esta","Essa"],a:0,n:"aquela = weit weg."},
+{k:"m",q:"O ___ irmão é alto. (mein)",o:["meu","minha","meus"],a:0,n:"irmão ist männlich → meu."},
+{k:"m",q:"A ___ casa é grande. (unser)",o:["nossa","nosso","vossa"],a:0,n:"casa ist weiblich → nossa."},
+{k:"m",q:"Os ___ amigos são simpáticos. (deine)",o:["teus","tuas","teu"],a:0,n:"amigos Plural männlich → teus."},
+{k:"m",q:"Gosto ___ casa. (dieser)",o:["desta","esta","dela"],a:0,n:"gostar de + esta = desta."},
+{k:"l",p:"Isto é meu",o:["Das hier gehört mir","Das dort gehört dir","Das ist nicht meins"],a:0},
+{k:"l",p:"Aquele homem é o meu pai",o:["Jener Mann ist mein Vater","Dieser Mann ist mein Bruder","Jene Frau ist meine Mutter"],a:0},
+{k:"l",p:"A nossa casa é pequena",o:["Unser Haus ist klein","Mein Haus ist groß","Euer Haus ist klein"],a:0},
+{k:"r",x:"Este é o meu irmão e aquela é a minha irmã. Os nossos pais vivem no Porto. A casa deles é grande e muito bonita.",q:"Wo wohnen die Eltern?",o:["In Porto","In Lissabon","In Faro"],a:0},
+{k:"w",q:"Das ist mein Haus.",a:["esta e a minha casa","esta casa e minha","e a minha casa","esta e minha casa","isto e a minha casa"],n:"Esta é a minha casa."},
+{k:"w",q:"Jenes Auto ist teuer.",a:["aquele carro e caro"],n:"Aquele carro é caro."},
+{k:"w",q:"Unsere Freunde sind nett.",a:["os nossos amigos sao simpaticos"],n:"Os nossos amigos são simpáticos."}]},
+
+{lv:"A2",t:"Zukunft: ir + Infinitiv & Futur",ov:"<table><tr><th></th><th>ir + Inf.</th><th>falar</th><th>ter</th><th>fazer</th></tr><tr><td>eu</td><td>vou falar</td><td>falarei</td><td>terei</td><td>farei</td></tr><tr><td>tu</td><td>vais falar</td><td>falarás</td><td>terás</td><td>farás</td></tr><tr><td>ele / ela</td><td>vai falar</td><td>falará</td><td>terá</td><td>fará</td></tr><tr><td>nós</td><td>vamos falar</td><td>falaremos</td><td>teremos</td><td>faremos</td></tr><tr><td>eles / elas</td><td>vão falar</td><td>falarão</td><td>terão</td><td>farão</td></tr></table><div class=nt>Im Alltag benutzt man fast immer „ir + Infinitiv“: „Amanhã vou trabalhar.“ Das einfache Futur (Infinitiv + -ei, -ás, -á, -emos, -ão) hört man eher in formellen Texten. Unregelmäßig: ser → serei, ir → irei, dizer → direi, poder → poderei. Zeitangaben: amanhã, depois de amanhã, na próxima semana, em breve, esta noite.</div>",ex:[
+{k:"c",p:"amanhã",d:"morgen"},{k:"c",p:"depois de amanhã",d:"übermorgen"},{k:"c",p:"a próxima semana",d:"die nächste Woche"},{k:"c",p:"em breve",d:"bald"},{k:"c",p:"esta noite",d:"heute Abend"},{k:"c",p:"viajar",d:"reisen"},{k:"c",p:"talvez",d:"vielleicht"},{k:"c",p:"as férias",d:"der Urlaub"},
+{k:"m",q:"Amanhã eu ___ trabalhar. (ir)",o:["vou","vais","vai"],a:0,n:"eu vou + Infinitiv."},
+{k:"m",q:"Nós ___ viajar em breve.",o:["vamos","vão","vou"],a:0,n:"nós vamos + Infinitiv."},
+{k:"m",q:"Ela ___ comprar um carro. (ir)",o:["vai","vais","vamos"],a:0,n:"ela vai + Infinitiv."},
+{k:"m",q:"Na próxima semana eu ___ férias. (Futur von ter)",o:["terei","tenho","tinha"],a:0,n:"terei = ich werde haben."},
+{k:"m",q:"Amanhã tu ___ o jantar? (Futur von fazer)",o:["farás","fizeste","fazias"],a:0,n:"farás (unregelmäßiger Stamm far-)."},
+{k:"m",q:"Eles ___ falar com o médico. (ir)",o:["vão","vamos","vai"],a:0,n:"eles vão + Infinitiv."},
+{k:"l",p:"Amanhã vou ao médico",o:["Morgen gehe ich zum Arzt","Gestern war ich beim Arzt","Heute gehe ich zur Arbeit"],a:0},
+{k:"l",p:"Vamos viajar em breve",o:["Wir werden bald verreisen","Wir sind gestern verreist","Wir bleiben zu Hause"],a:0},
+{k:"l",p:"Na próxima semana terei férias",o:["Nächste Woche habe ich Urlaub","Letzte Woche hatte ich Urlaub","Heute habe ich frei"],a:0},
+{k:"r",x:"Na próxima semana vou a Lisboa com a minha família. Vamos ficar num hotel perto do rio. Amanhã vou comprar os bilhetes de comboio.",q:"Was kauft die Person morgen?",o:["Zugtickets","Hotelzimmer","Flugtickets"],a:0},
+{k:"w",q:"Morgen werde ich arbeiten.",a:["amanha vou trabalhar","eu vou trabalhar amanha","vou trabalhar amanha","amanha trabalharei"],n:"Amanhã vou trabalhar."},
+{k:"w",q:"Wir werden nach Lissabon reisen.",a:["vamos viajar para lisboa","nos vamos viajar para lisboa","vamos viajar a lisboa"],n:"Vamos viajar para Lisboa."},
+{k:"w",q:"Nächste Woche habe ich Urlaub.",a:["na proxima semana tenho ferias","na proxima semana vou ter ferias","na proxima semana terei ferias"],n:"Na próxima semana tenho férias."}]},
+
+{lv:"A2",t:"Körper & Gesundheit",ov:"<table><tr><th>Körperteil</th><th>Deutsch</th><th>Körperteil</th><th>Deutsch</th></tr><tr><td>a cabeça</td><td>Kopf</td><td>o braço</td><td>Arm</td></tr><tr><td>o olho</td><td>Auge</td><td>a mão</td><td>Hand</td></tr><tr><td>o nariz</td><td>Nase</td><td>a barriga</td><td>Bauch</td></tr><tr><td>a boca</td><td>Mund</td><td>as costas</td><td>Rücken</td></tr><tr><td>o dente</td><td>Zahn</td><td>a perna</td><td>Bein</td></tr><tr><td>a garganta</td><td>Hals</td><td>o pé</td><td>Fuß</td></tr></table><div class=nt>Schmerzen: „Dói-me a cabeça“ (Singular) und „Doem-me os pés“ (Plural). Oder: „Tenho dor de cabeça / de dentes.“ „Tenho febre.“ (Ich habe Fieber.) „Estou doente.“ „Preciso de um médico.“ Vorsicht: „Estou constipado / constipada“ heißt erkältet, nicht „verstopft“.</div>",ex:[
+{k:"c",p:"a cabeça",d:"der Kopf"},{k:"c",p:"a garganta",d:"der Hals"},{k:"c",p:"a barriga",d:"der Bauch"},{k:"c",p:"as costas",d:"der Rücken"},{k:"c",p:"o pé",d:"der Fuß"},{k:"c",p:"a febre",d:"das Fieber"},{k:"c",p:"o médico",d:"der Arzt"},{k:"c",p:"doente",d:"krank"},{k:"c",p:"o comprimido",d:"die Tablette"},{k:"c",p:"a receita",d:"das Rezept"},
+{k:"m",q:"___-me a cabeça. (tut weh)",o:["Dói","Doem","Dou"],a:0,n:"Singular: dói-me."},
+{k:"m",q:"Doem-me ___ pés.",o:["os","a","o"],a:0,n:"pés ist Plural → os."},
+{k:"m",q:"Tenho ___ de dentes.",o:["dor","dói","febre"],a:0,n:"dor de dentes = Zahnschmerzen."},
+{k:"m",q:"Estou ___. (erkältet)",o:["constipado","constipação","cansaço"],a:0,n:"estou constipado = ich bin erkältet."},
+{k:"m",q:"Tenho febre. Preciso de um ___.",o:["médico","livro","bilhete"],a:0,n:"médico = Arzt."},
+{k:"m",q:"Onde te dói? – Dói-me a ___.",o:["garganta","febre","receita"],a:0,n:"a garganta = der Hals."},
+{k:"l",p:"Dói-me a cabeça",o:["Ich habe Kopfschmerzen","Ich habe Bauchschmerzen","Ich habe Hunger"],a:0},
+{k:"l",p:"Tenho febre",o:["Ich habe Fieber","Ich habe Durst","Ich habe Zeit"],a:0},
+{k:"l",p:"Estou doente",o:["Ich bin krank","Ich bin müde","Ich bin fertig"],a:0},
+{k:"r",x:"O Pedro está doente. Tem febre e dói-lhe a garganta. Vai ao médico às três. O médico dá-lhe uma receita e ele vai à farmácia.",q:"Wohin geht Pedro nach dem Arzt?",o:["Zur Apotheke","Nach Hause","Zur Arbeit"],a:0},
+{k:"w",q:"Ich habe Kopfschmerzen.",a:["doi me a cabeca","tenho dor de cabeca","eu tenho dor de cabeca"],n:"Dói-me a cabeça."},
+{k:"w",q:"Ich habe Fieber.",a:["tenho febre","eu tenho febre"],n:"Tenho febre."},
+{k:"w",q:"Ich brauche einen Arzt.",a:["preciso de um medico","eu preciso de um medico"],n:"Preciso de um médico."},
+{k:"w",q:"Meine Füße tun weh.",a:["doem me os pes"],n:"Doem-me os pés."}]},
+
+{lv:"A2",t:"Einkaufen & Kleidung",ov:"<table><tr><th>Portugiesisch</th><th>Deutsch</th><th>Portugiesisch</th><th>Deutsch</th></tr><tr><td>a camisa</td><td>Hemd</td><td>os sapatos</td><td>Schuhe</td></tr><tr><td>a camisola</td><td>Pullover</td><td>o tamanho</td><td>Größe</td></tr><tr><td>as calças</td><td>Hose</td><td>o preço</td><td>Preis</td></tr><tr><td>o casaco</td><td>Jacke</td><td>caro / barato</td><td>teuer / billig</td></tr><tr><td>o vestido</td><td>Kleid</td><td>os saldos</td><td>Ausverkauf</td></tr></table><div class=nt>Nützliche Sätze: „Quanto custa?“ – „Posso experimentar?“ – „Que tamanho usa?“ – „Tem noutra cor?“ – „Fica-lhe bem.“ (Es steht Ihnen gut.) – „Pago com cartão.“ / „Pago em dinheiro.“ In Portugal ist „a camisola“ der Pullover, „a camisa“ das Hemd.</div>",ex:[
+{k:"c",p:"as calças",d:"die Hose"},{k:"c",p:"os sapatos",d:"die Schuhe"},{k:"c",p:"o casaco",d:"die Jacke"},{k:"c",p:"o tamanho",d:"die Größe"},{k:"c",p:"o cartão",d:"die Karte"},{k:"c",p:"o dinheiro",d:"das Geld"},{k:"c",p:"experimentar",d:"anprobieren, ausprobieren"},{k:"c",p:"a loja",d:"das Geschäft"},
+{k:"m",q:"___ custa este casaco?",o:["Quanto","Quantos","Quem"],a:0,n:"Quanto custa …? = Was kostet …?"},
+{k:"m",q:"Posso ___ as calças?",o:["experimentar","custar","dormir"],a:0,n:"experimentar = anprobieren."},
+{k:"m",q:"Pago ___ cartão.",o:["com","em","de"],a:0,n:"pagar com cartão."},
+{k:"m",q:"Que ___ usa? (Größe)",o:["tamanho","preço","cor"],a:0,n:"o tamanho = die Größe."},
+{k:"m",q:"Este casaco é muito ___. (teuer)",o:["caro","barato","pequeno"],a:0,n:"caro = teuer."},
+{k:"m",q:"O vestido fica-___ bem. (Ihnen)",o:["lhe","o","se"],a:0,n:"fica-lhe bem = es steht Ihnen gut."},
+{k:"l",p:"Quanto custam os sapatos?",o:["Was kosten die Schuhe?","Wie groß sind die Schuhe?","Wo sind die Schuhe?"],a:0},
+{k:"l",p:"Posso experimentar?",o:["Kann ich es anprobieren?","Kann ich bezahlen?","Kann ich helfen?"],a:0},
+{k:"l",p:"Tem noutra cor?",o:["Haben Sie es in einer anderen Farbe?","Haben Sie es in meiner Größe?","Haben Sie es billiger?"],a:0},
+{k:"r",x:"Hoje estou numa loja de roupa. Quero uns sapatos pretos e um casaco azul. Os sapatos custam sessenta euros. O casaco está em saldos e custa só trinta euros. Pago com cartão.",q:"Wie bezahlt die Person?",o:["Mit Karte","Bar","Gar nicht"],a:0},
+{k:"w",q:"Was kostet das?",a:["quanto custa isto","quanto custa isso","quanto custa","quanto custa isto aqui"],n:"Quanto custa isto?"},
+{k:"w",q:"Ich möchte die Schuhe anprobieren.",a:["quero experimentar os sapatos","queria experimentar os sapatos","posso experimentar os sapatos"],n:"Queria experimentar os sapatos."},
+{k:"w",q:"Ich zahle mit Karte.",a:["pago com cartao","eu pago com cartao"],n:"Pago com cartão."}]},
+
+{lv:"A2",t:"🎧 Hörlektion 4: No médico",ov:"<table><tr><th>Hilfswort</th><th>Deutsch</th></tr><tr><td>Como se sente?</td><td>Wie fühlen Sie sich?</td></tr><tr><td>desde</td><td>seit</td></tr><tr><td>abra a boca</td><td>öffnen Sie den Mund</td></tr><tr><td>descansar</td><td>sich ausruhen</td></tr><tr><td>duas vezes por dia</td><td>zweimal am Tag</td></tr></table><div class=nt>Zuerst nur zuhören, dann die Fragen. Beim Arzt spricht man mit „o senhor“ / „a senhora“ und der 3. Person: „Como se sente?“ Das Transkript gibt es am Ende.</div>",pod:[["Bom dia. Como se sente?","Guten Tag. Wie fühlen Sie sich?"],["Bom dia, doutor. Não me sinto bem. Dói-me a garganta.","Guten Tag, Herr Doktor. Ich fühle mich nicht gut. Mein Hals tut weh."],["Desde quando?","Seit wann?"],["Desde ontem. Também tenho febre e estou muito cansado.","Seit gestern. Ich habe auch Fieber und bin sehr müde."],["Vou ver. Abra a boca, por favor.","Ich schaue mal. Öffnen Sie bitte den Mund."],["Está constipado. Vai tomar estes comprimidos duas vezes por dia.","Sie sind erkältet. Sie nehmen diese Tabletten zweimal am Tag."],["Preciso de ficar em casa?","Muss ich zu Hause bleiben?"],["Sim, descanse três dias. Beba muita água e fique na cama.","Ja, ruhen Sie sich drei Tage aus. Trinken Sie viel Wasser und bleiben Sie im Bett."],["Muito obrigado, doutor. Até à próxima!","Vielen Dank, Herr Doktor. Bis zum nächsten Mal!"]],ex:[{k:"p"},
+{k:"q",q:"Was tut dem Patienten weh?",o:["Der Hals","Der Kopf","Der Bauch"],a:0},
+{k:"q",q:"Seit wann hat er Beschwerden?",o:["Seit gestern","Seit einer Woche","Seit heute früh"],a:0},
+{k:"q",q:"Was hat der Patient außerdem?",o:["Fieber","Husten","Hunger"],a:0},
+{k:"q",q:"Wie oft soll er die Tabletten nehmen?",o:["Zweimal am Tag","Einmal am Tag","Dreimal am Tag"],a:0},
+{k:"q",q:"Wie lange soll er sich ausruhen?",o:["Drei Tage","Eine Woche","Einen Tag"],a:0}]}
+]);
+
+var OUT=[["B1","Subjuntivo, Futur, längere Texte & Dialoge"],["B2","Konditional, Passiv, Nachrichten & Podcasts"],["C1","Nuancen, Register, Argumentation, Originalquellen"]];
+var P={};try{P=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+try{Object.keys(P).forEach(function(k){if(/^\d+$/.test(k)&&P[k]>100)P[k]=100});if(P.kt)Object.keys(P.kt).forEach(function(k){if(P.kt[k]>100)P.kt[k]=100})}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){}}
+var A=document.getElementById("app"),li=0,ei=0,sc=0,tot=0;
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim()}
+function say(t,slow){try{var u=new SpeechSynthesisUtterance(t);u.lang="pt-PT";var v=speechSynthesis.getVoices().filter(function(x){return x.lang.replace("_","-")==="pt-PT"})[0];v=dv(0)||v;if(v)u.voice=v;u.rate=(slow?0.5:1)*(P.rate||1);speechSynthesis.cancel();setTimeout(function(){speechSynthesis.speak(u)},80)}catch(e){}}
+function shuf(a){return a.map(function(v,i){return{v:v,i:i}}).sort(function(){return Math.random()-.5})}
+function home(){tb(0);var cu=LS.findIndex(function(l,i){return !(P[i]>=PASS)});
+ var h='<h1>Português (Portugal)</h1><div class="mut">Kleine Lektionen, Schritt für Schritt bis C1</div>'+today()+wotd()+stats()+'<label class="row" style="margin:6px 0"><span class="mut">🔇 Leise-Modus: Hörübungen als Text</span><input type="checkbox" id="qm" style="width:auto;padding:0;margin:0"></label>';var lvO=null;if(P.srs&&Object.keys(P.srs).length)h='<button class="btn p" id="rv0">Wiederholen · '+due().length+' fällig</button>'+h;
+ LS.forEach(function(l,i){var open=i===0||P[i-1]>=PASS;if(l.lv!==lvO){if(lvO)h+=ktBtn(lvO)+'</details>';lvO=l.lv;var co=(P.co&&P.co[lvO]!==undefined)?P.co[lvO]:(lvO===LS[cu>=0?cu:LS.length-1].lv?0:1);h+='<details class="ch" data-lv="'+lvO+'"'+(co?'':' open')+'><summary>'+(LT[lvO]||lvO)+' <span>'+lvs(lvO)[1]+' / '+lvs(lvO)[0]+'</span></summary>'}
+  h+='<button class="btn'+(open?'':' lock')+(i===cu?' cur':'')+(P[i]!=null?sk(P[i]):'')+'" data-i="'+i+'"'+(open?'':' disabled')+'><div class="row"><span class="ln"><em>'+(i+1)+'</em>'+l.t+'</span><span class="mut">'+(P[i]!=null?(P[i]>=100?'<span class="gd">🏆 100%</span>':(P[i]>=PASS?'✓ ':'↻ ')+Math.round(P[i])+'%'):open?(i===cu?'Weiter ▶':'Start'):'🔒')+'</span></div></button>'});
+ h+=ktBtn(lvO)+'</details>';OUT.forEach(function(o){h+='<details class="ch"><summary>'+o[0]+' <span>in Planung</span></summary><div class="mut" style="padding:0 4px 16px">'+o[1]+'</div></details>'});h+=badgeBtn()+'<button class="btn" id="wk">📊 Wochenrückblick</button><button class="btn" id="pc1">📝 Einstufungstest (A1)</button><button class="btn" id="st1">⚙️ Einstellungen</button><h2>Sicherung</h2><div class="mut" style="margin-bottom:8px">Am sichersten: über Safari zum Home-Bildschirm hinzufügen und den Fortschritt ab und zu kopieren.</div><button class="btn" id="bx">Fortschritt kopieren</button><button class="btn" id="bi">Fortschritt einfügen</button>';
+ A.innerHTML=h;wire(A);G("tr").onclick=trophies;G("wk").onclick=weekly;Array.prototype.forEach.call(A.querySelectorAll("[data-kt]"),function(b){b.onclick=function(){ktStart(b.dataset.kt)}});setTimeout(function(){Array.prototype.forEach.call(A.querySelectorAll(".ch[data-lv]"),function(d){d.ontoggle=function(){P.co=P.co||{};P.co[d.dataset.lv]=d.open?0:1;save()}})},400);G("pc1").onclick=placement;G("st1").onclick=settings;
+ Array.prototype.forEach.call(A.querySelectorAll("[data-i]"),function(b){b.onclick=function(){li=+b.dataset.i;ei=0;sc=0;tot=0;ovw(1)}});var rb=document.getElementById("rv0");if(rb)rb.onclick=rev;var qm=document.getElementById("qm");qm.checked=!!P.quiet;qm.onchange=function(){P.quiet=qm.checked?1:0;save()};document.getElementById("td").onclick=daily;var gl=document.getElementById("gl");gl.value=P.goal||10;gl.onchange=function(){P.goal=+gl.value;save();home()};document.getElementById("bx").onclick=function(){try{navigator.clipboard.writeText(JSON.stringify(P));this.textContent="Kopiert ✓"}catch(e){prompt("Sicherung:",JSON.stringify(P))}};document.getElementById("bi").onclick=function(){var s=prompt("Sicherung einfügen");try{var o=JSON.parse(s);if(o&&typeof o==="object"){P=o;save();home()}}catch(e){}}}
+function step(){tb(-1);
+ var l=cl();if(ei>=Q.length){fin();return}
+ var e=Q[ei],pc=Math.round(ei/Q.length*100);if(P.quiet){e=tx(e);Q[ei]=e}
+ var h='<button class="back" id="bk">‹ Lektionen</button><div class="bar"><i style="width:'+pc+'%"></i></div><div class="card">';
+ var tag=e.tg||{c:"Vokabel",m:"Grammatik",l:"Hörverstehen",r:"Lesen",w:"Schreiben",p:"Podcast",q:"Verstehen",o:"Satzbau",d:"Diktat",x:"Zuordnen"}[e.k];
+ h=h.replace('<div class="card">','<div class="card" style="border-top:5px solid '+col(e.k)+'">');h+='<div class="tag" style="color:'+col(e.k)+'">'+tag+'</div>';
+ if(e.k==="c")h+='<div class="big">'+e.p+'</div><button class="btn" id="pl">🔊 Anhören</button><div id="rv"></div>';
+ if(e.k==="m"||e.k==="q")h+='<div class="big">'+(e.tg&&e.tg.indexOf("Lesen")===0?tap(e.q):e.q)+'</div>'+(e.k==="q"&&!P.quiet?'<button class="btn" id="pl">🔊 Folge nochmal</button>':'')+'<div id="op"></div>';
+ if(e.k==="p")h+='<div class="big">🎧 Mini-Podcast</div><div class="mut">Zwei Sprecher, eine kurze Folge. Nur zuhören!</div><button class="btn p" id="pl">▶ Folge abspielen</button><button class="btn" id="sl">🐢 Langsam</button><div class="mut" style="margin-top:12px">Stimme Rita</div><select id="v0"></select><div class="mut">Stimme Pedro</div><select id="v1"></select><div class="nt">Klingen beide gleich, hat dein iPhone nur eine portugiesische Stimme. Weitere findest du unter Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen.</div>';
+ if(e.k==="l")h+='<div class="mut">Was bedeutet das?</div><button class="btn p" id="pl">🔊 Abspielen</button><button class="btn" id="sl">🐢 Langsam</button><div id="op"></div>';
+ if(e.k==="r")h+='<p>'+tap(e.x)+'</p><button class="btn" id="pl">🔊 Vorlesen</button><div class="mut">'+e.q+'</div><div id="op"></div>';
+ if(e.k==="t")h+='<div class="big">📄 Transkript</div><div class="mut">Lies die Folge, dann beantworte die Fragen.</div>'+cl().pod.map(function(t){return'<p>'+tap(t[0],t[1])+'<br><span class="mut">'+t[1]+'</span></p>'}).join("");
+ if(e.k==="d")h+='<div class="mut">Höre zu und schreibe, was du hörst:</div><button class="btn p" id="pl">🔊 Abspielen</button><button class="btn" id="sl">🐢 Langsam</button><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false"><button class="btn p" id="ck">Prüfen</button>';
+ if(e.k==="o")h+='<div class="mut">Setze den Satz zusammen (Antwort antippen = zurücksetzen):</div><div class="big">'+e.q+'</div><div class="card" id="ans" style="min-height:56px;padding:12px;margin:8px 0;text-align:center"></div><div id="chips" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"></div><button class="btn p" id="ck">Prüfen</button>';
+ if(e.k==="x")h+='<div class="mut">Tippe die zusammengehörigen Paare an</div><div id="mx" style="margin-top:10px"></div>';
+ if(e.k==="w")h+='<div class="mut">Schreibe auf Portugiesisch:</div><div class="big">'+e.q+'</div><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false"><button class="btn p" id="ck">Prüfen</button>';
+ h+='<div class="fb" id="fb"></div></div><div id="nx"></div>';
+ A.innerHTML=h;
+ document.getElementById("bk").onclick=home;
+ if(e.k==="t")next();
+ if(e.k==="l"||e.k==="d"||e.k==="p"){var sb=document.createElement("button");sb.className="btn";sb.textContent="🔇 Gerade nicht möglich – als Text";sb.onclick=function(){if((e.k==="l"||e.k==="d")&&!e._r&&tot>0)tot--;Q[ei]=tx(e);step()};sb.className="cb skip";sb.textContent="🔇 Als Text";var se=document.getElementById("sl"),p0=document.getElementById("pl"),cr=document.createElement("div");cr.className="ctl";p0.parentNode.insertBefore(cr,p0);cr.appendChild(p0);cr.appendChild(se);cr.appendChild(sb);se.textContent="🐢 Langsam"}
+ var pl=document.getElementById("pl");if(pl)pl.onclick=function(){if(e.k==="r")say(e.x);else if(e.k==="p"||e.k==="q")pod();else say(e.s||e.p)};
+ if(e.k==="p"){document.getElementById("sl").onclick=function(){pod(1)};vsel();next()}
+ if(e.k==="l"){say(e.p);document.getElementById("sl").onclick=function(){say(e.p,1)}}
+ if(e.k==="d"){e.a=[norm(e.p)];e.n="Richtig: "+e.p;say(e.p);document.getElementById("sl").onclick=function(){say(e.p,1)}}
+ if(e.k==="o"){if(!e._r)tot++;var got=[],ans=document.getElementById("ans"),ch=document.getElementById("chips");
+  shuf(e.p.split(" ")).forEach(function(x){var b=document.createElement("button");b.className="btn";b.style.cssText="display:inline-block;width:auto;margin:0";b.textContent=x.v;b.onclick=function(){b.disabled=true;got.push(x.v);ans.textContent=got.join(" ")};ch.appendChild(b)});
+  ans.onclick=function(){got=[];ans.textContent="";Array.prototype.forEach.call(ch.children,function(c){c.disabled=false})};
+  document.getElementById("ck").onclick=function(){var r=got.join(" ")===e.p;if(r&&!e._r){sc=Math.min(sc+1,tot);good(e)}if(!r)retry(e);Array.prototype.forEach.call(ch.children,function(c){c.disabled=true});ans.onclick=null;this.hidden=true;fb(r,r?"":"Richtig: "+e.p);next()}}
+ if(e.k==="x"){if(!e._r)tot++;var mx=document.getElementById("mx"),sel=null,rest=e.pairs.length,bad=0;mx.style.cssText="display:grid;grid-template-columns:1fr 1fr;gap:8px";
+  var mk=function(t,s){var b=document.createElement("button");b.className="btn";b.style.margin="0";b.textContent=t;b.onclick=function(){
+   if(!sel||sel.s===s){if(sel)sel.b.style.outline="";sel={b:b,t:t,s:s};b.style.outline="2px solid var(--ac)";return}
+   var pt=s===0?t:sel.t,de=s===0?sel.t:t,ok=e.pairs.some(function(p){return p[0]===pt&&p[1]===de}),o=sel.b;o.style.outline="";
+   if(ok){b.disabled=o.disabled=true;b.classList.add("ok");o.classList.add("ok");if(!--rest){if(!bad&&!e._r){sc=Math.min(sc+1,tot);good(e)}fb(!bad,bad?bad+" Fehlversuch(e).":"");next()}}else{bad++;b.classList.add("no");o.classList.add("no");setTimeout(function(){b.classList.remove("no");o.classList.remove("no")},500)}sel=null};return b};
+  var cL=document.createElement("div"),cr=document.createElement("div");cL.style.cssText=cr.style.cssText="display:flex;flex-direction:column;gap:8px";
+  shuf(e.pairs.map(function(p){return p[0]})).forEach(function(x){cL.appendChild(mk(x.v,0))});shuf(e.pairs.map(function(p){return p[1]})).forEach(function(x){cr.appendChild(mk(x.v,1))});mx.appendChild(cL);mx.appendChild(cr)}
+ if(e.k==="c"){var rv=document.getElementById("rv");rv.innerHTML='<button class="btn p" id="sh">Übersetzung zeigen</button>';document.getElementById("sh").onclick=function(){rv.innerHTML='<div class="big" style="color:var(--ac)">'+e.d+'</div>';next()};say(e.s||e.p)}
+ if(e.o){var op=document.getElementById("op");if(!e._r)tot++;
+  shuf(e.o).forEach(function(x){var b=document.createElement("button");b.className="btn";b.textContent=x.v;b.onclick=function(){
+   var right=x.i===e.a;if(right&&!e._r){sc=Math.min(sc+1,tot);good(e)}if(!right)retry(e);
+   Array.prototype.forEach.call(op.children,function(c){c.disabled=true});b.classList.add(right?"ok":"no");
+   if(!right)Array.prototype.forEach.call(op.children,function(c){if(c.textContent===e.o[e.a])c.classList.add("ok")});
+   fb(right,e.n);next()};op.appendChild(b)})}
+ if(e.k==="w"||e.k==="d"){if(!e._r)tot++;var inp=document.getElementById("in");document.getElementById("ck").onclick=function(){
+  var v=norm(inp.value),right=e.a.indexOf(v)>=0,near=!right&&e.a.some(function(a){return a.length>5&&lev(a,v)<2});var fst=!e._r,ob=null;if(right||near){if(fst){sc=Math.min(sc+1,tot);good(e)}}else{retry(e);if(v&&e.k==="w"){ob=document.createElement("button");ob.className="btn";ob.textContent="✓ Meine Antwort war auch richtig";ob.onclick=function(){alt(e,v);if(fst){sc=Math.min(sc+1,tot);var qi=Q.lastIndexOf(e);if(qi>ei)Q.splice(qi,1);unerr(e)}ob.remove();fb(true,"Gespeichert – diese Antwort gilt künftig.")}}}inp.disabled=true;this.hidden=true;fb(right||near,(near?"Fast – achte auf die Schreibweise. ":"")+(e.n||""));next();if(ob)document.getElementById("nx").appendChild(ob)}}
+}
+function fb(r,n){var f=document.getElementById("fb");f.textContent=(r?"✓ Richtig. ":"✗ Nicht ganz. ")+(n||"");f.style.color=r?"var(--ok)":"var(--bad)"}
+function next(){mark();cnt();var n=document.getElementById("nx");n.innerHTML='<button class="btn p" id="go">Weiter</button>';document.getElementById("go").onclick=function(){ei++;step()}}
+function fin(){if(li<0){vfin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");var was=P[li]>=PASS;if(P[li]==null||p>P[li])P[li]=p;if(p>=PASS&&!was){P.lp=P.lp||[];P.lp.push(ymd(new Date()));P.lp=P.lp.slice(-150)};if(p>=PASS)enroll();save();
+ A.innerHTML='<div class="card'+(p>=100?' gold':'')+'"><div class="big">'+(p>=100?'Perfekt! 🏆':p>=PASS?'Lektion geschafft 🎉':'Noch nicht bestanden')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p>'+(p>=PASS?'':'<p class="mut" style="text-align:center">Für die nächste Lektion brauchst du mindestens '+PASS+' %. Übe die Lektion noch einmal.</p>')+'<button class="btn p" id="hm">Zur Übersicht</button><button class="btn" id="rp">Nochmal üben</button><button class="btn" id="ow">Übersicht ansehen</button></div>';
+ if(p>=PASS)boom(p>=100);document.getElementById("hm").onclick=home;document.getElementById("ow").onclick=function(){ovw(0)};
+ if(LS[li].pod){var d=document.createElement("div");d.className="card";d.innerHTML="<div class=tag>Transkript</div>"+LS[li].pod.map(function(t){return"<p>"+tap(t[0],t[1])+"<br><span class=mut>"+t[1]+"</span></p>"}).join("");A.appendChild(d)}document.getElementById("rp").onclick=function(){ei=0;sc=0;tot=0;rq();step()}}
+function ovw(m){tb(-1);A.innerHTML='<button class="back" id="bk">‹ Lektionen</button><h1>'+LS[li].t+'</h1><div class="mut">Das lernst du in dieser Lektion</div>'+LS[li].ov+'<button class="btn p" id="go">'+(m?'Los geht’s':'Zurück')+'</button>';document.getElementById("bk").onclick=home;document.getElementById("go").onclick=m?function(){rq();step()}:home}
+function ymd(d){return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+function mark(){var t=ymd(new Date());P.days=P.days||[];if(P.days[P.days.length-1]!==t)P.days.push(t);P.days=P.days.slice(-200);save()}
+function streak(){var s={},n=0,d=new Date();(P.days||[]).forEach(function(x){s[x]=1});if(!s[ymd(d)])d.setDate(d.getDate()-1);while(s[ymd(d)]){n++;d.setDate(d.getDate()-1)}return n}
+function lvs(v){var t=LS.filter(function(l){return l.lv===v});return[t.length,t.filter(function(l){return P[LS.indexOf(l)]>=PASS}).length]}
+function stats(){var V=["A1","A2","B1","B2","C1"],sr=P.srs||{},ks=Object.keys(sr),f=ks.filter(function(k){return sr[k].iv>=7}).length,dn=LS.filter(function(l,i){return P[i]>=PASS}).length,cd=V.filter(function(v){var r=lvs(v);return r[0]&&r[0]===r[1]}).length;
+ var h='<div class="st"><div><b>🔥 '+streak()+'</b><span class="mut">Tage am Stück</span></div><div><b>'+ks.length+'</b><span class="mut">Wörter ('+f+' gefestigt)</span></div><div><b>'+Math.round(dn/LS.length*100)+' %</b><span class="mut">'+dn+' von '+LS.length+' Lektionen</span></div></div><div class="dy">';
+ var d=new Date(),s={},a=[];(P.days||[]).forEach(function(x){s[x]=1});for(var i=0;i<14;i++){a.unshift('<i class="'+(s[ymd(d)]?'on':'')+'"></i>');d.setDate(d.getDate()-1)}
+ h+=a.join("")+'</div><div class="mut" style="margin:4px 0 10px">Letzte 14 Tage · Kapitel abgeschlossen: '+cd+'/5</div>';
+ V.forEach(function(v){var r=lvs(v);h+='<div class="row mut"><span>'+v+'</span><span>'+(r[0]?r[1]+'/'+r[0]+' Lektionen':'in Planung')+'</span></div><div class="bar"><i style="width:'+(r[0]?Math.round(r[1]/r[0]*100):0)+'%"></i></div>'});
+ return h}
+function pod(slow){try{speechSynthesis.cancel();var v=speechSynthesis.getVoices().filter(function(x){return x.lang.replace("_","-")==="pt-PT"})[0];LS[li].pod.forEach(function(t,i){var u=new SpeechSynthesisUtterance(t[0]);u.lang="pt-PT";if(v)u.voice=v;u.rate=(slow?0.5:1)*(P.rate||1);u.pitch=i%2?0.8:1.25;var w=dv(i);if(w)u.voice=w;setTimeout(function(){speechSynthesis.speak(u)},80+i)})}catch(e){}}
+function enroll(){P.srs=P.srs||{};LS[li].ex.forEach(function(e){if(e.k==="c"&&!P.srs[e.p])P.srs[e.p]={d:e.d,s:e.s,ease:2.5,iv:0,due:0,n:0}})}
+function due(){var n=Date.now(),s=P.srs||{};return Object.keys(s).filter(function(k){return s[k].due<=n}).sort(function(a,b){return s[a].due-s[b].due})}
+function calc(c,g){var e=c.ease,v=c.iv;if(g===0)return{ease:Math.max(1.3,e-.2),iv:0,m:1};if(v===0)v=g===1?1:g===2?2:4;else{v=g===1?v*1.2:g===2?v*e:v*e*1.3;e+=g===3?.15:g===1?-.15:0}return{ease:Math.max(1.3,e),iv:Math.max(1,Math.round(v)),m:0}}
+var VL={t:"Wiederholung",ex:[]};
+function cl(){return li<0?VL:LS[li]}
+function tb(a){var n=document.getElementById("tb");n.style.display=a<0?"none":"flex";if(a<0)return;PLC=0;KT=null;var T=[["🏠","Start",home],["🔁","Wiederholen",hub],["💬","Chat",chat],["📖","Nachschlagen",ref]];n.innerHTML="";T.forEach(function(t,i){var b=document.createElement("button");b.className=i===a?"on":"";b.innerHTML="<b>"+t[0]+"</b>"+t[1];b.onclick=function(){t[2]()};n.appendChild(b)})}
+function hub(){tb(1);var d=due().length,n=Object.keys(P.srs||{}).length;
+ A.innerHTML='<h1>Wiederholen</h1><div class="mut">'+n+' Wörter im Training · '+d+' fällig</div><h2>Üben</h2><button class="btn" data-m="k">🗂 Karteikarten <span class="mut">('+d+' fällig)</span></button><button class="btn" data-m="s">✍️ Schreiben <span class="mut">Deutsch → Portugiesisch</span></button><button class="btn" data-m="h">🎧 Hören <span class="mut">Wort hören, Bedeutung wählen</span></button><button class="btn" data-m="g">🧩 Grammatik &amp; Sätze <span class="mut">aus deinen Lektionen</span></button><button class="btn" data-m="e">🎯 Fehler-Training <span class="mut">('+Object.keys(P.err||{}).length+' Schwächen)</span></button><h2>Mehr</h2><button class="btn" data-x="z">🔢 Zahlen &amp; Uhrzeit</button><button class="btn" data-x="v">🔤 Verb-Trainer</button><button class="btn" data-x="d">🎭 Dialoge</button><button class="btn" data-x="s">🗣 Shadowing</button><button class="btn" data-x="g">📖 Kurzgeschichten</button><button class="btn" data-x="p">🧳 Themenpakete</button><button class="btn" data-x="a">👄 Aussprache</button>';
+ Array.prototype.forEach.call(A.querySelectorAll("[data-m]"),function(b){b.onclick=function(){drill(b.dataset.m)}});Array.prototype.forEach.call(A.querySelectorAll("[data-x]"),function(b){b.onclick={z:numMenu,v:verbTrainer,d:dialogs,s:shadow,g:stories,p:packs,a:pronDrill}[b.dataset.x]})}
+function drill(m){var sr=P.srs||{},ks=Object.keys(sr),ex=[];if(m==="k"){rev();return}
+ var pk=function(a,n){return shuf(a).slice(0,n).map(function(x){return x.v})};
+ if(m==="s")ex=pk(ks.filter(function(k){return k.indexOf("…")<0}),10).map(function(k){return{k:"w",q:sr[k].d,a:ansList(k,sr[k].d),n:"Richtig: "+k,srs:k}});
+ if(m==="h"&&ks.length>2)ex=pk(ks,10).map(function(k){var o=[sr[k].d].concat(pk(ks.filter(function(x){return sr[x].d!==sr[k].d}),2).map(function(x){return sr[x].d}));return{k:"l",p:sr[k].s||k.split(" / ")[0],o:o,a:0,srs:k}});
+ if(m==="g"){var pool=[];LS.forEach(function(l,i){if(P[i]>=PASS&&!l.pod)l.ex.forEach(function(e){if(e.k==="m"||e.k==="o"||e.k==="d")pool.push(e)})});ex=pk(pool,12)}
+ if(m==="e"){var ix=exIndex();ex=Object.keys(P.err||{}).sort(function(a,b){return P.err[b]-P.err[a]}).map(function(k){return ix[k]}).filter(Boolean).slice(0,12)}
+ if(ex.length<(m==="e"?1:3)){tb(1);A.innerHTML='<div class="card"><div class="big">Noch zu wenig</div><p class="mut" style="text-align:center">Hier ist noch nicht genug Material. Schließe Lektionen ab oder mache Fehler, dann füllt sich das hier.</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=hub;return}
+ VL.ex=ex;li=-1;ei=0;sc=0;tot=0;rq();step()}
+function vfin(){if(PLC){plcFin();return}if(KT){ktFin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");mark();if(p>=100)boom(1);tb(1);A.innerHTML='<div class="card"><div class="big">Geschafft 🎉</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><button class="btn p" id="hb">Zurück zur Wiederholung</button></div>';document.getElementById("hb").onclick=hub}
+function refOv(){var h='<div class="mut" style="margin:8px 0">Alle Übersichten deiner freigeschalteten Lektionen</div><input id="rs" placeholder="Suchen (z. B. ser, Artikel, estar)" style="margin:12px 0"><div>',lv="";
+ LS.forEach(function(l,i){if(!l.ov)return;var open=i===0||P[i-1]>=PASS;if(l.lv!==lv){lv=l.lv;h+='<h2>'+lv+'</h2>'}
+  h+=open?'<details class="rf"><summary>'+(i+1)+'. '+l.t+'</summary>'+l.ov+'</details>':'<div class="mut rf" style="padding:12px 16px">🔒 '+(i+1)+'. nach Abschluss von Lektion '+i+'</div>'});
+ document.getElementById("rc").innerHTML=h+'</div>';
+ document.getElementById("rs").oninput=function(){var q=norm(this.value);Array.prototype.forEach.call(document.querySelectorAll(".rf"),function(d){d.hidden=!!q&&norm(d.textContent).indexOf(q)<0})}}
+function tx(e){var r=tx0(e);if(r!==e)r._lt=e._lt;return r}
+function tx0(e){if(e.k==="l")return{k:"m",tg:"Lesen statt Hören",q:e.p,o:e.o,a:e.a,_r:e._r};if(e.k==="d")return{k:"w",tg:"Abschreiben statt Hören",q:e.p,a:[norm(e.p)],n:"Richtig: "+e.p,_r:e._r};if(e.k==="p")return{k:"t",tg:"Transkript"};return e}
+function rq(){var l=cl();Q=l.ex.slice();Q.forEach(function(x){x._r=0})}
+function sk(p){return p>=100?" sg":p>=90?" s9":p>=80?" s8":p>=PASS?" s7":""}
+function col(k){return({c:"#2e8f6b",m:"#7b5cc4",l:"#e08a2c",d:"#e08a2c",p:"#e08a2c",q:"#e08a2c",r:"#2a7fc1",w:"#d6527a",o:"#7b5cc4",x:"#2e8f6b",t:"#2a7fc1"})[k]||"var(--ac)"}
+/* ---- Haptik ---- */
+var HP={t:0,l:null,pat:{tap:[0],ok:[0],no:[0,90],pass:[0,130,260],perfect:[0,60,120,180,300,420],fail:[0,260]},vib:{tap:[8],ok:[14],no:[40,50,40],pass:[20,60,20,60,30],perfect:[20,40,20,40,20,40,60],fail:[90,90,90]}};
+function hap1(){try{var l=HP.l;if(!l||!l.isConnected){l=HP.l=document.createElement("label");l.setAttribute("aria-hidden","true");l.style.cssText="position:fixed;left:-100px;top:0;width:2px;height:2px;opacity:0;pointer-events:none;overflow:hidden";var i=document.createElement("input");i.type="checkbox";i.setAttribute("switch","");i.tabIndex=-1;i.style.cssText="all:revert";l.appendChild(i);document.body.appendChild(l)}l.click()}catch(e){}}
+function hap(k){if(P.hap===0)return;try{if(navigator.vibrate&&!/iPhone|iPad|iPod/.test(navigator.userAgent)){navigator.vibrate(HP.vib[k]||[8]);return}}catch(e){}var sh=0;if(k!=="tap"&&Date.now()-HP.t<160)sh=110;if(k==="tap")HP.t=Date.now();(HP.pat[k]||[0]).forEach(function(t){t+=sh;if(t)setTimeout(hap1,t);else hap1()})}
+document.addEventListener("click",function(e){if(P.hap===0)return;var t=e.target&&e.target.closest&&e.target.closest("button,summary,select,label,a,[data-i],[data-g],[data-m]");if(!t||t.disabled||t===HP.l)return;hap("tap")},true);
+function boom(g){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;var C=g?["#f6c445","#fda085","#fff1b8","#e8772e","#2a7fc1"]:["#2e8f6b","#2a7fc1","#7b5cc4","#e8772e"],n=g?70:30;for(var i=0;i<n;i++){var s=document.createElement("i");s.className="cf";s.style.cssText="left:"+Math.random()*100+"vw;background:"+C[i%C.length]+";animation-delay:"+Math.random()*.8+"s;animation-duration:"+(2+Math.random()*1.6)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),4500)}if(g&&!P.quiet)say("Parabéns!")}
+var IX=null;
+function ek(e){return e.k==="x"?"x|"+e.pairs[0][0]:(e.p||e.q||"")}
+function exIndex(){if(!IX){IX={};LS.forEach(function(l){if(l.pod)return;l.ex.forEach(function(e){if("mlodw".indexOf(e.k)<0)return;var k=ek(e);if(!IX[k]){IX[k]=e;var a=(P.alt||{})[k];if(a)e.a=(e.a||[]).concat(a)}})})}return IX}
+function good(e){hap("ok");sg(e,2);unerr(e);stt(e.k,1);ktr(e,1)}
+function unerr(e){var k=ek(e);if(P.err&&P.err[k]){P.err[k]--;if(P.err[k]<1)delete P.err[k];save()}}
+function sg(e,g){var c=e.srs&&P.srs&&P.srs[e.srs];if(!c)return;var r=calc(c,g);c.ease=r.ease;c.iv=r.iv;c.n++;c.due=Date.now()+(r.m?60000:r.iv*86400000)}
+function alt(e,v){e.a.push(v);P.alt=P.alt||{};var k=ek(e);(P.alt[k]=P.alt[k]||[]).push(v);save()}
+function cnt(){var d=ymd(new Date());if(!P.today||P.today.d!==d)P.today={d:d,n:0};P.today.n++;P.hist=P.hist||{};P.hist[d]=(P.hist[d]||0)+1;prune(P.hist);P.wc=P.wc||{};P.wc[d]=Object.keys(P.srs||{}).length;prune(P.wc);save();if(P.today.n===(P.goal||10)){P.goals=(P.goals||0)+1;save();boom(0)}}
+function ring(){var t=P.today&&P.today.d===ymd(new Date())?P.today.n:0,g=P.goal||10,f=Math.min(1,t/g),C=2*Math.PI*34;return'<svg width="84" height="84" viewBox="0 0 84 84"><circle cx="42" cy="42" r="34" fill="none" stroke="var(--bd)" stroke-width="8"/><circle cx="42" cy="42" r="34" fill="none" stroke="'+(f>=1?'#f0b429':'var(--ac)')+'" stroke-width="8" stroke-linecap="round" stroke-dasharray="'+C*f+' '+C+'" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-size="16" font-weight="600" fill="var(--tx)">'+t+'/'+g+'</text></svg>'}
+function today(){var ix=exIndex(),d=due().length,er=Object.keys(P.err||{}).filter(function(k){return ix[k]}).length;return'<div class="card" style="display:flex;gap:16px;align-items:center;padding:16px;margin:12px 0">'+ring()+'<div style="flex:1"><div style="font-weight:600;font-size:18px">Heute lernen</div><div class="mut">'+d+' Karten fällig · '+er+' Schwächen</div><button class="btn p" id="td" style="margin:10px 0 0;padding:11px">▶ Tagesrunde starten</button></div></div><div class="row mut" style="margin-bottom:6px"><span>Tagesziel (Aufgaben)</span><select id="gl" style="width:auto;margin:0;padding:6px 10px"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>'}
+function daily(){var sr=P.srs||{},ix=exIndex(),ex=[];
+ due().slice(0,6).forEach(function(k){if(k.indexOf("…")<0)ex.push({k:"w",q:sr[k].d,a:ansList(k,sr[k].d),n:"Richtig: "+k,srs:k})});
+ Object.keys(P.err||{}).sort(function(a,b){return P.err[b]-P.err[a]}).slice(0,5).forEach(function(k){if(ix[k])ex.push(ix[k])});
+ if(ex.length<5)shuf(Object.keys(sr).filter(function(k){return k.indexOf("…")<0&&!ex.some(function(e){return e.srs===k})})).slice(0,8-ex.length).forEach(function(x){var k=x.v;ex.push({k:"w",q:sr[k].d,a:ansList(k,sr[k].d),n:"Richtig: "+k})});
+ go(shuf(ex).map(function(x){return x.v}))}
+function go(ex){if(ex.length<1){tb(0);A.innerHTML='<div class="card"><div class="big">Noch nichts da</div><p class="mut" style="text-align:center">Schließe zuerst eine Lektion ab, dann gibt es Karten und Aufgaben für die Tagesrunde.</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=home;return}VL.ex=ex;li=-1;ei=0;sc=0;tot=0;rq();step()}
+var PASS=70;
+function vq(v){return/premium|enhanced|erweitert|verbessert|neural|siri/i.test(v.name+" "+(v.voiceURI||""))?2:/compact|kompakt/i.test(v.name+" "+(v.voiceURI||""))?0:1}
+function pv(){return speechSynthesis.getVoices().filter(function(x){return x.lang.replace("_","-").toLowerCase().indexOf("pt")===0}).sort(function(a,b){var pa=a.lang.replace("_","-")==="pt-PT"?0:1,pb=b.lang.replace("_","-")==="pt-PT"?0:1;return pa-pb||vq(b)-vq(a)||(a.name<b.name?-1:1)})}
+function dv(i){var a=pv(),n=P["v"+(i%2)],s=a.filter(function(x){return x.name===n})[0];if(s)return s;var pp=a.filter(function(x){return x.lang.replace("_","-")==="pt-PT"}),o=a.filter(function(x){return pp.indexOf(x)<0});return i%2?(pp[1]||o[0]||pp[0]):(pp[0]||a[0])}
+function vsel(){var a=pv();[0,1].forEach(function(i){var s=document.getElementById("v"+i);if(!s)return;s.innerHTML="";a.forEach(function(v){var o=document.createElement("option");o.value=v.name;o.textContent=v.name+" ("+v.lang.replace("_","-")+")"+(vq(v)===2?" ★ hohe Qualität":"");s.appendChild(o)});var d=dv(i);if(d)s.value=d.name;s.onchange=function(){P["v"+i]=s.value;save()}})}
+var Q=[];
+function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++)m[i]=[i];for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]}
+function retry(e){hap("no");var k=ek(e);if(e.k!=="q"&&e.k!=="x"&&exIndex()[k]){P.err=P.err||{};P.err[k]=(P.err[k]||0)+1}if(!e._r){sg(e,0);stt(e.k,0);ktr(e,0);e._r=1;Q.push(e)}save()}
+LS.forEach(function(l){if(l.pod)return;var ex=[];l.ex.filter(function(e){return e.k==="l"}).forEach(function(e,i){ex.push(i%2&&e.p.split(" ").length>2?{k:"o",q:e.o[e.a],p:e.p}:{k:"d",p:e.p})});
+ var cs=l.ex.filter(function(e){return e.k==="c"&&e.p.indexOf("/")<0&&e.d.indexOf("/")<0&&e.p.indexOf("…")<0}).slice(0,4);
+ var wi=l.ex.findIndex(function(e){return e.k==="w"});if(wi<0)wi=l.ex.length;l.ex.splice.apply(l.ex,[wi,0].concat(ex));
+ if(cs.length>2){var ci=0;l.ex.forEach(function(e,i){if(e.k==="c")ci=i+1});l.ex.splice(ci,0,{k:"x",pairs:cs.map(function(c){return[c.p,c.d]})})}});
+try{navigator.storage.persist()}catch(e){}
+try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
+try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
+/* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
+var PLC=0,RT=0;
+var G=function(i){return document.getElementById(i)};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
+applyTheme();
+
+/* ---- Kulturnotizen ---- */
+var CN={0:"In Portugal küssen sich Bekannte oft zweimal auf die Wange (dois beijinhos). Im Geschäft genügt ein freundliches „bom dia“.",
+6:"Uhrzeiten nennt man im Alltag oft im 24-Stunden-Format (às quinze horas). Mittagessen gibt es meist erst gegen 12:30–14 Uhr, Abendessen ab etwa 20 Uhr.",
+7:"Höflich bestellt man mit „Queria …“. In Lissabon heißt der Espresso oft „uma bica“, in Porto „um cimbalino“.",
+11:"Typisch: Bacalhau (Stockfisch) in vielen Varianten, Sardinen im Sommer und der „pastel de nata“ zum Kaffee. Das Frühstück heißt „pequeno-almoço“.",
+12:"„Desculpe“ ist die höfliche Art, jemanden anzusprechen. Zug heißt in Portugal „comboio“ (in Brasilien „trem“).",
+13:"Übers Wetter spricht man gern. Im Sommer wird es im Alentejo oft sehr heiß, an der Küste weht häufig Wind."};
+Object.keys(CN).forEach(function(k){if(LS[k]&&LS[k].ov)LS[k].ov+='<div class="nt">🇵🇹 '+CN[k]+'</div>'});
+
+/* ---- Daten: Verben ---- */
+var VB={ser:["sein",["sou","és","é","somos","são"]],ter:["haben",["tenho","tens","tem","temos","têm"]],estar:["sein (Zustand, Ort)",["estou","estás","está","estamos","estão"]],ir:["gehen",["vou","vais","vai","vamos","vão"]],fazer:["machen",["faço","fazes","faz","fazemos","fazem"]],poder:["können",["posso","podes","pode","podemos","podem"]],querer:["wollen",["quero","queres","quer","queremos","querem"]],falar:["sprechen",["falo","falas","fala","falamos","falam"]],comer:["essen",["como","comes","come","comemos","comem"]],partir:["abreisen",["parto","partes","parte","partimos","partem"]],gostar:["mögen (gostar de)",["gosto","gostas","gosta","gostamos","gostam"]],trabalhar:["arbeiten",["trabalho","trabalhas","trabalha","trabalhamos","trabalham"]],viver:["leben, wohnen",["vivo","vives","vive","vivemos","vivem"]],beber:["trinken",["bebo","bebes","bebe","bebemos","bebem"]],ver:["sehen",["vejo","vês","vê","vemos","veem"]],dar:["geben",["dou","dás","dá","damos","dão"]],dizer:["sagen",["digo","dizes","diz","dizemos","dizem"]]};
+var VBP={ser:["fui","foste","foi","fomos","foram"],ir:["fui","foste","foi","fomos","foram"],ter:["tive","tiveste","teve","tivemos","tiveram"],estar:["estive","estiveste","esteve","estivemos","estiveram"],fazer:["fiz","fizeste","fez","fizemos","fizeram"],poder:["pude","pudeste","pôde","pudemos","puderam"],querer:["quis","quiseste","quis","quisemos","quiseram"],ver:["vi","viste","viu","vimos","viram"],dar:["dei","deste","deu","demos","deram"],dizer:["disse","disseste","disse","dissemos","disseram"],falar:["falei","falaste","falou","falámos","falaram"],comer:["comi","comeste","comeu","comemos","comeram"],partir:["parti","partiste","partiu","partimos","partiram"],gostar:["gostei","gostaste","gostou","gostámos","gostaram"],trabalhar:["trabalhei","trabalhaste","trabalhou","trabalhámos","trabalharam"],viver:["vivi","viveste","viveu","vivemos","viveram"],beber:["bebi","bebeste","bebeu","bebemos","beberam"]};
+var LT={A1:"A1 · Grundlagen",A2:"A2 · Alltag & Vergangenheit",B1:"B1",B2:"B2",C1:"C1"};
+var PL=["eu","tu","ele / ela / você","nós","eles / elas / vocês"];
+
+/* ---- Daten: Dialoge ---- */
+var DL=[{t:"Im Café",ic:"☕",tn:[
+{b:"Boa tarde! Diga, por favor.",bd:"Guten Tag! Sagen Sie, bitte.",c:["Queria um café, por favor.","Eu sou alemão.","Onde fica a estação?"],cd:"Ich hätte gern einen Kaffee, bitte."},
+{b:"Com certeza. Mais alguma coisa?",bd:"Sehr gern. Noch etwas?",c:["Sim, uma água, por favor.","Eu tenho um gato.","Estou cansado."],cd:"Ja, ein Wasser, bitte."},
+{b:"Aqui tem. São dois euros.",bd:"Bitte sehr. Das macht zwei Euro.",c:["Aqui está. Obrigado!","Eu quero comer peixe.","Não tenho irmãos."],cd:"Hier, bitte. Danke!"}]},
+{t:"Nach dem Weg fragen",ic:"🚉",tn:[
+{b:"Bom dia! Posso ajudar?",bd:"Guten Morgen! Kann ich helfen?",c:["Desculpe, onde fica a farmácia?","Eu gosto de peixe.","Tenho trinta anos."],cd:"Entschuldigung, wo ist die Apotheke?"},
+{b:"A farmácia? Siga em frente e vire à esquerda.",bd:"Die Apotheke? Gehen Sie geradeaus und biegen Sie links ab.",c:["Fica perto?","Eu sou médico.","Quero um café."],cd:"Ist sie in der Nähe?"},
+{b:"Sim, fica perto. Cinco minutos.",bd:"Ja, sie ist nah. Fünf Minuten.",c:["Muito obrigado! Até logo.","Eu tenho fome.","Hoje é sábado."],cd:"Vielen Dank! Bis später."}]},
+{t:"Sich vorstellen",ic:"👋",tn:[
+{b:"Olá! Como te chamas?",bd:"Hallo! Wie heißt du?",c:["Chamo-me Pedro.","Eu sou o gato.","Boa noite!"],cd:"Ich heiße Pedro. (Name frei wählbar)"},
+{b:"Muito prazer! De onde és?",bd:"Freut mich sehr! Woher kommst du?",c:["Sou da Alemanha.","Estou bem.","Tenho um café."],cd:"Ich komme aus Deutschland."},
+{b:"Que bom! Falas português?",bd:"Schön! Sprichst du Portugiesisch?",c:["Falo um pouco.","Não tenho tempo.","Eu como pão."],cd:"Ich spreche ein bisschen."}]}];
+
+/* ---- Daten: Geschichten ---- */
+var ST=[{t:"O meu dia",lv:"A1",x:"De manhã eu bebo um café e como pão com queijo. Depois vou para o trabalho. O trabalho é perto de casa. À tarde faz sol e eu estou feliz. À noite janto com a minha família."},
+{t:"Na estação",lv:"A1",x:"Desculpe, onde fica a estação?\nSiga em frente e vire à direita. Fica perto da farmácia.\nObrigado!\nDe nada. Boa viagem!"},
+{t:"A minha família",lv:"A1",x:"A minha família é pequena. Tenho um irmão e uma irmã. O meu pai trabalha em Lisboa e a minha mãe é médica. Nós gostamos de comer peixe ao domingo. Hoje é sábado e estamos em casa."}];
+var CG={"de":"von, aus","manhã":"Morgen","eu":"ich","bebo":"ich trinke","um":"ein","café":"Kaffee","e":"und","como":"ich esse (auch: wie)","pão":"Brot","com":"mit","queijo":"Käse","depois":"danach","vou":"ich gehe","para":"nach, zu","o":"der / das (Artikel)","a":"die (Artikel)","trabalho":"Arbeit / ich arbeite","é":"ist","perto":"nah","casa":"Haus, Zuhause","à":"zu, um (a + a)","tarde":"Nachmittag","faz":"macht (faz sol = die Sonne scheint)","sol":"Sonne","estou":"ich bin (gerade)","feliz":"glücklich","noite":"Nacht, Abend","janto":"ich esse zu Abend","minha":"meine","família":"Familie","desculpe":"Entschuldigung","onde":"wo","fica":"befindet sich","estação":"Bahnhof","siga":"gehen Sie","em":"in","frente":"vorne (em frente = geradeaus)","vire":"biegen Sie ab","direita":"rechts","da":"von der","farmácia":"Apotheke","obrigado":"danke","nada":"nichts (de nada = gern geschehen)","boa":"gute","viagem":"Reise","pequena":"klein","tenho":"ich habe","irmão":"Bruder","uma":"eine","irmã":"Schwester","meu":"mein","pai":"Vater","trabalha":"arbeitet","lisboa":"Lissabon","mãe":"Mutter","médica":"Ärztin","nós":"wir","gostamos":"wir mögen","comer":"essen","peixe":"Fisch","ao":"am (a + o)","domingo":"Sonntag","hoje":"heute","sábado":"Samstag","estamos":"wir sind"};
+
+/* ---- Daten: Themenpakete ---- */
+var PK=[{t:"Reisen",ic:"🧳",w:[["o bilhete","die Fahrkarte"],["o comboio","der Zug"],["o autocarro","der Bus"],["o aeroporto","der Flughafen"],["a bagagem","das Gepäck"],["o passaporte","der Reisepass"],["o hotel","das Hotel"],["o quarto","das Zimmer"],["a reserva","die Reservierung"],["o mapa","die Karte, der Stadtplan"],["a paragem","die Haltestelle"],["o elétrico","die Straßenbahn"]]},
+{t:"Technik & Werkstatt",ic:"🔧",w:[["a máquina","die Maschine"],["a ferramenta","das Werkzeug"],["o parafuso","die Schraube"],["a avaria","die Störung, der Defekt"],["o ar comprimido","die Druckluft"],["a pressão","der Druck"],["o tubo","das Rohr"],["a válvula","das Ventil"],["o motor","der Motor"],["a manutenção","die Wartung"],["o compressor","der Kompressor"],["o óleo","das Öl"],["a fuga","die Leckage"],["o filtro","der Filter"],["o sensor","der Sensor"]]},
+{t:"Restaurant",ic:"🍽",w:[["a ementa","die Speisekarte"],["o prato","der Teller, das Gericht"],["a sopa","die Suppe"],["a sobremesa","der Nachtisch"],["o vinho","der Wein"],["a cerveja","das Bier"],["o garfo","die Gabel"],["a faca","das Messer"],["a colher","der Löffel"],["o copo","das Glas"],["a gorjeta","das Trinkgeld"],["uma mesa para dois","ein Tisch für zwei"]]}];
+
+/* ---- Daten: Aussprache ---- */
+var PRS=[["ã, ão, õe, ãe","Nasale: der Laut klingt durch die Nase. pão ≈ „pãu“, mãe ≈ „mãi“."],["unbetontes e","fast stumm: de ≈ „d’“, leite ≈ „leit’“."],["unbetontes o / -o am Ende","klingt wie u: obrigado ≈ „ubrigadu“."],["s am Wortende, vor k/p/t","wie „sch“: os livros ≈ „usch livruch“, estação ≈ „schtassãu“."],["lh · nh","lh ≈ „lj“ (filho), nh ≈ „nj“ (vinho)."],["ch · j · g vor e/i","ch = „sch“ (chá), j und g vor e/i = weiches „sch“ wie in „Genie“ (já, gente)."],["ç","scharfes „s“: tem „ça“ = „sa“ (começar)."],["r am Anfang · rr","Rachen-r, ähnlich dem deutschen „ch“ in „ach“ (rua, carro)."],["h","wird nie gesprochen (hoje ≈ „oje“)."],["v","wie deutsches „w“ (vinho)."]];
+var PRX=[["pão","Brot",["Stock","Hund"]],["pau","Stock",["Brot","Mutter"]],["avó","Oma",["Opa","Tante"]],["avô","Opa",["Oma","Onkel"]],["mas","aber",["mehr","mit"]],["mais","mehr",["aber","mit"]],["sou","ich bin",["sie sind","du bist"]],["são","sie sind",["ich bin","wir sind"]],["pais","Eltern",["Land","Brot"]],["país","Land",["Eltern","Stadt"]],["filho","Sohn",["Fisch","Tochter"]],["vinho","Wein",["Fisch","Haus"]],["chá","Tee",["Kaffee","Kater"]],["já","schon",["wo","nein"]]];
+var BRT=[["Zug","o comboio","o trem"],["Bus","o autocarro","o ônibus"],["Frühstück","o pequeno-almoço","o café da manhã"],["Handy","o telemóvel","o celular"],["Kühlschrank","o frigorífico","a geladeira"],["Toilette","a casa de banho","o banheiro"],["Mädchen","a rapariga","a menina"],["Straßenbahn","o elétrico","o bonde"],["Ich arbeite gerade","Estou a trabalhar","Estou trabalhando"],["Anrede „du“","tu","você (üblicher)"],["Aussprache","unbetonte Vokale sehr kurz","Vokale voller"]];
+
+/* ---- Hilfen ---- */
+function vocab(){var o=[],s={};LS.forEach(function(l,i){l.ex.forEach(function(e){if(e.k==="c"&&e.d&&!s[e.p]){s[e.p]=1;o.push({p:e.p,d:e.d,s:e.s,l:i})}})});return o}
+function allWords(){var v=vocab().map(function(x){return{p:x.p,d:x.d,s:x.s}});PK.forEach(function(k){k.w.forEach(function(w){v.push({p:w[0],d:w[1]})})});return v.filter(function(x){return x.p.indexOf("…")<0&&x.p.indexOf("?")<0})}
+function addCard(p,d){P.srs=P.srs||{};if(!P.srs[p])P.srs[p]={d:d,ease:2.5,iv:0,due:0,n:0};save()}
+function wire(r){Array.prototype.forEach.call(r.querySelectorAll("[data-say]"),function(b){b.onclick=function(){say(b.dataset.say)}});Array.prototype.forEach.call(r.querySelectorAll("[data-add]"),function(b){b.onclick=function(){var a=b.dataset.add.split("|");addCard(a[0],a.slice(1).join("|"));b.outerHTML='<span class="mut">✓ im Training</span>'}})}
+function stt(k,r){var dd=ymd(new Date());P.ha=P.ha||{};var hh=P.ha[dd]||[0,0];hh[1]++;if(r)hh[0]++;P.ha[dd]=hh;prune(P.ha);P.st=P.st||{};var a=P.st[k]||[0,0];a[1]++;if(r)a[0]++;P.st[k]=a}
+function wotd(){var a=allWords(),w=a[Math.floor(Date.now()/864e5)%a.length],has=P.srs&&P.srs[w.p];return'<div class="card" style="padding:16px;margin:12px 0;text-align:left"><div class="tag" style="color:#e08a2c">Wort des Tages</div><div class="big" style="font-size:24px;margin:6px 0;text-align:left">'+esc(w.p)+'</div><div class="mut">'+esc(w.d)+'</div><div class="row" style="margin-top:10px"><button class="btn" style="margin:0;width:auto;text-align:center" data-say="'+esc(w.s||w.p)+'">🔊 Anhören</button>'+(has?'<span class="mut">✓ im Training</span>':'<button class="btn" style="margin:0;width:auto;text-align:center" data-add="'+esc(w.p)+'|'+esc(w.d)+'">➕ Training</button>')+'</div></div>'}
+
+/* ---- Abzeichen & Erfolge ---- */
+function nPass(){return LS.filter(function(l,i){return P[i]>=PASS}).length}
+function nPerf(){return LS.filter(function(l,i){return P[i]>=100}).length}
+function nWords(){return Object.keys(P.srs||{}).length}
+function dlDone(){return Object.keys(P.dl||{}).length}
+var BG=[["🌱","Erster Schritt","Erste Lektion bestanden",function(){return nPass()>=1}],["📚","Fünf Lektionen","5 Lektionen bestanden",function(){return nPass()>=5}],["🏁","A1 geschafft","Alle A1-Lektionen bestanden",function(){var r=lvs("A1");return r[0]>0&&r[0]===r[1]}],["🎓","A2 geschafft","Alle A2-Lektionen bestanden",function(){var r=lvs("A2");return r[0]>0&&r[0]===r[1]}],["🏆","Perfekt","Eine Lektion mit 100 %",function(){return nPerf()>=1}],["💯","Fünfmal Gold","5 Lektionen mit 100 %",function(){return nPerf()>=5}],["📝","Kapiteltest A1","Kapiteltest A1 bestanden",function(){return((P.kt||{}).A1||0)>=PASS}],["📝","Kapiteltest A2","Kapiteltest A2 bestanden",function(){return((P.kt||{}).A2||0)>=PASS}],["🔢","Zahlenprofi","5 Zahlenrunden",function(){return(P.nr||0)>=5}],["🔥","3 Tage","3 Tage am Stück",function(){return streak()>=3}],["🔥","7 Tage","7 Tage am Stück",function(){return streak()>=7}],["🌋","30 Tage","30 Tage am Stück",function(){return streak()>=30}],["🧠","50 Wörter","50 Wörter im Training",function(){return nWords()>=50}],["🧠","100 Wörter","100 Wörter im Training",function(){return nWords()>=100}],["🎯","Tagesziel ×7","Tagesziel 7-mal erreicht",function(){return(P.goals||0)>=7}],["💬","Plauderer","10 Chat-Nachrichten",function(){return(P.chm||0)>=10}],["🎭","Dialog-Profi","Alle 3 Dialoge geschafft",function(){return dlDone()>=DL.length}]];
+function badgeBtn(){var n=BG.filter(function(b){return b[3]()}).length;return'<button class="btn" id="tr">🏅 Erfolge <span class="mut">· '+n+'/'+BG.length+' Abzeichen</span></button>'}
+function trophies(){tb(0);var TL={c:"Vokabeln",m:"Grammatik",l:"Hören",d:"Diktat",w:"Schreiben",o:"Satzbau",r:"Lesen",x:"Zuordnen",q:"Podcast",n:"Zahlen & Zeit"};
+ var h='<button class="back" id="bk">‹ Start</button><h1>Erfolge</h1><div class="mut">Streak '+streak()+' Tage · '+nWords()+' Wörter · '+nPass()+' Lektionen bestanden</div><h2>Abzeichen</h2><div class="bdg">';
+ BG.forEach(function(b){var on=b[3]();h+='<div class="'+(on?'':'off')+'" title="'+esc(b[2])+'"><b>'+b[0]+'</b>'+esc(b[1])+'<div class="mut" style="font-size:11px">'+esc(b[2])+'</div></div>'});
+ h+='</div><h2>Trefferquote (erster Versuch)</h2>';var any=0;
+ Object.keys(TL).forEach(function(k){var a=(P.st||{})[k];if(!a||!a[1])return;any=1;var p=Math.round(a[0]/a[1]*100);h+='<div class="row mut"><span>'+TL[k]+'</span><span>'+p+' % ('+a[0]+'/'+a[1]+')</span></div><div class="bar" style="margin-bottom:8px"><i style="width:'+p+'%"></i></div>'});
+ if(!any)h+='<p class="mut">Noch keine Daten – löse ein paar Aufgaben.</p>';
+ A.innerHTML=h;G("bk").onclick=home}
+
+/* ---- Verb-Trainer ---- */
+function verbTrainer(){var ex=[],ks=Object.keys(VB),pf=P[15]>=PASS,seen={};var n=0;while(ex.length<12&&n++<200){var v=ks[Math.floor(Math.random()*ks.length)],p=Math.floor(Math.random()*5),t=pf&&VBP[v]&&Math.random()<.5?1:0,k=v+p+t;if(seen[k])continue;seen[k]=1;var f=t?VBP[v][p]:VB[v][1][p],ans=[norm(f)];PL[p].split(" / ").forEach(function(pr){ans.push(norm(pr+" "+f))});ex.push({k:"w",q:v+" ("+VB[v][0]+") · "+(t?"Perfeito · ":"Präsens · ")+PL[p],a:ans,n:"Richtig: "+PL[p].split(" / ")[0]+" "+f})}go(ex)}
+/* ---- Shadowing ---- */
+var SH={l:[],i:0};
+function shadow(){var o=[];LS.forEach(function(l){if(l.pod)l.pod.forEach(function(t){o.push({p:t[0],d:t[1]})});else l.ex.forEach(function(e){if(e.k==="l"&&e.o&&e.p.split(" ").length>1)o.push({p:e.p,d:e.o[e.a]})})});SH.l=shuf(o).slice(0,10).map(function(x){return x.v});SH.i=0;shStep()}
+function shStep(){tb(-1);if(SH.i>=SH.l.length){mark();cnt();tb(1);A.innerHTML='<div class="card"><div class="big">Stark gesprochen 🎉</div><p class="mut" style="text-align:center">Je öfter du laut nachsprichst, desto flüssiger wird dein Portugiesisch.</p><button class="btn p" id="bk">Zurück</button></div>';G("bk").onclick=hub;return}
+ var s=SH.l[SH.i];A.innerHTML='<button class="back" id="bk">‹ Wiederholen</button><div class="bar"><i style="width:'+Math.round(SH.i/SH.l.length*100)+'%"></i></div><div class="card" style="border-top:5px solid #e08a2c"><div class="tag" style="color:#e08a2c">Shadowing</div><div class="mut">Anhören, dann sofort laut nachsprechen</div><div class="big">'+esc(s.p)+'</div><div class="mut" id="sd" hidden>'+esc(s.d)+'</div><button class="btn p" id="pl">🔊 Anhören</button><button class="btn" id="sl">🐢 Langsam</button><button class="btn" id="sm">Bedeutung zeigen</button><button class="btn" id="nx2">Nachgesprochen ✓ Weiter</button></div>';
+ G("bk").onclick=hub;G("pl").onclick=function(){say(s.p)};G("sl").onclick=function(){say(s.p,1)};G("sm").onclick=function(){G("sd").hidden=false;this.hidden=true};G("nx2").onclick=function(){SH.i++;shStep()};say(s.p)}
+
+/* ---- Dialoge ---- */
+var D=null;
+function bub(w,t,d){return'<div class="bb '+w+'"><div>'+esc(t)+'</div>'+(d?'<div class="bd">'+esc(d)+'</div>':'')+'</div>'}
+function dialogs(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederholen</button><h1>Dialoge</h1><div class="mut">Der Bot spricht, du wählst die passende Antwort.</div>'+DL.map(function(d,i){return'<button class="btn" data-d="'+i+'"><div class="row"><span>'+d.ic+' '+esc(d.t)+'</span><span class="mut">'+((P.dl||{})[i]?'✓':'')+'</span></div></button>'}).join("");
+ G("bk").onclick=hub;Array.prototype.forEach.call(A.querySelectorAll("[data-d]"),function(b){b.onclick=function(){D={i:+b.dataset.d,k:0,w:0,log:[]};dlgStep()}})}
+function dlgStep(){tb(-1);var d=DL[D.i],h='<button class="back" id="bk">‹ Dialoge</button><h1 style="font-size:24px">'+d.ic+' '+esc(d.t)+'</h1><div class="chat">';
+ D.log.forEach(function(m){h+=bub(m.w,m.t,m.d)});var t=d.tn[D.k];if(t)h+=bub("bot",t.b,t.bd);h+='</div>';
+ if(t)h+='<div id="op"></div><div class="mut" id="fb2"></div>';else h+='<div class="card gold" style="margin-top:12px"><div class="big">'+(D.w===0?'Perfekt! 🏆':'Geschafft 🎉')+'</div><p style="text-align:center">'+(D.w===0?'Alles beim ersten Versuch richtig.':D.w+' Fehlversuch(e).')+'</p></div><button class="btn p" id="bk2">Zurück zu den Dialogen</button>';
+ A.innerHTML=h;G("bk").onclick=dialogs;
+ if(!t){P.dl=P.dl||{};P.dl[D.i]=1;mark();cnt();save();boom(D.w===0);G("bk2").onclick=dialogs;return}
+ say(t.b);var op=G("op");
+ shuf(t.c).forEach(function(x){var b=document.createElement("button");b.className="btn";b.textContent=x.v;b.onclick=function(){if(x.i===0){D.log.push({w:"bot",t:t.b,d:t.bd},{w:"me",t:t.c[0],d:t.cd});D.k++;dlgStep()}else{D.w++;b.disabled=true;b.classList.add("no");G("fb2").textContent="Das passt hier nicht – lies die Frage noch einmal."}};op.appendChild(b)})}
+
+/* ---- Geschichten ---- */
+function stories(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederholen</button><h1>Kurzgeschichten</h1><div class="mut">Tippe ein Wort an, um die Übersetzung zu sehen.</div>'+ST.map(function(s,i){return'<button class="btn" data-s="'+i+'"><div class="row"><span>📖 '+esc(s.t)+'</span><span class="mut">'+s.lv+'</span></div></button>'}).join("");
+ G("bk").onclick=hub;Array.prototype.forEach.call(A.querySelectorAll("[data-s]"),function(b){b.onclick=function(){story(+b.dataset.s)}})}
+function story(i){tb(-1);var s=ST[i],body=s.x.split("\n").map(function(ln){return ln.split(" ").map(function(tk){var w=tk.toLowerCase().replace(/[.,!?;:"]/g,"");return'<span class="tk" data-w="'+esc(w)+'">'+esc(tk)+'</span>'}).join(" ")}).join("<br>");
+ A.innerHTML='<button class="back" id="bk">‹ Geschichten</button><h1 style="font-size:24px">'+esc(s.t)+'</h1><div class="card" style="text-align:left;line-height:1.9;font-size:19px">'+body+'</div><div id="tp" class="card" style="padding:14px;min-height:64px;text-align:left"><span class="mut">Tippe auf ein Wort.</span></div><button class="btn" id="pl">🔊 Vorlesen</button><button class="btn" id="sl">🐢 Langsam vorlesen</button><button class="btn p" id="dn">Fertig gelesen ✓</button>';
+ G("bk").onclick=stories;G("pl").onclick=function(){say(s.x.replace(/\n/g," "))};G("sl").onclick=function(){say(s.x.replace(/\n/g," "),1)};G("dn").onclick=function(){mark();cnt();stories()};
+ Array.prototype.forEach.call(A.querySelectorAll(".tk"),function(el){el.onclick=function(){Array.prototype.forEach.call(A.querySelectorAll(".tk.sel"),function(x){x.classList.remove("sel")});el.classList.add("sel");var w=el.dataset.w,g=CG[w]||"–",tp=G("tp");tp.innerHTML='<b>'+esc(w)+'</b> – '+esc(g)+'<div style="margin-top:8px"></div>';
+  if(g!=="–"){var b=document.createElement("button");b.className="btn";b.style.cssText="margin:0;width:auto;text-align:center";b.textContent=(P.srs&&P.srs[w])?"✓ im Training":"➕ Zum Training";b.onclick=function(){addCard(w,g);b.textContent="✓ im Training"};tp.lastChild.appendChild(b)}
+  say(w)}})}
+
+/* ---- Aussprache ---- */
+function pronDrill(){go(shuf(PRX).slice(0,10).map(function(x){var r=x.v;return{k:"l",p:r[0],o:[r[1]].concat(r[2]),a:0,n:r[0]+" = "+r[1]}}))}
+
+/* ---- Themenpakete ---- */
+function packs(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederholen</button><h1>Themenpakete</h1><div class="mut">Zusatzwortschatz unabhängig vom Lernpfad.</div>'+PK.map(function(k,i){var n=k.w.filter(function(w){return P.srs&&P.srs[w[0]]}).length;return'<div class="card" style="padding:16px;margin:12px 0;text-align:left"><div style="font-weight:600;font-size:18px">'+k.ic+' '+esc(k.t)+'</div><div class="mut">'+k.w.length+' Wörter · '+n+' im Training</div><button class="btn" data-a="'+i+'" style="margin-top:10px">➕ Alle zum Training hinzufügen</button><button class="btn p" data-p="'+i+'">Jetzt üben (Schreiben)</button></div>'}).join("");
+ G("bk").onclick=hub;Array.prototype.forEach.call(A.querySelectorAll("[data-a]"),function(b){b.onclick=function(){PK[+b.dataset.a].w.forEach(function(w){addCard(w[0],w[1])});packs()}});
+ Array.prototype.forEach.call(A.querySelectorAll("[data-p]"),function(b){b.onclick=function(){go(shuf(PK[+b.dataset.p].w).map(function(x){var w=x.v;return{k:"w",q:w[1],a:[norm(w[0]),norm(w[0].replace(/^(o|a|os|as|uma|um) /,""))],n:"Richtig: "+w[0]}}))}})}
+
+/* ---- Nachschlagen ---- */
+function ref(){tb(3);var T=["Übersichten","Wörterbuch","Verben","Aussprache","PT ↔ BR","Floskeln"];A.innerHTML='<h1>Nachschlagen</h1><div class="seg">'+T.map(function(t,i){return'<button data-r="'+i+'" class="'+(i===RT?'on':'')+'">'+t+'</button>'}).join("")+'</div><div id="rc"></div>';
+ Array.prototype.forEach.call(A.querySelectorAll("[data-r]"),function(b){b.onclick=function(){RT=+b.dataset.r;ref()}});[refOv,refDict,refVerbs,refPron,refBR,refPhr][RT]()}
+function refDict(){var u=vocab(),rc=G("rc");rc.innerHTML='<input id="ds" placeholder="Suchen (Portugiesisch oder Deutsch)" style="margin:12px 0"><div id="dlst"></div><h2>Eigene Karte</h2><input id="cp" placeholder="Portugiesisch"><input id="cd" placeholder="Deutsch"><button class="btn p" id="ca">Karte hinzufügen</button><div class="mut" id="cm"></div>';
+ function paint(){var q=norm(G("ds").value),l=u.filter(function(x){return!q||norm(x.p+" "+x.d).indexOf(q)>=0}).slice(0,60);G("dlst").innerHTML=l.map(function(x){return'<div class="item"><div><b>'+esc(x.p)+'</b><div class="mut">'+esc(x.d)+' · L'+(x.l+1)+'</div></div><div><button class="ib" data-say="'+esc(x.s||x.p)+'">🔊</button>'+(P.srs&&P.srs[x.p]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(x.p)+'|'+esc(x.d)+'">➕</button>')+'</div></div>'}).join("")||'<p class="mut">Nichts gefunden.</p>';wire(G("dlst"))}
+ G("ds").oninput=paint;paint();
+ G("ca").onclick=function(){var p=G("cp").value.trim(),d=G("cd").value.trim();if(!p||!d){G("cm").textContent="Bitte beide Felder ausfüllen.";return}addCard(p,d);G("cp").value=G("cd").value="";G("cm").textContent="Gespeichert ✓ – kommt in die Wiederholung.";paint()}}
+function refVerbs(){var rc=G("rc"),ks=Object.keys(VB);rc.innerHTML='<select id="vs" style="margin:12px 0">'+ks.map(function(k){return'<option value="'+k+'">'+k+' – '+esc(VB[k][0])+'</option>'}).join("")+'</select><div id="vt"></div><h2>Regelmäßige Endungen (Präsens)</h2><table><tr><th></th><th>-ar</th><th>-er</th><th>-ir</th></tr><tr><td>eu</td><td>-o</td><td>-o</td><td>-o</td></tr><tr><td>tu</td><td>-as</td><td>-es</td><td>-es</td></tr><tr><td>ele / ela / você</td><td>-a</td><td>-e</td><td>-e</td></tr><tr><td>nós</td><td>-amos</td><td>-emos</td><td>-imos</td></tr><tr><td>eles / elas / vocês</td><td>-am</td><td>-em</td><td>-em</td></tr></table>';
+ function paint(){var v=G("vs").value,f=VB[v][1],h='<table><tr><th>'+v+'</th><th>'+esc(VB[v][0])+'</th></tr>';PL.forEach(function(p,i){h+='<tr><td>'+p+'</td><td><b>'+f[i]+'</b></td></tr>'});h+='</table>';if(VBP[v]){h+='<table><tr><th>Perfeito</th><th></th></tr>';PL.forEach(function(p,i){h+='<tr><td>'+p+'</td><td><b>'+VBP[v][i]+'</b></td></tr>'});h+='</table>'}G("vt").innerHTML=h+'<button class="btn" id="vp">🔊 Alle Formen anhören</button>';G("vp").onclick=function(){say(PL.map(function(p,i){return p.split(" / ")[0]+" "+f[i]}).join(". "))}}
+ G("vs").onchange=paint;paint()}
+function refPron(){var h='<div class="mut" style="margin:12px 0">Europäisches Portugiesisch – Vergleich mit dem Deutschen.</div><table>';PRS.forEach(function(r){h+='<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td></tr>'});G("rc").innerHTML=h+'</table><button class="btn p" id="pd">👄 Lautpaare üben</button>';G("pd").onclick=pronDrill}
+function refBR(){var h='<div class="mut" style="margin:12px 0">Wo sich Portugal und Brasilien unterscheiden – die App lehrt Portugal.</div><table><tr><th></th><th>🇵🇹 Portugal</th><th>🇧🇷 Brasilien</th></tr>';BRT.forEach(function(r){h+='<tr><td>'+esc(r[0])+'</td><td><b>'+esc(r[1])+'</b></td><td>'+esc(r[2])+'</td></tr>'});G("rc").innerHTML=h+'</table>'}
+
+/* ---- Einstellungen, Sicherung, Einstufung ---- */
+function dlFile(){var b=new Blob([JSON.stringify(P)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="portugues-fortschritt.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},3000)}
+function settings(){tb(0);A.innerHTML='<button class="back" id="bk">‹ Start</button><h1>Einstellungen</h1><h2>Sprache & Stimme</h2><div class="row mut"><span>Sprechtempo</span><select id="sr" style="width:auto;margin:0"><option value="0.8">langsamer</option><option value="1">normal</option><option value="1.15">schneller</option></select></div><h2>Stimmen</h2><div class="mut">Stimme 1 · Standard und Rita im Podcast</div><select id="v0"></select><button class="btn" id="vt0">🔊 Probehören</button><div class="mut">Stimme 2 · Pedro im Podcast</div><select id="v1"></select><button class="btn" id="vt1">🔊 Probehören</button><button class="btn" id="vr">🔄 Stimmen neu laden</button><div class="mut" id="vn"></div><div class="nt">Neu heruntergeladene Stimmen erscheinen manchmal erst nach einem Neustart der App (Home-Bildschirm-App schließen und neu öffnen). Hat dein iPhone nur eine portugiesische Stimme, klingen beide gleich. Mehr Stimmen: Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Português.</div><h2>Lernen</h2><div class="row mut"><span>Tagesziel (Aufgaben)</span><select id="sg" style="width:auto;margin:0"><option>10</option><option>20</option><option>30</option><option>50</option></select></div><label class="row mut" style="margin:10px 0"><span>🔇 Leise-Modus</span><input type="checkbox" id="sq" style="width:auto;margin:0"></label><label class="row mut" style="margin:10px 0"><span>📳 Haptisches Feedback</span><input type="checkbox" id="shp" style="width:auto;margin:0"></label><div class="nt">Kurze Vibrationen beim Antippen, bei richtigen und falschen Antworten und am Ende einer Lektion. Auf dem iPhone ab iOS 17.4 (Einstellungen → Töne & Haptik → Systemhaptik muss aktiv sein). Funktioniert in Safari und in der Home-Bildschirm-App, nicht im Claude-Artefakt.</div><button class="btn" id="hpt">📳 Haptik testen</button><div class="mut" id="hpn"></div><h2>Design</h2><div class="row mut"><span>Darstellung</span><select id="sth" style="width:auto;margin:0"><option value="">automatisch</option><option value="light">hell</option><option value="dark">dunkel</option></select></div><h2>App</h2><div class="mut">Version 20.10.2026 · Haptik-Fix v2</div><button class="btn" id="rl">🔄 App aktualisieren (Zwischenspeicher leeren)</button><h2>Sicherung</h2><button class="btn" id="sd1">⬇️ Fortschritt als Datei speichern</button><button class="btn" id="sd2">⬆️ Aus Datei wiederherstellen</button><input type="file" id="sf" accept=".json,application/json" hidden><button class="btn" id="sx" style="color:var(--bad)">Fortschritt zurücksetzen</button>';
+ G("sr").value=String(P.rate||1);var vc=function(){try{speechSynthesis.getVoices()}catch(e){}vsel();var n=pv();G("vn").textContent=n.length?n.length+" portugiesische Stimme(n) gefunden: "+n.map(function(v){return v.name}).join(", "):"Keine portugiesische Stimme gefunden."};vc();setTimeout(vc,800);G("vr").onclick=function(){vc();setTimeout(vc,600)};G("vt0").onclick=function(){sayV(0,"Olá! Eu sou a Rita. Vamos aprender português.")};G("vt1").onclick=function(){sayV(1,"Olá! Eu sou o Pedro. Vamos aprender português.")};G("sg").value=String(P.goal||10);G("sq").checked=!!P.quiet;G("sth").value=P.theme||"";
+ G("bk").onclick=home;G("sr").onchange=function(){P.rate=+this.value;save();say("Olá, vamos aprender português")};G("sg").onchange=function(){P.goal=+this.value;save()};G("sq").onchange=function(){P.quiet=this.checked?1:0;save()};G("hpt").onclick=function(){var was=P.hap;P.hap=1;hap("perfect");P.hap=was;G("hpn").textContent="Hast du etwas gespürt? Wenn nicht: Läuft die App in Safari oder als Home-Bildschirm-App (nicht im Claude-Artefakt), ist iOS 17.4 oder neuer installiert und ist Einstellungen → Töne & Haptik → Systemhaptik an?"};G("shp").checked=P.hap!==0;G("shp").onchange=function(){P.hap=this.checked?1:0;save();if(P.hap)hap("ok")};G("sth").onchange=function(){P.theme=this.value;save();applyTheme()};
+ G("rl").onclick=function(){this.textContent="Lade neu …";var go=function(){location.href=location.pathname+"?v="+Date.now()};try{Promise.all([navigator.serviceWorker.getRegistrations().then(function(r){return Promise.all(r.map(function(x){return x.unregister()}))}),caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))})]).then(go,go)}catch(e){go()}};G("sd1").onclick=dlFile;G("sd2").onclick=function(){G("sf").click()};
+ G("sf").onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var o=JSON.parse(r.result);if(o&&typeof o==="object"){P=o;save();applyTheme();home()}}catch(e){alert("Die Datei konnte nicht gelesen werden.")}};r.readAsText(f)};
+ G("sx").onclick=function(){if(confirm("Wirklich den gesamten Fortschritt löschen?")){P={};save();applyTheme();home()}}}
+function sayV(i,t){try{var u=new SpeechSynthesisUtterance(t);u.lang="pt-PT";var v=dv(i);if(v)u.voice=v;u.rate=P.rate||1;u.pitch=i%2?0.8:1.25;speechSynthesis.cancel();setTimeout(function(){speechSynthesis.speak(u)},80)}catch(e){}}
+function placement(){var pool=[];LS.forEach(function(l){if(l.pod||l.lv!=="A1")return;l.ex.forEach(function(e){if(e.k==="m"||e.k==="w"||e.k==="l"||e.k==="r")pool.push(e)})});var ex=shuf(pool).slice(0,16).map(function(x){return x.v});PLC=1;go(ex)}
+function plcFin(){PLC=0;var p=tot?Math.min(100,Math.round(sc/tot*100)):100,ok=p>=85;hap(p>=100?"perfect":ok?"pass":"fail");mark();tb(0);
+ A.innerHTML='<div class="card"><div class="big">'+(ok?'Sehr gut! 🎯':'Gute Basis')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><p class="mut" style="text-align:center">'+(ok?'Du beherrschst den A1-Stoff schon sehr gut. Du kannst alle A1-Lektionen als bestanden markieren. Die Wörter kommen verteilt in die Wiederholung.':'Zum Überspringen brauchst du mindestens 85 %. Starte am besten mit Lektion 1 und arbeite dich nach vorn.')+'</p>'+(ok?'<button class="btn p" id="pk">A1 freischalten</button>':'')+'<button class="btn" id="hm">Zur Übersicht</button></div>';
+ G("hm").onclick=home;if(ok)G("pk").onclick=function(){var old=li;P.srs=P.srs||{};var before={};Object.keys(P.srs).forEach(function(k){before[k]=1});LS.forEach(function(l,i){if(l.lv!=="A1")return;P[i]=Math.max(P[i]||0,80);li=i;enroll()});li=old;Object.keys(P.srs).forEach(function(k){if(!before[k])P.srs[k].due=Date.now()+(1+Math.random()*6)*864e5});save();boom(1);home()}}
+
+/* ---- Chat ---- */
+var CH={topic:null,log:[],tn:0,busy:false};
+var CT={apres:{t:"Sich vorstellen",ic:"👋",pt:"de ti",q:[["Olá! Como te chamas?","Hallo! Wie heißt du?",["Chamo-me Pedro.","Eu sou o Pedro."]],["De onde és?","Woher kommst du?",["Sou da Alemanha.","Sou de Berlim."]],["Gostas de falar português?","Sprichst du gern Portugiesisch?",["Sim, gosto muito.","Falo um pouco."]],["Trabalhas muito?","Arbeitest du viel?",["Sim, trabalho muito.","Não, trabalho pouco."]]]},
+comida:{t:"Essen & Trinken",ic:"🍽",pt:"de comida",q:[["Gostas de comer peixe?","Isst du gern Fisch?",["Sim, gosto de peixe.","Não, não gosto."]],["O que bebes de manhã?","Was trinkst du morgens?",["Bebo café.","Bebo água."]],["Qual é o teu prato favorito?","Was ist dein Lieblingsgericht?",["Gosto de sopa.","Gosto de pão com queijo."]],["Queres um pastel de nata?","Möchtest du ein Pastel de Nata?",["Sim, quero!","Não, obrigado."]]]},
+tempo:{t:"Wetter",ic:"☀️",pt:"do tempo",q:[["Que tempo faz hoje onde estás?","Wie ist das Wetter heute bei dir?",["Faz sol.","Está a chover.","Faz frio."]],["Gostas de calor ou de frio?","Magst du Wärme oder Kälte?",["Gosto de calor.","Gosto de frio."]],["O que fazes quando chove?","Was machst du, wenn es regnet?",["Fico em casa.","Estou em casa."]]]},
+familia:{t:"Familie",ic:"👨‍👩‍👧",pt:"da família",q:[["Tens irmãos?","Hast du Geschwister?",["Sim, tenho um irmão.","Não, não tenho irmãos."]],["A tua família é grande ou pequena?","Ist deine Familie groß oder klein?",["A minha família é pequena.","É grande."]],["Onde vive a tua família?","Wo lebt deine Familie?",["Vive na Alemanha.","Vivem em Berlim."]]]},
+dia:{t:"Tagesablauf",ic:"🕘",pt:"do teu dia",q:[["O que fazes de manhã?","Was machst du morgens?",["Bebo café.","Vou para o trabalho."]],["Onde trabalhas?","Wo arbeitest du?",["Trabalho em casa.","Trabalho em Berlim."]],["O que fazes à noite?","Was machst du abends?",["Janto em casa.","Estou em casa."]]]},
+viagem:{t:"Reisen",ic:"✈️",pt:"de viagens",q:[["Queres viajar para Portugal?","Möchtest du nach Portugal reisen?",["Sim, quero muito!","Talvez."]],["Gostas mais de Lisboa ou do Porto?","Magst du Lissabon oder Porto lieber?",["Gosto de Lisboa.","Gosto do Porto."]],["Queres um café na pastelaria?","Möchtest du einen Kaffee in der Konditorei?",["Sim, por favor.","Não, obrigado."]]]}};
+var RC=[["Muito bem!","Sehr gut!"],["Que bom!","Wie schön!"],["Interessante!","Interessant!"],["Ah, percebo.","Ah, ich verstehe."],["Boa!","Gut!"]];
+var PRN={eu:0,tu:1,ele:2,ela:2,"você":2,voce:2,"nós":3,nos:3,eles:4,elas:4,"vocês":4,voces:4};
+function fixPT(t){var w=t.toLowerCase().replace(/[.,!?;:¿¡"()]/g," ").split(/\s+/).filter(Boolean),de=["ich","und","der","die","das","ist","nicht","ein","eine","bin","habe","mit","für","du","wir"],n=w.filter(function(x){return de.indexOf(x)>=0}).length;
+ if(n>=2||(w.length&&n/w.length>0.34))return"Versuch es bitte auf Portugiesisch – tippe auf einen Vorschlag, wenn du nicht weiterweißt.";
+ for(var i=0;i<w.length-1;i++){var p=PRN[w[i]];if(p===undefined)continue;var j=i+1;if(w[j]==="não"||w[j]==="nao")j++;var f=w[j];if(!f)continue;
+  var c=Object.keys(VB).filter(function(v){return VB[v][1].indexOf(f)>=0});if(!c.length)continue;if(c.some(function(v){return VB[v][1][p]===f}))continue;
+  return"Zu „"+w[i]+"“ passt „"+VB[c[0]][1][p]+"“ (nicht „"+f+"“)."}
+ return""}
+function botSay(m){CH.log.push({who:"bot",pt:m.pt,de:m.de||"",sug:m.sug||[]})}
+function sysSay(t){CH.log.push({who:"sys",pt:t,de:""})}
+function bubs(list){return list.map(function(m){if(m.who==="sys")return'<div class="bb sys">'+esc(m.pt)+'</div>';var h='<div class="bb '+m.who+'">';if(m.n)h+='<div class="who">'+esc(m.n)+'</div>';h+='<div>'+esc(m.pt!==undefined?m.pt:m.t)+(m.who==="bot"?' <button class="ib" style="padding:0 4px;font-size:15px" data-say="'+esc(m.pt)+'">🔊</button>':'')+'</div>';if(m.de&&P.chT!==0)h+='<div class="bd">'+esc(m.de)+'</div>';if(m.fix)h+='<div class="fx">💡 '+esc(m.fix)+'</div>';return h+'</div>'}).join("")}
+function chat(){tb(2);A.innerHTML='<h1>Chat</h1><div class="mut">Übe freies Schreiben mit Tiago – ganz ohne Internet.</div><div id="cx"></div>';
+ botView()}
+function botView(){var cx=G("cx");if(!CH.log.length)botSay({pt:"Olá! Eu sou o Tiago. Sobre o que queres falar?",de:"Hallo! Ich bin Tiago. Worüber möchtest du sprechen?"});
+ cx.innerHTML='<label class="row mut" style="margin:6px 0"><span>🇩🇪 Übersetzungen zeigen</span><input type="checkbox" id="cht" style="width:auto;margin:0"></label><div class="chips" id="ctp"></div><div class="chat" id="cmsg"></div><div class="chips" id="csg"></div><div class="ci"><input id="cin" placeholder="Schreib auf Portugiesisch …" autocapitalize="off" autocorrect="off" spellcheck="false"><button id="csend">Senden</button></div>';
+ G("cht").checked=P.chT!==0;G("cht").onchange=function(){P.chT=this.checked?1:0;save();paintBot()};
+ 
+ var tp=G("ctp");Object.keys(CT).forEach(function(k){var b=document.createElement("button");b.textContent=CT[k].ic+" "+CT[k].t;b.onclick=function(){startTopic(k)};tp.appendChild(b)});
+ var r=document.createElement("button");r.textContent="🎲 Thema vorschlagen";r.onclick=suggestTopic;tp.appendChild(r);
+ G("csend").onclick=chatSend;G("cin").onkeydown=function(e){if(e.key==="Enter")chatSend()};paintBot()}
+function paintBot(){var m=G("cmsg");if(!m)return;m.innerHTML=bubs(CH.log)+(CH.busy?'<div class="bb bot"><div>…</div></div>':'');wire(m);var s=G("csg");s.innerHTML="";var last=CH.log[CH.log.length-1];if(last&&last.who==="bot"&&last.sug&&!CH.busy)last.sug.forEach(function(x){var b=document.createElement("button");b.textContent=x;b.onclick=function(){G("cin").value=x;G("cin").focus()};s.appendChild(b)});window.scrollTo(0,document.body.scrollHeight)}
+function suggestTopic(){var ks=Object.keys(CT).filter(function(k){return k!==CH.topic}),k=ks[Math.floor(Math.random()*ks.length)];botSay({pt:"Que tal falarmos "+CT[k].pt+"?",de:"Wie wäre es, wenn wir über dieses Thema sprechen: "+CT[k].t+"?"});startTopic(k)}
+function startTopic(k){CH.topic=k;CH.tn=0;CH.hist=[];var q=CT[k].q[0];botSay({pt:"Vamos falar "+CT[k].pt+". "+q[0],de:"Sprechen wir über: "+CT[k].t+". "+q[1],sug:q[2]});paintBot()}
+function chatSend(){var inp=G("cin"),t=inp.value.trim();if(!t||CH.busy)return;inp.value="";var me={who:"me",pt:t,fix:fixPT(t)};CH.log.push(me);P.chm=(P.chm||0)+1;mark();save();scriptTurn(t);paintBot()}
+function scriptTurn(t){var T=CT[CH.topic];if(!T){botSay({pt:"Vamos escolher um tema! Toca num dos temas em cima.",de:"Wählen wir ein Thema! Tippe oben auf eines der Themen."});return}
+ var nt=" "+norm(t)+" ",q=T.q[CH.tn];if(/ (ajuda|help|hilfe) /.test(nt)||/ nao percebo /.test(nt)){botSay({pt:"Sem problema! "+q[0],de:"Kein Problem! "+q[1],sug:q[2]});return}
+ var r=/ nao /.test(nt)?["Ah, está bem.","Ach so, okay."]:/ sim /.test(nt)?["Ótimo!","Super!"]:RC[Math.floor(Math.random()*RC.length)];CH.tn++;
+ if(CH.tn<T.q.length){var n=T.q[CH.tn];botSay({pt:r[0]+" "+n[0],de:r[1]+" "+n[1],sug:n[2]})}else{botSay({pt:r[0]+" Foi um prazer! Queres falar de outro tema?",de:r[1]+" Es war mir ein Vergnügen! Möchtest du über ein anderes Thema sprechen?"});CH.topic=null}}
+
+/* ---- Wort-Erklärungen in Lektionen ---- */
+var DW={"a":"die / zu / nach (je nach Satz)","o":"der / das (Artikel)","os":"die (Plural, m.)","as":"die (Plural, f.)","um":"ein","uma":"eine","uns":"einige (m.)","umas":"einige (f.)","de":"von, aus","em":"in, an","para":"für, nach, zu","por":"durch, für, wegen","com":"mit","sem":"ohne","e":"und","ou":"oder","mas":"aber","que":"dass / was / der, die, das (Relativ)","não":"nicht, nein","sim":"ja","eu":"ich","tu":"du","ele":"er","ela":"sie (f.)","nós":"wir","você":"Sie / du (höflich)","vocês":"ihr / Sie (Plural)","eles":"sie (m. Plural)","elas":"sie (f. Plural)","meu":"mein","minha":"meine","teu":"dein","tua":"deine","seu":"sein / Ihr","sua":"seine / Ihre","aqui":"hier","ali":"dort","lá":"dort","onde":"wo","como":"wie / ich esse","quando":"wann","porque":"weil","porquê":"warum","quem":"wer","qual":"welcher","quanto":"wie viel","muito":"sehr, viel","pouco":"wenig","também":"auch","já":"schon","hoje":"heute","agora":"jetzt","ontem":"gestern","amanhã":"morgen","sempre":"immer","nunca":"nie","bem":"gut (Adverb)","mal":"schlecht","mais":"mehr","menos":"weniger","do":"vom (de + o)","da":"von der (de + a)","dos":"von den (de + os)","das":"von den (de + as)","no":"im (em + o)","na":"in der (em + a)","nos":"in den (em + os)","nas":"in den (em + as)","ao":"zum (a + o)","à":"zur (a + a)","aos":"zu den","às":"um … Uhr / zu den","pelo":"durch den / für den","pela":"durch die","este":"dieser","esta":"diese","isto":"dies","isso":"das","tudo":"alles","nada":"nichts","todos":"alle","bom":"gut","boa":"gut (f.)","bons":"gut (Plural)","grande":"groß","pequeno":"klein","pequena":"klein (f.)","novo":"neu","velho":"alt","por favor":"bitte","obrigado":"danke (m.)","obrigada":"danke (f.)","olá":"hallo","adeus":"auf Wiedersehen","bem-vindos":"willkommen","dia":"Tag","noite":"Nacht, Abend","tarde":"Nachmittag, spät","manhã":"Morgen","hora":"Stunde, Uhr","amigo":"Freund","amigos":"Freunde","amiga":"Freundin","casa":"Haus","livro":"Buch","gato":"Kater","cão":"Hund","água":"Wasser","maria":"Maria (Name)","joão":"João (Name)","ana":"Ana (Name)","rita":"Rita (Name)","pedro":"Pedro (Name)","portugal":"Portugal","podcast":"Podcast","trinta":"dreißig","anos":"Jahre (trinta anos = 30 Jahre)","dorme":"schläft (dormir = schlafen)","até":"bis","próxima":"nächste","português":"Portugiesisch / portugiesisch","inglês":"Englisch / englisch","horas":"Stunden, Uhr","gatos":"Kater (Plural)","favor":"Gefallen (por favor = bitte)","baixa":"Unterstadt, Innenstadt (in Lissabon: Baixa)","azul":"blau","janta":"isst zu Abend (jantar)","jantamos":"wir essen zu Abend (jantar)","centro":"Zentrum","pastel":"Gebäck (pastel de nata = Puddingtörtchen)","nata":"Sahne, Pudding (pastel de nata)","pastelaria":"Konditorei, Café","ideia":"Idee","acordou":"wachte auf (acordar)","acorda":"wacht auf (acordar)","saiu":"ging hinaus, verließ (sair)","oito":"acht","nove":"neun","sete":"sieben","seis":"sechs","vinte":"zwanzig","três":"drei","sessenta":"sechzig","chegou":"kam an (chegar)","piquenique":"Picknick","mar":"Meer","toma":"nimmt (tomar)","meia":"halb (e meia = halb)","almoça":"isst zu Mittag (almoçar)","levanta-se":"steht auf (levantar-se)","lava-se":"wäscht sich (lavar-se)","se":"sich (Reflexivpronomen)","deita":"legt (deitar)","deita-se":"geht ins Bett (deitar-se)","fim":"Ende (fim de semana = Wochenende)","alguma":"irgendeine (alguma coisa = etwas)","coisa":"Sache","especial":"besonders","grelhado":"gegrillt","vinho":"Wein","fiquei":"ich blieb (ficar)","cozinhei":"ich kochte (cozinhar)","saíste":"du bist ausgegangen (sair)","num":"in einem (em + um)","numa":"in einer (em + uma)","restaurante":"Restaurant","comida":"Essen","perfeito":"perfekt","aniversário":"Geburtstag","março":"März","maior":"größer, größte","famoso":"berühmt","era":"war (ser, Imperfeito)","vivia":"wohnte (viver, Imperfeito)","ia":"ging (ir, Imperfeito)","domingos":"Sonntage (aos domingos = sonntags)","fazia":"machte (fazer, Imperfeito)","comíamos":"wir aßen (comer, Imperfeito)","juntos":"zusammen","lê-lo":"es lesen (ler + o)","telefono-lhe":"ich rufe ihn/sie an","convido-a":"ich lade sie ein","nossos":"unsere (m. Pl.)","pais":"Eltern","deles":"ihr (von ihnen)","bonita":"schön (f.)","ficar":"bleiben","hotel":"Hotel","rio":"Fluss","bilhetes":"Fahrkarten, Tickets","comboio":"Zug","dói-lhe":"ihm/ihr tut weh","dá-lhe":"gibt ihm/ihr","roupa":"Kleidung","pretos":"schwarz (Plural)","custam":"kosten","euros":"Euro","saldos":"Ausverkauf","só":"nur","pago":"ich bezahle (pagar)","sente":"fühlt (sentir-se: Como se sente? = Wie fühlen Sie sich?)","doutor":"Herr Doktor","me":"mich, mir","sinto":"ich fühle (sentir)","dói-me":"mir tut weh","desde":"seit","abra":"öffnen Sie (abrir)","boca":"Mund","constipado":"erkältet","estes":"diese","comprimidos":"Tabletten","preciso":"ich brauche (precisar de)","descanse":"ruhen Sie sich aus (descansar)","beba":"trinken Sie (beber)","muita":"viel (f.)","fique":"bleiben Sie (ficar)","cama":"Bett"};
+var DX=null;
+function gk(w){return norm(w).replace(/ /g,"")}
+function buildDX(){DX={};var put=function(k,v){k=gk(k);if(!k)return;if(DX[k]&&DX[k].indexOf(v)<0&&DX[k].length<90)DX[k]+="; "+v;else if(!DX[k])DX[k]=v};
+ Object.keys(DW).forEach(function(k){put(k,DW[k])});Object.keys(CG).forEach(function(k){put(k,CG[k])});
+ vocab().forEach(function(x){var p=x.p.replace(/\([^)]*\)/g,"").split(" / ").map(function(s){return s.trim()}),d=x.d.replace(/\([^)]*\)/g,"").split(" / ").map(function(s){return s.trim()});
+  p.forEach(function(s,i){var g=p.length===d.length?d[i]:x.d,w=s.replace(/^(o|a|os|as|um|uma) /,"");if(w.indexOf(" ")<0)put(w,g);else w.split(" ").forEach(function(t){if(!DX[gk(t)]&&t.length>3)put(t,g+" (aus „"+s+"“)")})})});
+ Object.keys(VB).forEach(function(v){VB[v][1].forEach(function(f,i){put(f,"Form von „"+v+"“ ("+VB[v][0]+"): "+PL[i].split(" / ")[0])})});Object.keys(VBP).forEach(function(v){VBP[v].forEach(function(f,i){put(f,"Perfeito von „"+v+"“ ("+(VB[v]?VB[v][0]:v)+"): "+PL[i].split(" / ")[0])})})}
+function lookup(w){if(!DX)buildDX();return DX[gk(w)]||""}
+function tap(t,tr){return'<span class="ts" data-tr="'+esc(tr||"")+'">'+t.split(" ").map(function(tk){var w=tk.replace(/[.,!?;:"“”()¿¡…]/g,"");return w?'<span class="tw" data-w="'+esc(w)+'">'+esc(tk)+'</span>':esc(tk)}).join(" ")+'</span>'}
+var WS=null;
+function wsheet(el){var w=el.dataset.w,g=lookup(w),tr=el.parentNode.dataset.tr;Array.prototype.forEach.call(document.querySelectorAll(".tw.sel"),function(x){x.classList.remove("sel")});el.classList.add("sel");
+ if(!WS){WS=document.createElement("div");WS.id="wsh";document.body.appendChild(WS)}
+ WS.innerHTML='<button class="x" aria-label="Schließen">✕</button><div class="w">'+esc(w)+'</div><div>'+(g?esc(g):'<span class="mut">Dazu habe ich noch keine Erklärung gespeichert.</span>')+'</div>'+(tr?'<div class="mut" style="margin-top:6px">Satz: '+esc(tr)+'</div>':'')+'<div class="act"><button data-a="s">🔊 Anhören</button>'+(g?'<button data-a="t">➕ Ins Training</button>':'')+'</div>';WS.style.display="block";
+ WS.querySelector(".x").onclick=hideWS;WS.querySelector('[data-a="s"]').onclick=function(){say(w)};var tb2=WS.querySelector('[data-a="t"]');if(tb2)tb2.onclick=function(){addCard(w,g.split(";")[0]);tb2.textContent="✓ im Training";tb2.disabled=true};say(w)}
+function hideWS(){if(WS)WS.style.display="none";Array.prototype.forEach.call(document.querySelectorAll(".tw.sel"),function(x){x.classList.remove("sel")})}
+document.addEventListener("click",function(ev){var t=ev.target.closest?ev.target.closest(".tw"):null;if(t){wsheet(t);return}if(WS&&!ev.target.closest("#wsh"))hideWS()});
+
+/* ===== v4: Zahlen-Trainer, Kapiteltest, Floskeln, Wochenrückblick, aktive Karten ===== */
+var KT=null;
+function prune(o){var k=Object.keys(o);if(k.length>90){k.map(function(s){var p=s.split("-");return[new Date(+p[0],p[1]-1,+p[2]).getTime(),s]}).sort(function(a,b){return a[0]-b[0]}).slice(0,k.length-90).forEach(function(x){delete o[x[1]]})}}
+function ktr(e,r){if(KT&&e._lt!=null){var a=KT.t[e._lt]=KT.t[e._lt]||[0,0];a[1]++;if(r)a[0]++}}
+
+/* ---- Zahlen auf Portugiesisch ---- */
+var NU=["zero","um","dois","três","quatro","cinco","seis","sete","oito","nove","dez","onze","doze","treze","catorze","quinze","dezasseis","dezassete","dezoito","dezanove"],NT=["","","vinte","trinta","quarenta","cinquenta","sessenta","setenta","oitenta","noventa"],NH=["","cento","duzentos","trezentos","quatrocentos","quinhentos","seiscentos","setecentos","oitocentos","novecentos"],MON=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+function ptNum(n,f){if(n<20)return f&&n===1?"uma":f&&n===2?"duas":NU[n];
+ if(n<100){var u=n%10;return NT[Math.floor(n/10)]+(u?" e "+ptNum(u,f):"")}
+ if(n===100)return"cem";
+ if(n<1000){var r=n%100,w=NH[Math.floor(n/100)];if(f&&n>=200)w=w.replace(/os$/,"as");return w+(r?" e "+ptNum(r,f):"")}
+ var th=Math.floor(n/1000),r2=n%1000,tw=th===1?"mil":ptNum(th)+" mil";return r2?tw+((r2<100||r2%100===0)?" e ":" ")+ptNum(r2,f):tw}
+function ptTime(h,m){var H=h%12||12;
+ if(m===0){if(h===12)return"É meio-dia";if(h===0)return"É meia-noite";return H===1?"É uma hora":"São "+ptNum(H,1)+" horas"}
+ var v=H===1?"É":"São";
+ if(m===45){var N=H+1;return"São "+ptNum(N,1)+" menos um quarto"}
+ var t=m===15?"um quarto":m===30?"meia":ptNum(m);return v+" "+ptNum(H,1)+" e "+t}
+function rint(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function zq(kind){var q;
+ if(kind==="n1"){var n=rint(0,100);q={t:ptNum(n),a:n,fmt:String(n),h:"Tippe die Zahl"}}
+ else if(kind==="n2"){var n=rint(101,999);q={t:ptNum(n),a:n,fmt:String(n),h:"Tippe die Zahl"}}
+ else if(kind==="n3"){var n=rint(1000,9999);q={t:ptNum(n),a:n,fmt:String(n),h:"Tippe die Zahl"}}
+ else if(kind==="tm"){var h=rint(1,11),m=[0,0,15,30,30,45,5,10,20,25,35,40,50,55][rint(0,13)];if(m===45&&h>10)h=rint(1,10);if(rint(0,9)===0){h=12;m=0}else if(rint(0,14)===0){h=0;m=0}
+  q={t:ptTime(h,m),a:[h%12,m],fmt:(h%12||12)+":"+(m<10?"0":"")+m,h:"Tippe die Uhrzeit (z. B. 3:30)"}}
+ else if(kind==="pr"){var e=rint(1,120),c=[0,0,50,20,90,99,10,30,40,70,80,95,25,75,5][rint(0,14)];
+  q={t:"Custa "+ptNum(e)+(e===1?" euro":" euros")+(c?" e "+ptNum(c)+(c<10?" cêntimos":""):""),a:Math.round((e+c/100)*100),fmt:e+","+(c<10?"0":"")+c+" €",h:"Tippe den Preis (z. B. 12,50)"}}
+ else{var d=rint(1,28),mo=rint(0,11);q={t:"É dia "+ptNum(d)+" de "+MON[mo],a:[d,mo+1],fmt:d+"."+(mo+1)+".",h:"Tippe das Datum (z. B. 23.3.)"}}
+ q.k=kind;return q}
+function zcheck(q,s){s=String(s).trim().toLowerCase();
+ if(q.k==="tm"){var x=s.match(/\d+/g);if(!x)return false;var hh,mm;if(x.length>=2){hh=+x[0];mm=+x[1]}else{var d=x[0];if(d.length<=2){hh=+d;mm=0}else{hh=+d.slice(0,d.length-2);mm=+d.slice(-2)}}return hh%12===q.a[0]&&mm===q.a[1]}
+ if(q.k==="pr"){var v=parseFloat(s.replace(/[^\d,.]/g,"").replace(",","."));return!isNaN(v)&&Math.round(v*100)===q.a}
+ if(q.k==="dt"){var x2=s.match(/\d+/g)||[],mi=-1;MON.forEach(function(w,i){if(norm(s).indexOf(norm(w))>=0)mi=i+1});var dd=x2[0]?+x2[0]:0,mn=x2.length>1?+x2[1]:mi;return dd===q.a[0]&&mn===q.a[1]}
+ var n=parseInt(s.replace(/[^\d]/g,""),10);return n===q.a}
+var ZN=null;
+function numMenu(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederholen</button><h1>Zahlen & Uhrzeit</h1><div class="mut">Du hörst eine Angabe und tippst sie als Ziffern. Zehn Fragen pro Runde.</div><h2>Zahlen</h2><button class="btn" data-z="n1">🔢 0 bis 100</button><button class="btn" data-z="n2">🔢 100 bis 999</button><button class="btn" data-z="n3">🔢 1000 bis 9999</button><h2>Alltag</h2><button class="btn" data-z="tm">🕒 Uhrzeit</button><button class="btn" data-z="pr">💶 Preise</button><button class="btn" data-z="dt">📅 Datum</button><label class="row mut" style="margin-top:14px"><span>🔇 Immer als Text zeigen</span><input type="checkbox" id="zq" style="width:auto;margin:0"></label>';
+ G("zq").checked=!!P.quiet;G("zq").onchange=function(){P.quiet=this.checked?1:0;save()};G("bk").onclick=hub;
+ Array.prototype.forEach.call(A.querySelectorAll("[data-z]"),function(b){b.onclick=function(){ZN={k:b.dataset.z,i:0,ok:0,n:10};znext()}})}
+function znext(){tb(-1);if(ZN.i>=ZN.n){zfin();return}var q=zq(ZN.k);ZN.q=q;var T={n1:"Zahlen",n2:"Zahlen",n3:"Zahlen",tm:"Uhrzeit",pr:"Preise",dt:"Datum"}[ZN.k];
+ A.innerHTML='<button class="back" id="bk">‹ Zahlen & Uhrzeit</button><div class="bar"><i style="width:'+Math.round(ZN.i/ZN.n*100)+'%"></i></div><div class="card" style="border-top:5px solid #e08a2c"><div class="tag" style="color:#e08a2c">'+T+'</div><div class="mut">'+q.h+'</div><div class="ctl"><button id="pl">🔊 Abspielen</button><button id="sl">🐢 Langsam</button><button class="cb skip" id="tt">👁 Text zeigen</button></div><div class="big" id="txt" hidden style="font-size:22px">'+esc(q.t)+'</div><input id="zin" inputmode="decimal" autocomplete="off" autocapitalize="off"><button class="btn p" id="ck">Prüfen</button><div class="fb" id="fb"></div></div><div id="nx"></div>';
+ G("bk").onclick=numMenu;G("pl").onclick=function(){say(q.t)};G("sl").onclick=function(){say(q.t,1)};G("tt").onclick=function(){G("txt").hidden=false;this.hidden=true};if(P.quiet){G("txt").hidden=false;G("tt").hidden=true}else say(q.t);
+ var chk=function(){var ok=zcheck(q,G("zin").value);hap(ok?"ok":"no");stt("n",ok);if(ok)ZN.ok++;G("zin").disabled=true;G("ck").hidden=true;G("txt").hidden=false;var f=G("fb");f.innerHTML=(ok?"✓ Richtig. ":"✗ Nicht ganz. ")+"<b>"+esc(q.fmt)+"</b> – "+esc(q.t);f.style.color=ok?"var(--ok)":"var(--bad)";mark();cnt();
+  var nx=G("nx");nx.innerHTML='<button class="btn p" id="go">Weiter</button>';G("go").onclick=function(){ZN.i++;znext()};G("go").focus()};
+ G("ck").onclick=chk;G("zin").onkeydown=function(e){if(e.key==="Enter")chk()};if(P.quiet)G("zin").focus()}
+function zfin(){hap(ZN.ok===ZN.n?"perfect":ZN.ok/ZN.n>=.7?"pass":"fail");mark();P.nr=(P.nr||0)+1;save();tb(1);if(ZN.ok===ZN.n)boom(1);A.innerHTML='<div class="card'+(ZN.ok===ZN.n?' gold':'')+'"><div class="big">'+(ZN.ok===ZN.n?'Perfekt! 🏆':'Runde geschafft 🎉')+'</div><p style="text-align:center">'+ZN.ok+' von '+ZN.n+' richtig</p><button class="btn p" id="ag">Noch eine Runde</button><button class="btn" id="bk">Zurück</button></div>';
+ var k=ZN.k;G("ag").onclick=function(){ZN={k:k,i:0,ok:0,n:10};znext()};G("bk").onclick=numMenu}
+
+/* ---- Kapiteltest ---- */
+function ktBtn(lv){var r=lvs(lv);if(!r[0])return"";var b=(P.kt||{})[lv];if(r[0]!==r[1])return'<div class="mut" style="padding:8px 4px">📝 Kapiteltest '+lv+': nach allen Lektionen</div>';return'<button class="btn p" data-kt="'+lv+'">📝 Kapiteltest '+lv+(b!=null?' <span style="opacity:.8">· Bestwert '+b+' %</span>':'')+'</button>'}
+function ktStart(lv){var ex=[];LS.forEach(function(l,i){if(l.lv!==lv||l.pod)return;shuf(l.ex.filter(function(e){return"mwldor".indexOf(e.k)>=0})).slice(0,2).forEach(function(x){var c=Object.assign({},x.v);c._lt=i;ex.push(c)})});KT={lv:lv,t:{}};go(shuf(ex).map(function(x){return x.v}))}
+function ktFin(){var lv=KT.lv,t=KT.t,p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");P.kt=P.kt||{};if(P.kt[lv]==null||p>P.kt[lv])P.kt[lv]=p;mark();save();KT=null;tb(0);if(p>=PASS)boom(p>=100);
+ var rows=Object.keys(t).map(function(i){return{i:+i,a:t[i][0],b:t[i][1],p:t[i][1]?Math.round(t[i][0]/t[i][1]*100):100}}).sort(function(x,y){return x.p-y.p});
+ var h='<div class="card'+(p>=100?' gold':'')+'"><div class="big">'+(p>=100?'Perfekt! 🏆':p>=PASS?'Kapiteltest bestanden 🎓':'Noch nicht bestanden')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p></div><h2>Auswertung nach Themen</h2>';
+ rows.forEach(function(r){var bad=r.p<PASS;h+='<div class="card" style="padding:14px 16px;margin:8px 0"><div class="row"><span>'+(r.i+1)+'. '+esc(LS[r.i].t)+'</span><span class="mut">'+r.a+'/'+r.b+'</span></div><div class="bar" style="margin-top:8px"><i style="width:'+r.p+'%;'+(bad?'background:var(--bad)':'')+'"></i></div>'+(bad?'<button class="btn" style="margin:10px 0 0;padding:10px 14px" data-w="'+r.i+'">Lektion wiederholen</button>':'')+'</div>'});
+ A.innerHTML=h+'<button class="btn p" id="hm">Zur Übersicht</button>';G("hm").onclick=home;
+ Array.prototype.forEach.call(A.querySelectorAll("[data-w]"),function(b){b.onclick=function(){li=+b.dataset.w;ei=0;sc=0;tot=0;ovw(1)}})}
+
+/* ---- Floskeln ---- */
+var PHR=[["Reaktionen","pois","ja, genau (zustimmend)","Sehr häufig. „Pois é“ = so ist es / tja. „Pois não?“ sagt die Verkäuferin: Bitte, was darf es sein?"],["Reaktionen","pois é","stimmt, so ist es","Man stimmt zu oder seufzt über etwas Unabänderliches."],["Reaktionen","está bem","einverstanden, okay","Auch „está bom“. Umgangssprachlich: „tá bem“."],["Reaktionen","com certeza","sicher, gern","Antwort auf Bitten und Fragen."],["Reaktionen","claro que sim","natürlich","Auch kurz: „claro“."],["Reaktionen","a sério?","wirklich?","Auch „a sério!“ = im Ernst."],["Reaktionen","que pena","wie schade",""],["Reaktionen","que bom","wie schön",""],["Reaktionen","ainda bem","zum Glück","„Ainda bem que vieste“ = zum Glück bist du gekommen."],["Reaktionen","nem pensar","kommt nicht in Frage",""],["Reaktionen","tens razão","du hast recht","Höflich: „tem razão“."],["Reaktionen","não faz mal","macht nichts","Antwort auf eine Entschuldigung."],["Reaktionen","não há problema","kein Problem",""],["Reaktionen","estou a ver","ich verstehe / ich sehe","Zeigt, dass man folgt."],["Reaktionen","não faço ideia","ich habe keine Ahnung",""],["Gespräch","já agora","übrigens, wenn wir schon dabei sind","Beliebtes Verbindungswort: „Já agora, onde fica o hotel?“"],["Gespräch","se calhar","vielleicht, womöglich","„Se calhar vou ao cinema.“"],["Gespräch","ora bem","also gut, na dann","Leitet eine Überlegung oder einen neuen Punkt ein."],["Gespräch","então","also / dann / na?","„Então, tudo bem?“ = Na, alles gut?"],["Gespräch","pronto","also gut, okay, fertig","Schließt ein Thema ab, oft mit einem Schulterzucken."],["Gespräch","olha","schau mal, hör mal","Zieht die Aufmerksamkeit auf sich."],["Gespräch","ó pá","Mensch! / Mann! (umgangssprachlich)","Unter Freunden. Nicht zu Fremden sagen."],["Gespräch","um bocadinho","ein bisschen","Auch: „Espera um bocadinho.“"],["Gespräch","vá lá","komm schon","Ermunterung oder Bitte."],["Gespräch","deixa lá","lass gut sein","„Deixa lá, não faz mal.“"],["Umgangssprache","fixe","cool, super","Sehr typisch für Portugal, in Brasilien sagt man „legal“."],["Umgangssprache","giro / gira","hübsch, nett, süß","„Que casa gira!“"],["Umgangssprache","bué","sehr, richtig viel (Jugendsprache)","„Bué bom“ = richtig gut."],["Umgangssprache","está combinado","abgemacht","Zum Verabreden."],["Höflichkeit","com licença","Entschuldigung (beim Durchgehen), mit Erlaubnis","Wenn man sich vorbeidrängt oder fragt, ob man etwas darf."],["Höflichkeit","de nada","gern geschehen","Auch „não tem de quê“."],["Höflichkeit","muito prazer","sehr erfreut",""],["Höflichkeit","tudo bem?","alles gut?","Antwort: „Tudo bem, e contigo?“"],["Höflichkeit","até já","bis gleich",""],["Höflichkeit","até logo","bis später",""],["Höflichkeit","boa viagem","gute Reise",""],["Höflichkeit","bom apetite","guten Appetit",""],["Höflichkeit","saúde","Prost! / Gesundheit!",""],["Höflichkeit","parabéns","herzlichen Glückwunsch",""],["Alltag","a conta, por favor","die Rechnung, bitte","Im Restaurant."],["Alltag","quanto é?","wie viel macht das?","Beim Bezahlen."],["Alltag","fico com isto","ich nehme das","Beim Einkaufen."],["Alltag","tem troco?","haben Sie Wechselgeld?",""]];
+function refPhr(){var cats=[],rc=G("rc");PHR.forEach(function(p){if(cats.indexOf(p[0])<0)cats.push(p[0])});
+ rc.innerHTML='<div class="mut" style="margin:12px 0">Wörter und Wendungen, die man in Portugal ständig hört.</div><input id="fs" placeholder="Suchen" style="margin-bottom:8px"><button class="btn p" id="fd">🎯 Floskeln üben</button><div id="fl"></div>';
+ function paint(){var q=norm(G("fs").value),h="";cats.forEach(function(c){var l=PHR.filter(function(p){return p[0]===c&&(!q||norm(p[1]+" "+p[2]).indexOf(q)>=0)});if(!l.length)return;h+='<h2>'+c+'</h2>';l.forEach(function(p){h+='<div class="item"><div><b>'+esc(p[1])+'</b><div>'+esc(p[2])+'</div>'+(p[3]?'<div class="mut" style="font-size:13px">'+esc(p[3])+'</div>':'')+'</div><div style="white-space:nowrap"><button class="ib" data-say="'+esc(p[1])+'">🔊</button>'+(P.srs&&P.srs[p[1]]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(p[1])+'|'+esc(p[2])+'">➕</button>')+'</div></div>'});});G("fl").innerHTML=h||'<p class="mut">Nichts gefunden.</p>';wire(G("fl"))}
+ G("fs").oninput=paint;paint();
+ G("fd").onclick=function(){var all=PHR.map(function(p){return p[2]});go(shuf(PHR).slice(0,10).map(function(x){var p=x.v,o=[p[2]].concat(shuf(all.filter(function(d){return d!==p[2]})).slice(0,2).map(function(y){return y.v}));return{k:"l",p:p[1],o:o,a:0,n:p[1]+" = "+p[2]}}))}}
+
+/* ---- Wochenrückblick ---- */
+function dayOff(o){var d=new Date();d.setDate(d.getDate()-o);return d}
+function weekDays(o){var a=[],H=P.hist||{},HA=P.ha||{};for(var i=6;i>=0;i--){var d=dayOff(o+i),k=ymd(d);a.push({d:d,k:k,n:H[k]||0,a:HA[k]||[0,0]})}return a}
+function sumF(a,f){return a.reduce(function(s,x){return s+f(x)},0)}
+function delta(c,p,unit,hasPrev){if(!hasPrev)return"";var d=c-p;return d===0?"wie letzte Woche":(d>0?"▲ ":"▼ ")+Math.abs(d)+(unit||"")+" "+(d>0?"mehr":"weniger")+" als letzte Woche"}
+function weekly(){tb(0);var cur=weekDays(0),prv=weekDays(7),WD=["So","Mo","Di","Mi","Do","Fr","Sa"],goal=P.goal||10,
+ tasks=sumF(cur,function(x){return x.n}),ptasks=sumF(prv,function(x){return x.n}),days=cur.filter(function(x){return x.n>0}).length,pdays=prv.filter(function(x){return x.n>0}).length,
+ ac=sumF(cur,function(x){return x.a[0]}),at=sumF(cur,function(x){return x.a[1]}),pac=sumF(prv,function(x){return x.a[0]}),pat=sumF(prv,function(x){return x.a[1]}),acc=at?Math.round(ac/at*100):null,pacc=pat?Math.round(pac/pat*100):null,
+ lp=(P.lp||[]),ls=cur.filter(function(x){return 1}).reduce(function(s,x){return s+lp.filter(function(k){return k===x.k}).length},0),lsp=prv.reduce(function(s,x){return s+lp.filter(function(k){return k===x.k}).length},0),
+ wc=P.wc||{},now=nWords(),base=null;for(var i=7;i<=60&&base===null;i++){var v=wc[ymd(dayOff(i))];if(v!=null)base=v}if(base===null){var ks=Object.keys(wc);if(ks.length)base=wc[ks[0]]}var nw=base===null?0:Math.max(0,now-base);
+ var mx=Math.max(goal,5);cur.forEach(function(x){if(x.n>mx)mx=x.n});var step=mx<=10?2:mx<=30?5:mx<=60?10:20;mx=Math.ceil(mx/step)*step;
+ var W=340,Hh=170,L=26,Rr=8,T=14,B=26,pw=W-L-Rr,ph=Hh-T-B,bw=22,col=pw/7,svg='<svg viewBox="0 0 '+W+' '+Hh+'" width="100%" role="img" aria-label="Aufgaben pro Tag in den letzten 7 Tagen">';
+ for(var g=0;g<=mx;g+=step){var y=T+ph-ph*g/mx;svg+='<line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+y+'" y2="'+y+'" stroke="var(--bd)" stroke-width="1"/><text x="'+(L-5)+'" y="'+(y+3.5)+'" text-anchor="end" font-size="10" fill="var(--mut)">'+g+'</text>'}
+ var gy=T+ph-ph*goal/mx;svg+='<line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+gy+'" y2="'+gy+'" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="4 4"/><text x="'+(W-Rr)+'" y="'+(gy-4)+'" text-anchor="end" font-size="10" fill="var(--mut)">Ziel '+goal+'</text>';
+ cur.forEach(function(x,i){var cx=L+col*i+col/2,h=ph*x.n/mx,y=T+ph-h,r=Math.min(4,h/2);
+  if(x.n>0){svg+='<path d="M'+(cx-bw/2)+' '+(T+ph)+'V'+(y+r)+'Q'+(cx-bw/2)+' '+y+' '+(cx-bw/2+r)+' '+y+'H'+(cx+bw/2-r)+'Q'+(cx+bw/2)+' '+y+' '+(cx+bw/2)+' '+(y+r)+'V'+(T+ph)+'Z" fill="var(--ac)"/><text x="'+cx+'" y="'+(y-4)+'" text-anchor="middle" font-size="10" font-weight="600" fill="var(--tx)">'+x.n+'</text>'}
+  svg+='<text x="'+cx+'" y="'+(Hh-8)+'" text-anchor="middle" font-size="11" fill="var(--'+(i===6?'tx':'mut')+')" font-weight="'+(i===6?700:400)+'">'+(i===6?'Heute':WD[x.d.getDay()])+'</text><rect class="wbar" data-i="'+i+'" x="'+(cx-col/2)+'" y="'+T+'" width="'+col+'" height="'+ph+'" fill="transparent"/>'});
+ svg+='</svg>';
+ var tiles=function(v,l,s){return'<div><b>'+v+'</b><span class="mut">'+l+'</span>'+(s?'<span class="mut" style="font-size:11px">'+s+'</span>':'')+'</div>'},
+ h='<button class="back" id="bk">‹ Start</button><h1>Wochenrückblick</h1><div class="mut">Die letzten 7 Tage bis heute</div><div class="st" style="grid-template-columns:repeat(2,1fr)">'+tiles(tasks,"Aufgaben",delta(tasks,ptasks,"",ptasks>0))+tiles(days+" / 7","Lerntage",delta(days,pdays,"",pdays>0))+tiles(acc===null?"–":acc+" %","richtig (1. Versuch)",acc!==null&&pacc!==null?delta(acc,pacc," %",1):"")+tiles(nw,"neue Wörter","im Training: "+now)+'</div><div class="card" style="padding:16px 12px"><div style="font-weight:600;margin:0 6px 6px">Aufgaben pro Tag</div>'+svg+'<div class="mut" id="bt" style="min-height:20px;margin:4px 6px 0;font-size:13px">Tippe auf einen Tag für Details.</div><details style="margin:8px 6px 0"><summary class="mut" style="cursor:pointer">Als Tabelle</summary><table>'+cur.map(function(x){return'<tr><td>'+WD[x.d.getDay()]+' '+x.d.getDate()+'.'+(x.d.getMonth()+1)+'.</td><td>'+x.n+' Aufgaben</td><td>'+(x.a[1]?Math.round(x.a[0]/x.a[1]*100)+' %':'–')+'</td></tr>'}).join("")+'</table></details></div>';
+ var ST=P.st||{},TL={c:"Vokabeln",m:"Grammatik",l:"Hören",d:"Diktat",w:"Schreiben",o:"Satzbau",r:"Lesen",x:"Zuordnen",q:"Podcast",n:"Zahlen & Zeit"},wk=null;Object.keys(ST).forEach(function(k){if(ST[k][1]>=5){var p=Math.round(ST[k][0]/ST[k][1]*100);if(!wk||p<wk[1])wk=[TL[k]||k,p]}});
+ var cl=LS.filter(function(l,i){return P[i]>=PASS}).length,lv=LS[Math.max(0,LS.findIndex(function(l,i){return!(P[i]>=PASS)}))].lv,rem=LS.filter(function(l,i){return l.lv===lv&&!(P[i]>=PASS)}).length,avg=(ls+lsp)/2,pr="";
+ if(rem===0)pr="Du hast alle Lektionen von "+lv+" bestanden.";else if(avg>0)pr="Bei diesem Tempo (Ø "+(Math.round(avg*10)/10).toString().replace(".",",")+" Lektionen pro Woche) brauchst du für die restlichen "+rem+" Lektionen von "+lv+" etwa "+Math.ceil(rem/avg)+" Woche"+(Math.ceil(rem/avg)===1?"":"n")+".";else pr="Noch keine Prognose: In den letzten zwei Wochen wurde keine Lektion bestanden. Offen in "+lv+": "+rem+" Lektionen.";
+ h+='<h2>Einschätzung</h2><div class="card" style="padding:16px;margin:8px 0;text-align:left"><div>🎯 '+pr+'</div>'+(wk?'<div style="margin-top:10px">🔍 Schwächste Aufgabenart: <b>'+wk[0]+'</b> ('+wk[1]+' % richtig)</div>':'')+'<div style="margin-top:10px">⚠️ Offene Fehler im Fehler-Training: <b>'+Object.keys(P.err||{}).length+'</b></div><div class="mut" style="margin-top:6px">Lektionen bestanden diese Woche: '+ls+'</div></div>';
+ if(Object.keys(P.err||{}).length)h+='<button class="btn" id="er">🎯 Fehler-Training starten</button>';
+ if(!P.hist||Object.keys(P.hist).length<4)h+='<div class="nt">Der Rückblick sammelt seine Daten ab diesem Update. Frühere Lerntage fehlen deshalb noch.</div>';
+ A.innerHTML=h;G("bk").onclick=home;var er=G("er");if(er)er.onclick=function(){drill("e")};
+ Array.prototype.forEach.call(A.querySelectorAll(".wbar"),function(r){r.onclick=function(){var x=cur[+r.dataset.i];G("bt").textContent=WD[x.d.getDay()]+", "+x.d.getDate()+"."+(x.d.getMonth()+1)+".: "+x.n+" Aufgaben"+(x.a[1]?" · "+Math.round(x.a[0]/x.a[1]*100)+" % richtig":"")}})}
+
+/* ---- Aktive Karteikarten ---- */
+function ansList(k,d){var a=cardAns(k,{d:d}),j=norm(k.replace(/\([^)]*\)/g,""));if(j&&a.indexOf(j)<0)a.push(j);return a}
+function cardAns(k,c){var o=[];k.replace(/\([^)]*\)/g,"").split(" / ").forEach(function(s){s=norm(s);if(!s)return;o.push(s);var t=s.replace(/^(o|a|os|as|um|uma) /,"");if(t!==s)o.push(t)});return o.concat((P.alt||{})[c.d]||[])}
+function revBar(){return'<div class="seg"><button data-rm="0" class="'+(P.rm===1?'':'on')+'">Aufdecken</button><button data-rm="1" class="'+(P.rm===1?'on':'')+'">Tippen</button></div>'}
+function revBind(){Array.prototype.forEach.call(A.querySelectorAll("[data-rm]"),function(b){b.onclick=function(){P.rm=+b.dataset.rm;save();rev()}});G("bk").onclick=hub}
+function revGrade(c,g){var r=calc(c,g);c.ease=r.ease;c.iv=r.iv;c.n++;c.due=Date.now()+(r.m?60000:r.iv*86400000);mark();cnt();rev()}
+function rev(){tb(1);var q=due(),h='<button class="back" id="bk">‹ Wiederholen</button>'+revBar();
+ if(!q.length){A.innerHTML=h+'<div class="card"><div class="big">Alles wiederholt 🎉</div><p class="mut" style="text-align:center">Aktuell ist keine Karte fällig.</p></div>';revBind();return}
+ var k=q[0],c=P.srs[k],typed=P.rm===1&&k.indexOf("…")<0;
+ if(typed){A.innerHTML=h+'<div class="card"><div class="tag">Wiederholung · '+q.length+' fällig · Tippen</div><div class="mut">Wie heißt das auf Portugiesisch?</div><div class="big">'+esc(c.d)+'</div><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off"><button class="btn p" id="ck">Prüfen</button><div class="fb" id="fb"></div><div id="rv"></div></div>';revBind();
+  var inp=G("in"),gr=function(extra){var L=["Nochmal","Schwer","Gut","Leicht"];return L.map(function(x,g){if(g===0&&!extra)return"";if(g===0)return"";var r=calc(c,g);return'<button class="btn" data-g="'+g+'">'+x+' <span class="mut">· '+(r.m?'1 Min.':r.iv+' T.')+'</span></button>'}).join("")},
+  done=function(){var rv=G("rv"),v=norm(inp.value),as=cardAns(k,c),right=as.indexOf(v)>=0||as.some(function(a){return a.length>5&&lev(a,v)<2});stt("c",right);inp.disabled=true;G("ck").hidden=true;say(c.s||k);var f=G("fb");f.innerHTML=(right?"✓ Richtig. ":"✗ Nicht ganz. ")+"<b>"+esc(k)+"</b>";f.style.color=right?"var(--ok)":"var(--bad)";
+   if(right)rv.innerHTML=gr(1);else{rv.innerHTML='<button class="btn" id="nc">Weiter (kommt gleich wieder)</button>'+(v?'<button class="btn" id="al">✓ Meine Antwort war auch richtig</button>':'');G("nc").onclick=function(){revGrade(c,0)};if(v)G("al").onclick=function(){P.alt=P.alt||{};(P.alt[c.d]=P.alt[c.d]||[]).push(v);save();f.innerHTML="✓ Gespeichert – diese Antwort gilt künftig.";f.style.color="var(--ok)";rv.innerHTML=gr(1);bindG()}}
+   bindG()},
+  bindG=function(){Array.prototype.forEach.call(G("rv").querySelectorAll("[data-g]"),function(b){b.onclick=function(){revGrade(c,+b.dataset.g)}})};
+  G("ck").onclick=done;inp.onkeydown=function(e){if(e.key==="Enter"&&!G("ck").hidden)done()};inp.focus();return}
+ var R=c.n>1&&Math.random()<.35;
+ A.innerHTML=h+'<div class="card"><div class="tag">Wiederholung · '+q.length+' fällig</div><div class="big">'+(R?c.d:k)+'</div>'+(R?'':'<button class="btn" id="pl">🔊 Anhören</button>')+'<div id="rv"></div></div>';revBind();var pb=G("pl");if(pb){pb.onclick=function(){say(c.s||k)};say(c.s||k)}
+ var rv=G("rv");rv.innerHTML='<button class="btn p" id="sh">Übersetzung zeigen</button>';
+ G("sh").onclick=function(){var L=["Nochmal","Schwer","Gut","Leicht"];if(R)say(c.s||k);rv.innerHTML='<div class="big" style="color:var(--ac)">'+(R?k:c.d)+'</div>'+L.map(function(x,g){var r=calc(c,g);return'<button class="btn" data-g="'+g+'">'+x+' <span class="mut">· '+(r.m?'1 Min.':r.iv+' T.')+'</span></button>'}).join("");
+  Array.prototype.forEach.call(rv.querySelectorAll("[data-g]"),function(b){b.onclick=function(){revGrade(c,+b.dataset.g)}})}}
+
+home();
+</script>
+</body>
+</html>
