@@ -11,13 +11,14 @@
 <link rel="icon" type="image/png" href="icon-192.png?v=2">
 <title>Português (PT) lernen</title>
 <style>
-:root{--bg:#f6f5f1;--card:#fff;--tx:#1d1d1b;--mut:#6b6a66;--ac:#2f6f5e;--acx:#fff;--bd:#e2e0d9;--bad:#b3402f;--ok:#2f6f5e;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#f6f5f1;--card:#fff;--tx:#1d1d1b;--mut:#6b6a66;--ac:#2f6f5e;--acx:#fff;--bd:#e2e0d9;--bad:#b3402f;--ok:#2f6f5e}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161715;--card:#222320;--tx:#efeee9;--mut:#9a9890;--ac:#5fb59c;--acx:#10211b;--bd:#34352f;--bad:#e07a68;--ok:#5fb59c}}
 :root[data-theme="dark"]{--bg:#161715;--card:#222320;--tx:#efeee9;--mut:#9a9890;--ac:#5fb59c;--acx:#10211b;--bd:#34352f;--bad:#e07a68;--ok:#5fb59c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.45 -apple-system,system-ui,"Segoe UI",sans-serif;min-height:100vh}
-main{max-width:480px;margin:0 auto;padding:16px}
+/* Nur der Inhalt (main) scrollt, die Seite selbst nie: so kann iOS die Menüleiste nicht verschieben */
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+body{position:fixed;inset:0;margin:0;background:var(--bg);color:var(--tx);font:17px/1.45 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{position:absolute;inset:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,calc(50% - 224px)) 16px}
 h1{font-size:22px;margin:4px 0 2px}h2{font-size:15px;color:var(--mut);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.05em}
 .mut{color:var(--mut);font-size:14px}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px 18px;margin:12px 0}
@@ -49,7 +50,7 @@ input{border-radius:16px;padding:15px}input:focus{outline:2px solid var(--ac);ou
 .st div{border-radius:18px;box-shadow:var(--sh);border-color:transparent}
 main>*{animation:in .4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-main{padding-bottom:100px}
+main{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
 h2{color:var(--ac)}
 .btn.p{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 65%,#2e8f6b))}
 .bar i{background:linear-gradient(90deg,var(--ac),#2e8f6b)}
@@ -62,7 +63,7 @@ h2{color:var(--ac)}
 .cf{position:fixed;top:-14px;width:9px;height:14px;border-radius:2px;z-index:20;pointer-events:none;animation:cf 2.8s ease-in forwards}
 @keyframes cf{to{transform:translateY(105vh) rotate(720deg)}}
 @media (prefers-reduced-motion:reduce){.btn.cur{animation:none}}
-#tb{position:fixed;left:0;right:0;bottom:0;display:flex;gap:4px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 82%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--bd);z-index:5}
+#tb{position:absolute;left:0;right:0;bottom:0;display:flex;gap:4px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 82%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--bd);z-index:5}
 #tb button{flex:1;background:none;border:none;color:var(--mut);font:inherit;font-size:12px;padding:6px 0;border-radius:12px;transition:color .2s,background .2s}
 #tb button b{display:block;font-size:20px;font-weight:400}
 #tb button.on{color:var(--ac);background:color-mix(in srgb,var(--ac) 12%,transparent)}
@@ -81,7 +82,7 @@ select{width:100%;padding:12px;margin:6px 0;border-radius:16px;border:1px solid 
 .bb .fx{font-size:13px;margin-top:5px;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,.2)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .chips button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 12px;font:inherit;font-size:14px}
-.ci{display:flex;gap:8px;position:sticky;bottom:78px}.ci input{flex:1}.ci button{border:none;border-radius:16px;background:var(--ac);color:var(--acx);font:inherit;padding:0 18px}
+.ci{display:flex;gap:8px;position:sticky;bottom:0}.ci input{flex:1}.ci button{border:none;border-radius:16px;background:var(--ac);color:var(--acx);font:inherit;padding:0 18px}
 .seg{display:flex;gap:4px;background:var(--bd);padding:4px;border-radius:14px;margin:12px 0;overflow-x:auto}
 .seg button{flex:1;white-space:nowrap;border:none;background:none;color:var(--mut);font:inherit;font-size:13px;padding:8px 10px;border-radius:10px}
 .seg button.on{background:var(--card);color:var(--tx);box-shadow:var(--sh)}
@@ -94,7 +95,7 @@ select{width:100%;padding:12px;margin:6px 0;border-radius:16px;border:1px solid 
 :root{--bg:#f3f4fb;--card:#ffffff;--tx:#141a2e;--mut:#6a7189;--ac:#5b5bf0;--ac2:#8b5cf6;--acx:#fff;--bd:#e5e7f3;--bad:#e5484d;--ok:#12a594;--sh:0 1px 2px rgba(20,26,46,.04),0 10px 30px -10px rgba(60,60,160,.18);--r:22px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d17;--card:#151827;--tx:#eceefb;--mut:#8d93ad;--ac:#8b8bff;--ac2:#a78bfa;--acx:#0b0d17;--bd:#252a40;--bad:#ff7b80;--ok:#3dd6c3;--sh:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -12px rgba(0,0,0,.6)}}
 :root[data-theme="dark"]{--bg:#0b0d17;--card:#151827;--tx:#eceefb;--mut:#8d93ad;--ac:#8b8bff;--ac2:#a78bfa;--acx:#0b0d17;--bd:#252a40;--bad:#ff7b80;--ok:#3dd6c3;--sh:0 1px 0 rgba(255,255,255,.04) inset,0 14px 34px -12px rgba(0,0,0,.6)}
-body{background:radial-gradient(700px 380px at 90% -5%,color-mix(in srgb,var(--ac2) 20%,transparent),transparent),radial-gradient(600px 360px at -10% 8%,color-mix(in srgb,var(--ok) 14%,transparent),transparent),var(--bg);background-attachment:fixed;font-family:-apple-system,"SF Pro Text","Inter",system-ui,sans-serif;letter-spacing:-.005em}
+body{background:radial-gradient(700px 380px at 90% -5%,color-mix(in srgb,var(--ac2) 20%,transparent),transparent),radial-gradient(600px 360px at -10% 8%,color-mix(in srgb,var(--ok) 14%,transparent),transparent),var(--bg);font-family:-apple-system,"SF Pro Text","Inter",system-ui,sans-serif;letter-spacing:-.005em}
 h1{font:800 30px/1.1 -apple-system,"SF Pro Display","Inter",system-ui,sans-serif;letter-spacing:-.03em;margin:14px 0 6px}
 h2{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin:28px 0 10px}
 .big{font:700 28px/1.2 -apple-system,"SF Pro Display","Inter",system-ui,sans-serif;letter-spacing:-.02em}
@@ -117,11 +118,11 @@ input:focus,select:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4p
 #tb{left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:6px;border-radius:28px;border:1px solid color-mix(in srgb,var(--bd) 60%,transparent);background:color-mix(in srgb,var(--card) 78%,transparent);-webkit-backdrop-filter:blur(22px) saturate(1.6);backdrop-filter:blur(22px) saturate(1.6);box-shadow:0 18px 40px -14px rgba(30,30,90,.35)}
 #tb button{border-radius:22px;padding:7px 0;font-weight:600;font-size:11px}
 #tb button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
-main{padding-bottom:120px}
+main{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
 .rf{border-radius:20px;border:none}.seg{background:color-mix(in srgb,var(--ac) 10%,var(--bd));border-radius:16px}.seg button.on{background:var(--card);color:var(--ac);font-weight:700}
 .bb{border-radius:20px 20px 20px 6px;border:none}.bb.me{border-radius:20px 20px 6px 20px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
 .chips button{background:var(--card);box-shadow:var(--sh);border:none;color:var(--ac);font-weight:600}
-.ci{bottom:92px;padding:6px;background:color-mix(in srgb,var(--card) 85%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;box-shadow:var(--sh)}.ci input{border:none;background:transparent;box-shadow:none}.ci button{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-radius:16px;font-weight:650}
+.ci{bottom:0;padding:6px;background:color-mix(in srgb,var(--card) 85%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:22px;box-shadow:var(--sh)}.ci input{border:none;background:transparent;box-shadow:none}.ci button{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-radius:16px;font-weight:650}
 .bdg div{border-radius:20px}.nt{border-radius:14px}
 table{border-radius:14px}th{text-transform:uppercase;letter-spacing:.06em;font-size:11px}
 .back{font-weight:600;color:var(--ac);padding:6px 0}
@@ -601,6 +602,8 @@ var P={};try{P=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 try{Object.keys(P).forEach(function(k){if(/^\d+$/.test(k)&&P[k]>100)P[k]=100});if(P.kt)Object.keys(P.kt).forEach(function(k){if(P.kt[k]>100)P.kt[k]=100})}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){}}
 var A=document.getElementById("app"),li=0,ei=0,sc=0,tot=0,NAV=null,BK=null;
+/* iOS verschiebt beim Tippen mit Tastatur manchmal die ganze Seite und schiebt sie nicht zurück */
+document.addEventListener("focusout",function(){setTimeout(function(){if(window.scrollY||document.documentElement.scrollTop||document.body.scrollTop){window.scrollTo(0,0);document.body.scrollTop=0}},120)});
 function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim()}
 function say(t,slow){try{var u=new SpeechSynthesisUtterance(t);u.lang="pt-PT";var v=speechSynthesis.getVoices().filter(function(x){return x.lang.replace("_","-")==="pt-PT"})[0];v=dv(0)||v;if(v)u.voice=v;u.rate=(slow?0.5:1)*(P.rate||1);speechSynthesis.cancel();setTimeout(function(){speechSynthesis.speak(u)},80)}catch(e){}}
 function shuf(a){return a.map(function(v,i){return{v:v,i:i}}).sort(function(){return Math.random()-.5})}
@@ -660,7 +663,7 @@ function step(){tb(-1);
 }
 function fb(r,n){var f=document.getElementById("fb");f.textContent=(r?"✓ Richtig. ":"✗ Nicht ganz. ")+(n||"");f.style.color=r?"var(--ok)":"var(--bad)"}
 function next(){mark();cnt();var n=document.getElementById("nx");n.innerHTML='<button class="btn p" id="go">Weiter</button>';document.getElementById("go").onclick=function(){ei++;step()}}
-function fin(){if(li<0){vfin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");var was=P[li]>=PASS;if(P[li]==null||p>P[li])P[li]=p;if(p>=PASS&&!was){P.lp=P.lp||[];P.lp.push(ymd(new Date()));P.lp=P.lp.slice(-150)};if(p>=PASS)enroll();save();
+function fin(){if(li<0){vfin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;var was=P[li]>=PASS;if(P[li]==null||p>P[li])P[li]=p;if(p>=PASS&&!was){P.lp=P.lp||[];P.lp.push(ymd(new Date()));P.lp=P.lp.slice(-150)};if(p>=PASS)enroll();save();
  A.innerHTML='<div class="card'+(p>=100?' gold':'')+'"><div class="big">'+(p>=100?'Perfekt! 🏆':p>=PASS?'Lektion geschafft 🎉':'Noch nicht bestanden')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p>'+(p>=PASS?'':'<p class="mut" style="text-align:center">Für die nächste Lektion brauchst du mindestens '+PASS+' %. Übe die Lektion noch einmal.</p>')+'<button class="btn p" id="hm">Zur Übersicht</button><button class="btn" id="rp">Nochmal üben</button><button class="btn" id="ow">Übersicht ansehen</button></div>';
  if(p>=PASS)boom(p>=100);document.getElementById("hm").onclick=home;document.getElementById("ow").onclick=function(){ovw(0)};
  if(LS[li].pod){var d=document.createElement("div");d.className="card";d.innerHTML="<div class=tag>Transkript</div>"+LS[li].pod.map(function(t){return"<p>"+tap(t[0],t[1])+"<br><span class=mut>"+t[1]+"</span></p>"}).join("");A.appendChild(d)}document.getElementById("rp").onclick=function(){ei=0;sc=0;tot=0;rq();step()}}
@@ -687,7 +690,7 @@ function drill(m){var sr=P.srs||{},ks=Object.keys(sr),ex=[];if(m==="k"){rev();re
  if(m==="e"){var ix=exIndex();ex=Object.keys(P.err||{}).sort(function(a,b){return P.err[b]-P.err[a]}).map(function(k){return ix[k]}).filter(Boolean).slice(0,12)}
  if(ex.length<(m==="e"?1:3)){tb(1);A.innerHTML='<div class="card"><div class="big">Noch zu wenig</div><p class="mut" style="text-align:center">Hier ist noch nicht genug Material. Schließe Lektionen ab oder mache Fehler, dann füllt sich das hier.</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=hub;return}
  VL.ex=ex;BK=NAV;li=-1;ei=0;sc=0;tot=0;rq();step()}
-function vfin(){if(PLC){plcFin();return}if(KT){ktFin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");mark();if(p>=100)boom(1);tb(1);A.innerHTML='<div class="card"><div class="big">Geschafft 🎉</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=function(){(BK||hub)()}}
+function vfin(){if(PLC){plcFin();return}if(KT){ktFin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;mark();if(p>=100)boom(1);tb(1);A.innerHTML='<div class="card"><div class="big">Geschafft 🎉</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=function(){(BK||hub)()}}
 function refOv(){var h='<div class="mut" style="margin:8px 0">Alle Übersichten deiner freigeschalteten Lektionen</div><input id="rs" placeholder="Suchen (z. B. ser, Artikel, estar)" style="margin:12px 0"><div>',lv="";
  LS.forEach(function(l,i){if(!l.ov)return;var open=i===0||P[i-1]>=PASS;if(l.lv!==lv){lv=l.lv;h+='<h2>'+lv+'</h2>'}
   h+=open?'<details class="rf"><summary>'+(i+1)+'. '+l.t+'</summary>'+l.ov+'</details>':'<div class="mut rf" style="padding:12px 16px">🔒 '+(i+1)+'. nach Abschluss von Lektion '+i+'</div>'});
@@ -698,16 +701,11 @@ function tx0(e){if(e.k==="l")return{k:"m",tg:"Lesen statt Hören",q:e.p,o:e.o,a:
 function rq(){var l=cl();Q=l.ex.slice();Q.forEach(function(x){x._r=0})}
 function sk(p){return p>=100?" sg":p>=90?" s9":p>=80?" s8":p>=PASS?" s7":""}
 function col(k){return({c:"#2e8f6b",m:"#7b5cc4",l:"#e08a2c",d:"#e08a2c",p:"#e08a2c",q:"#e08a2c",r:"#2a7fc1",w:"#d6527a",o:"#7b5cc4",x:"#2e8f6b",t:"#2a7fc1"})[k]||"var(--ac)"}
-/* ---- Haptik ---- */
-var HP={t:0,l:null,pat:{tap:[0],ok:[0],no:[0,90],pass:[0,130,260],perfect:[0,60,120,180,300,420],fail:[0,260]},vib:{tap:[8],ok:[14],no:[40,50,40],pass:[20,60,20,60,30],perfect:[20,40,20,40,20,40,60],fail:[90,90,90]}};
-function hap1(){try{var l=HP.l;if(!l||!l.isConnected){l=HP.l=document.createElement("label");l.setAttribute("aria-hidden","true");l.style.cssText="position:fixed;left:-100px;top:0;width:2px;height:2px;opacity:0;pointer-events:none;overflow:hidden";var i=document.createElement("input");i.type="checkbox";i.setAttribute("switch","");i.tabIndex=-1;i.style.cssText="all:revert";l.appendChild(i);document.body.appendChild(l)}l.click()}catch(e){}}
-function hap(k){if(P.hap===0)return;try{if(navigator.vibrate&&!/iPhone|iPad|iPod/.test(navigator.userAgent)){navigator.vibrate(HP.vib[k]||[8]);return}}catch(e){}var sh=0;if(k!=="tap"&&Date.now()-HP.t<160)sh=110;if(k==="tap")HP.t=Date.now();(HP.pat[k]||[0]).forEach(function(t){t+=sh;if(t)setTimeout(hap1,t);else hap1()})}
-document.addEventListener("click",function(e){if(P.hap===0)return;var t=e.target&&e.target.closest&&e.target.closest("button,summary,label,a,[data-i],[data-g],[data-m]");if(!t||t.disabled||t===HP.l)return;hap("tap")},true);
 function boom(g){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;var C=g?["#f6c445","#fda085","#fff1b8","#e8772e","#2a7fc1"]:["#2e8f6b","#2a7fc1","#7b5cc4","#e8772e"],n=g?70:30;for(var i=0;i<n;i++){var s=document.createElement("i");s.className="cf";s.style.cssText="left:"+Math.random()*100+"vw;background:"+C[i%C.length]+";animation-delay:"+Math.random()*.8+"s;animation-duration:"+(2+Math.random()*1.6)+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),4500)}if(g&&!P.quiet)say("Parabéns!")}
 var IX=null;
 function ek(e){return e.k==="x"?"x|"+e.pairs[0][0]:(e.p||e.q||"")}
 function exIndex(){if(!IX){IX={};LS.forEach(function(l){if(l.pod)return;l.ex.forEach(function(e){if("mlodw".indexOf(e.k)<0)return;var k=ek(e);if(!IX[k]){IX[k]=e;var a=(P.alt||{})[k];if(a)e.a=(e.a||[]).concat(a)}})})}return IX}
-function good(e){hap("ok");sg(e,2);unerr(e);stt(e.k,1);ktr(e,1)}
+function good(e){sg(e,2);unerr(e);stt(e.k,1);ktr(e,1)}
 function unerr(e){var k=ek(e);if(P.err&&P.err[k]){P.err[k]--;if(P.err[k]<1)delete P.err[k];save()}}
 function sg(e,g){var c=e.srs&&P.srs&&P.srs[e.srs];if(!c)return;var r=calc(c,g);c.ease=r.ease;c.iv=r.iv;c.n++;c.due=Date.now()+(r.m?60000:r.iv*86400000)}
 function alt(e,v){e.a.push(v);P.alt=P.alt||{};var k=ek(e);(P.alt[k]=P.alt[k]||[]).push(v);save()}
@@ -727,7 +725,7 @@ function dv(i){var a=pv(),n=P["v"+(i%2)],s=a.filter(function(x){return x.name===
 function vsel(){var a=pv();[0,1].forEach(function(i){var s=document.getElementById("v"+i);if(!s)return;s.innerHTML="";a.forEach(function(v){var o=document.createElement("option");o.value=v.name;o.textContent=v.name+" ("+v.lang.replace("_","-")+")"+(vq(v)===2?" ★ hohe Qualität":"");s.appendChild(o)});var d=dv(i);if(d)s.value=d.name;s.onchange=function(){P["v"+i]=s.value;save()}})}
 var Q=[];
 function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++)m[i]=[i];for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]}
-function retry(e){hap("no");var k=ek(e);if(e.k!=="q"&&e.k!=="x"&&exIndex()[k]){P.err=P.err||{};P.err[k]=(P.err[k]||0)+1}if(!e._r){sg(e,0);stt(e.k,0);ktr(e,0);e._r=1;Q.push(e)}save()}
+function retry(e){var k=ek(e);if(e.k!=="q"&&e.k!=="x"&&exIndex()[k]){P.err=P.err||{};P.err[k]=(P.err[k]||0)+1}if(!e._r){sg(e,0);stt(e.k,0);ktr(e,0);e._r=1;Q.push(e)}save()}
 LS.forEach(function(l){if(l.pod)return;var ex=[];l.ex.filter(function(e){return e.k==="l"}).forEach(function(e,i){ex.push(i%2&&e.p.split(" ").length>2?{k:"o",q:e.o[e.a],p:e.p}:{k:"d",p:e.p})});
  var cs=l.ex.filter(function(e){return e.k==="c"&&e.p.indexOf("/")<0&&e.d.indexOf("/")<0&&e.p.indexOf("…")<0}).slice(0,4);
  var wi=l.ex.findIndex(function(e){return e.k==="w"});if(wi<0)wi=l.ex.length;l.ex.splice.apply(l.ex,[wi,0].concat(ex));
@@ -955,15 +953,15 @@ function refBR(){var h='<div class="mut" style="margin:12px 0">Wo sich Portugal 
 
 /* ---- Einstellungen, Sicherung, Einstufung ---- */
 function dlFile(){var b=new Blob([JSON.stringify(P)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="portugues-fortschritt.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},3000)}
-function settings(){tb(0);A.innerHTML='<button class="back" id="bk">‹ Start</button><h1>Einstellungen</h1><h2>Sprache & Stimme</h2><div class="row mut"><span>Sprechtempo</span><select id="sr" style="width:auto;margin:0"><option value="0.8">langsamer</option><option value="1">normal</option><option value="1.15">schneller</option></select></div><h2>Stimmen</h2><div class="mut">Stimme 1 · Standard und Rita im Podcast</div><select id="v0"></select><button class="btn" id="vt0">🔊 Probehören</button><div class="mut">Stimme 2 · Pedro im Podcast</div><select id="v1"></select><button class="btn" id="vt1">🔊 Probehören</button><button class="btn" id="vr">🔄 Stimmen neu laden</button><div class="mut" id="vn"></div><div class="nt">Neu heruntergeladene Stimmen erscheinen manchmal erst nach einem Neustart der App (Home-Bildschirm-App schließen und neu öffnen). Hat dein iPhone nur eine portugiesische Stimme, klingen beide gleich. Mehr Stimmen: Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Português.</div>'+aiSet()+'<h2>Lernen</h2><div class="row mut"><span>Tagesziel (Aufgaben)</span><select id="sg" style="width:auto;margin:0"><option>10</option><option>20</option><option>30</option><option>50</option></select></div><label class="row mut" style="margin:10px 0"><span>🔇 Leise-Modus</span><input type="checkbox" id="sq" style="width:auto;margin:0"></label><label class="row mut" style="margin:10px 0"><span>📳 Haptisches Feedback</span><input type="checkbox" id="shp" style="width:auto;margin:0"></label><div class="nt">Kurze Vibrationen beim Antippen, bei richtigen und falschen Antworten und am Ende einer Lektion. Auf dem iPhone ab iOS 17.4 (Einstellungen → Töne & Haptik → Systemhaptik muss aktiv sein). Funktioniert in Safari und in der Home-Bildschirm-App, nicht im Claude-Artefakt.</div><button class="btn" id="hpt">📳 Haptik testen</button><div class="mut" id="hpn"></div><h2>Design</h2><div class="row mut"><span>Darstellung</span><select id="sth" style="width:auto;margin:0"><option value="">automatisch</option><option value="light">hell</option><option value="dark">dunkel</option></select></div><h2>App</h2><div class="mut">Version 20.10.2026 · KI-Chat</div><button class="btn" id="rl">🔄 App aktualisieren (Zwischenspeicher leeren)</button><h2>Sicherung</h2><button class="btn" id="sd1">⬇️ Fortschritt als Datei speichern</button><button class="btn" id="sd2">⬆️ Aus Datei wiederherstellen</button><input type="file" id="sf" accept=".json,application/json" hidden><button class="btn" id="sx" style="color:var(--bad)">Fortschritt zurücksetzen</button>';
+function settings(){tb(0);A.innerHTML='<button class="back" id="bk">‹ Start</button><h1>Einstellungen</h1><h2>Sprache & Stimme</h2><div class="row mut"><span>Sprechtempo</span><select id="sr" style="width:auto;margin:0"><option value="0.8">langsamer</option><option value="1">normal</option><option value="1.15">schneller</option></select></div><h2>Stimmen</h2><div class="mut">Stimme 1 · Standard und Rita im Podcast</div><select id="v0"></select><button class="btn" id="vt0">🔊 Probehören</button><div class="mut">Stimme 2 · Pedro im Podcast</div><select id="v1"></select><button class="btn" id="vt1">🔊 Probehören</button><button class="btn" id="vr">🔄 Stimmen neu laden</button><div class="mut" id="vn"></div><div class="nt">Neu heruntergeladene Stimmen erscheinen manchmal erst nach einem Neustart der App (Home-Bildschirm-App schließen und neu öffnen). Hat dein iPhone nur eine portugiesische Stimme, klingen beide gleich. Mehr Stimmen: Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Português.</div>'+aiSet()+'<h2>Lernen</h2><div class="row mut"><span>Tagesziel (Aufgaben)</span><select id="sg" style="width:auto;margin:0"><option>10</option><option>20</option><option>30</option><option>50</option></select></div><label class="row mut" style="margin:10px 0"><span>🔇 Leise-Modus</span><input type="checkbox" id="sq" style="width:auto;margin:0"></label><h2>Design</h2><div class="row mut"><span>Darstellung</span><select id="sth" style="width:auto;margin:0"><option value="">automatisch</option><option value="light">hell</option><option value="dark">dunkel</option></select></div><h2>App</h2><div class="mut">Version 21.10.2026 · KI-Chat</div><button class="btn" id="rl">🔄 App aktualisieren (Zwischenspeicher leeren)</button><h2>Sicherung</h2><button class="btn" id="sd1">⬇️ Fortschritt als Datei speichern</button><button class="btn" id="sd2">⬆️ Aus Datei wiederherstellen</button><input type="file" id="sf" accept=".json,application/json" hidden><button class="btn" id="sx" style="color:var(--bad)">Fortschritt zurücksetzen</button>';
  G("sr").value=String(P.rate||1);var vc=function(){try{speechSynthesis.getVoices()}catch(e){}vsel();var n=pv();G("vn").textContent=n.length?n.length+" portugiesische Stimme(n) gefunden: "+n.map(function(v){return v.name}).join(", "):"Keine portugiesische Stimme gefunden."};vc();setTimeout(vc,800);G("vr").onclick=function(){vc();setTimeout(vc,600)};G("vt0").onclick=function(){sayV(0,"Olá! Eu sou a Rita. Vamos aprender português.")};G("vt1").onclick=function(){sayV(1,"Olá! Eu sou o Pedro. Vamos aprender português.")};G("sg").value=String(P.goal||10);G("sq").checked=!!P.quiet;G("sth").value=P.theme||"";
- G("bk").onclick=home;G("sr").onchange=function(){P.rate=+this.value;save();say("Olá, vamos aprender português")};G("sg").onchange=function(){P.goal=+this.value;save()};G("sq").onchange=function(){P.quiet=this.checked?1:0;save()};G("hpt").onclick=function(){var was=P.hap;P.hap=1;hap("perfect");P.hap=was;G("hpn").textContent="Hast du etwas gespürt? Wenn nicht: Läuft die App in Safari oder als Home-Bildschirm-App (nicht im Claude-Artefakt), ist iOS 17.4 oder neuer installiert und ist Einstellungen → Töne & Haptik → Systemhaptik an?"};G("shp").checked=P.hap!==0;G("shp").onchange=function(){P.hap=this.checked?1:0;save();if(P.hap)hap("ok")};G("sth").onchange=function(){P.theme=this.value;save();applyTheme()};
+ G("bk").onclick=home;G("sr").onchange=function(){P.rate=+this.value;save();say("Olá, vamos aprender português")};G("sg").onchange=function(){P.goal=+this.value;save()};G("sq").onchange=function(){P.quiet=this.checked?1:0;save()};G("sth").onchange=function(){P.theme=this.value;save();applyTheme()};
  G("rl").onclick=function(){this.textContent="Lade neu …";var go=function(){location.href=location.pathname+"?v="+Date.now()};try{Promise.all([navigator.serviceWorker.getRegistrations().then(function(r){return Promise.all(r.map(function(x){return x.unregister()}))}),caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))})]).then(go,go)}catch(e){go()}};G("sd1").onclick=dlFile;G("sd2").onclick=function(){G("sf").click()};
  G("sf").onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var o=JSON.parse(r.result);if(o&&typeof o==="object"){P=o;save();applyTheme();home()}}catch(e){alert("Die Datei konnte nicht gelesen werden.")}};r.readAsText(f)};
  aiWire();G("sx").onclick=function(){if(confirm("Wirklich den gesamten Fortschritt löschen?")){P={};save();applyTheme();home()}}}
 function sayV(i,t){try{var u=new SpeechSynthesisUtterance(t);u.lang="pt-PT";var v=dv(i);if(v)u.voice=v;u.rate=P.rate||1;u.pitch=i%2?0.8:1.25;speechSynthesis.cancel();setTimeout(function(){speechSynthesis.speak(u)},80)}catch(e){}}
 function placement(){var pool=[];LS.forEach(function(l){if(l.pod||l.lv!=="A1")return;l.ex.forEach(function(e){if(e.k==="m"||e.k==="w"||e.k==="l"||e.k==="r")pool.push(e)})});var ex=shuf(pool).slice(0,16).map(function(x){return x.v});PLC=1;go(ex)}
-function plcFin(){PLC=0;var p=tot?Math.min(100,Math.round(sc/tot*100)):100,ok=p>=85;hap(p>=100?"perfect":ok?"pass":"fail");mark();tb(0);
+function plcFin(){PLC=0;var p=tot?Math.min(100,Math.round(sc/tot*100)):100,ok=p>=85;mark();tb(0);
  A.innerHTML='<div class="card"><div class="big">'+(ok?'Sehr gut! 🎯':'Gute Basis')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><p class="mut" style="text-align:center">'+(ok?'Du beherrschst den A1-Stoff schon sehr gut. Du kannst alle A1-Lektionen als bestanden markieren. Die Wörter kommen verteilt in die Wiederholung.':'Zum Überspringen brauchst du mindestens 85 %. Starte am besten mit Lektion 1 und arbeite dich nach vorn.')+'</p>'+(ok?'<button class="btn p" id="pk">A1 freischalten</button>':'')+'<button class="btn" id="hm">Zur Übersicht</button></div>';
  G("hm").onclick=home;if(ok)G("pk").onclick=function(){var old=li;P.srs=P.srs||{};var before={};Object.keys(P.srs).forEach(function(k){before[k]=1});LS.forEach(function(l,i){if(l.lv!=="A1")return;P[i]=Math.max(P[i]||0,80);li=i;enroll()});li=old;Object.keys(P.srs).forEach(function(k){if(!before[k])P.srs[k].due=Date.now()+(1+Math.random()*6)*864e5});save();boom(1);home()}}
 
@@ -1040,7 +1038,7 @@ function botView(go){var cx=G("cx");if(CH.mode!=="ai"&&!CH.slog.length){CH.log=C
  else{Object.keys(CT).forEach(function(k){var b=document.createElement("button");b.textContent=CT[k].ic+" "+CT[k].t;b.onclick=function(){startTopic(k)};tp.appendChild(b)});
   var r=document.createElement("button");r.textContent="🎲 Thema vorschlagen";r.onclick=suggestTopic;tp.appendChild(r)}
  G("csend").onclick=chatSend;G("cin").onkeydown=function(e){if(e.key==="Enter")chatSend()};paintBot();if(ai&&!CH.alog.length&&!CH.busy)aiTurn()}
-function paintBot(){var m=G("cmsg");if(!m)return;m.innerHTML=bubs(CH.log)+(CH.busy?'<div class="bb bot"><div>…</div></div>':'');wire(m);var s=G("csg");s.innerHTML="";var last=CH.log[CH.log.length-1];if(last&&last.who==="bot"&&last.sug&&!CH.busy)last.sug.forEach(function(x){var b=document.createElement("button");b.textContent=x;b.onclick=function(){G("cin").value=x;G("cin").focus()};s.appendChild(b)});if(last&&last.who==="sys"&&last.retry&&!CH.busy){var rb=document.createElement("button");rb.textContent="🔄 Nochmal versuchen";rb.onclick=function(){CH.alog.pop();aiTurn()};s.appendChild(rb)}window.scrollTo(0,document.body.scrollHeight)}
+function paintBot(){var m=G("cmsg");if(!m)return;m.innerHTML=bubs(CH.log)+(CH.busy?'<div class="bb bot"><div>…</div></div>':'');wire(m);var s=G("csg");s.innerHTML="";var last=CH.log[CH.log.length-1];if(last&&last.who==="bot"&&last.sug&&!CH.busy)last.sug.forEach(function(x){var b=document.createElement("button");b.textContent=x;b.onclick=function(){G("cin").value=x;G("cin").focus()};s.appendChild(b)});if(last&&last.who==="sys"&&last.retry&&!CH.busy){var rb=document.createElement("button");rb.textContent="🔄 Nochmal versuchen";rb.onclick=function(){CH.alog.pop();aiTurn()};s.appendChild(rb)}A.scrollTop=A.scrollHeight}
 function suggestTopic(){var ks=Object.keys(CT).filter(function(k){return k!==CH.topic}),k=ks[Math.floor(Math.random()*ks.length)];botSay({pt:"Que tal falarmos "+CT[k].pt+"?",de:"Wie wäre es, wenn wir über dieses Thema sprechen: "+CT[k].t+"?"});startTopic(k)}
 function startTopic(k){CH.topic=k;CH.tn=0;CH.hist=[];var q=CT[k].q[0];botSay({pt:"Vamos falar "+CT[k].pt+". "+q[0],de:"Sprechen wir über: "+CT[k].t+". "+q[1],sug:q[2]});paintBot()}
 function chatSend(){var inp=G("cin"),t=inp.value.trim();if(!t||CH.busy)return;inp.value="";if(CH.mode==="ai"){if(!aiOn()||!CH.role)return;CH.alog.push({who:"me",pt:t});P.chm=(P.chm||0)+1;mark();save();aiTurn();return}var me={who:"me",pt:t,fix:fixPT(t)};CH.log.push(me);P.chm=(P.chm||0)+1;mark();save();scriptTurn(t);paintBot()}
@@ -1108,16 +1106,16 @@ function numMenu(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederhol
 function znext(){tb(-1);if(ZN.i>=ZN.n){zfin();return}var q=zq(ZN.k);ZN.q=q;var T={n1:"Zahlen",n2:"Zahlen",n3:"Zahlen",tm:"Uhrzeit",pr:"Preise",dt:"Datum"}[ZN.k];
  A.innerHTML='<button class="back" id="bk">‹ Zahlen & Uhrzeit</button><div class="bar"><i style="width:'+Math.round(ZN.i/ZN.n*100)+'%"></i></div><div class="card" style="border-top:5px solid #e08a2c"><div class="tag" style="color:#e08a2c">'+T+'</div><div class="mut">'+q.h+'</div><div class="ctl"><button id="pl">🔊 Abspielen</button><button id="sl">🐢 Langsam</button><button class="cb skip" id="tt">👁 Text zeigen</button></div><div class="big" id="txt" hidden style="font-size:22px">'+esc(q.t)+'</div><input id="zin" inputmode="decimal" autocomplete="off" autocapitalize="off"><button class="btn p" id="ck">Prüfen</button><div class="fb" id="fb"></div></div><div id="nx"></div>';
  G("bk").onclick=numMenu;G("pl").onclick=function(){say(q.t)};G("sl").onclick=function(){say(q.t,1)};G("tt").onclick=function(){G("txt").hidden=false;this.hidden=true};if(P.quiet){G("txt").hidden=false;G("tt").hidden=true}else say(q.t);
- var chk=function(){var ok=zcheck(q,G("zin").value);hap(ok?"ok":"no");stt("n",ok);if(ok)ZN.ok++;G("zin").disabled=true;G("ck").hidden=true;G("txt").hidden=false;var f=G("fb");f.innerHTML=(ok?"✓ Richtig. ":"✗ Nicht ganz. ")+"<b>"+esc(q.fmt)+"</b> – "+esc(q.t);f.style.color=ok?"var(--ok)":"var(--bad)";mark();cnt();
+ var chk=function(){var ok=zcheck(q,G("zin").value);stt("n",ok);if(ok)ZN.ok++;G("zin").disabled=true;G("ck").hidden=true;G("txt").hidden=false;var f=G("fb");f.innerHTML=(ok?"✓ Richtig. ":"✗ Nicht ganz. ")+"<b>"+esc(q.fmt)+"</b> – "+esc(q.t);f.style.color=ok?"var(--ok)":"var(--bad)";mark();cnt();
   var nx=G("nx");nx.innerHTML='<button class="btn p" id="go">Weiter</button>';G("go").onclick=function(){ZN.i++;znext()};G("go").focus()};
  G("ck").onclick=chk;G("zin").onkeydown=function(e){if(e.key==="Enter")chk()};if(P.quiet)G("zin").focus()}
-function zfin(){hap(ZN.ok===ZN.n?"perfect":ZN.ok/ZN.n>=.7?"pass":"fail");mark();P.nr=(P.nr||0)+1;save();tb(1);if(ZN.ok===ZN.n)boom(1);A.innerHTML='<div class="card'+(ZN.ok===ZN.n?' gold':'')+'"><div class="big">'+(ZN.ok===ZN.n?'Perfekt! 🏆':'Runde geschafft 🎉')+'</div><p style="text-align:center">'+ZN.ok+' von '+ZN.n+' richtig</p><button class="btn p" id="ag">Noch eine Runde</button><button class="btn" id="bk">Zurück</button></div>';
+function zfin(){mark();P.nr=(P.nr||0)+1;save();tb(1);if(ZN.ok===ZN.n)boom(1);A.innerHTML='<div class="card'+(ZN.ok===ZN.n?' gold':'')+'"><div class="big">'+(ZN.ok===ZN.n?'Perfekt! 🏆':'Runde geschafft 🎉')+'</div><p style="text-align:center">'+ZN.ok+' von '+ZN.n+' richtig</p><button class="btn p" id="ag">Noch eine Runde</button><button class="btn" id="bk">Zurück</button></div>';
  var k=ZN.k;G("ag").onclick=function(){ZN={k:k,i:0,ok:0,n:10};znext()};G("bk").onclick=numMenu}
 
 /* ---- Kapiteltest ---- */
 function ktBtn(lv){var r=lvs(lv);if(!r[0])return"";var b=(P.kt||{})[lv];if(r[0]!==r[1])return'<div class="mut" style="padding:8px 4px">📝 Kapiteltest '+lv+': nach allen Lektionen</div>';return'<button class="btn p" data-kt="'+lv+'">📝 Kapiteltest '+lv+(b!=null?' <span style="opacity:.8">· Bestwert '+b+' %</span>':'')+'</button>'}
 function ktStart(lv){var ex=[];LS.forEach(function(l,i){if(l.lv!==lv||l.pod)return;shuf(l.ex.filter(function(e){return"mwldor".indexOf(e.k)>=0})).slice(0,2).forEach(function(x){var c=Object.assign({},x.v);c._lt=i;ex.push(c)})});KT={lv:lv,t:{}};go(shuf(ex).map(function(x){return x.v}))}
-function ktFin(){var lv=KT.lv,t=KT.t,p=tot?Math.min(100,Math.round(sc/tot*100)):100;hap(p>=100?"perfect":p>=PASS?"pass":"fail");P.kt=P.kt||{};if(P.kt[lv]==null||p>P.kt[lv])P.kt[lv]=p;mark();save();KT=null;tb(0);if(p>=PASS)boom(p>=100);
+function ktFin(){var lv=KT.lv,t=KT.t,p=tot?Math.min(100,Math.round(sc/tot*100)):100;P.kt=P.kt||{};if(P.kt[lv]==null||p>P.kt[lv])P.kt[lv]=p;mark();save();KT=null;tb(0);if(p>=PASS)boom(p>=100);
  var rows=Object.keys(t).map(function(i){return{i:+i,a:t[i][0],b:t[i][1],p:t[i][1]?Math.round(t[i][0]/t[i][1]*100):100}}).sort(function(x,y){return x.p-y.p});
  var h='<div class="card'+(p>=100?' gold':'')+'"><div class="big">'+(p>=100?'Perfekt! 🏆':p>=PASS?'Kapiteltest bestanden 🎓':'Noch nicht bestanden')+'</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p></div><h2>Auswertung nach Themen</h2>';
  rows.forEach(function(r){var bad=r.p<PASS;h+='<div class="card" style="padding:14px 16px;margin:8px 0"><div class="row"><span>'+(r.i+1)+'. '+esc(LS[r.i].t)+'</span><span class="mut">'+r.a+'/'+r.b+'</span></div><div class="bar" style="margin-top:8px"><i style="width:'+r.p+'%;'+(bad?'background:var(--bad)':'')+'"></i></div>'+(bad?'<button class="btn" style="margin:10px 0 0;padding:10px 14px" data-w="'+r.i+'">Lektion wiederholen</button>':'')+'</div>'});
@@ -1450,10 +1448,10 @@ function stats(){var V=["A1","A2","B1","B2","C1"],sr=P.srs||{},ks=Object.keys(sr
  h+='<div class="wkc"><div class="row"><b>Lernpfad</b><span class="mut">Kapitel fertig: '+cd+'/5</span></div>';
  V.forEach(function(v){var r=lvs(v);h+='<button class="lr" data-l="'+v+'"><div class="row"><span>'+(LT[v]||v)+'</span><span class="mut">'+(r[0]?r[1]+'/'+r[0]+' ›':'in Planung ›')+'</span></div><div class="bar"><i style="width:'+(r[0]?Math.round(r[1]/r[0]*100):0)+'%"></i></div></button>'});
  return h+'</div>'}
-function wireStats(){var e;if(e=G("tl1"))e.onclick=function(){calScreen()};if(e=G("tl2"))e.onclick=function(){wordsScreen("all");window.scrollTo(0,0)};if(e=G("tl3"))e.onclick=function(){lessonsScreen()};
+function wireStats(){var e;if(e=G("tl1"))e.onclick=function(){calScreen()};if(e=G("tl2"))e.onclick=function(){wordsScreen("all");A.scrollTop=0};if(e=G("tl3"))e.onclick=function(){lessonsScreen()};
  Array.prototype.forEach.call(A.querySelectorAll(".dc"),function(b){b.onclick=function(){calScreen(b.dataset.d)}});
  Array.prototype.forEach.call(A.querySelectorAll(".lr"),function(b){b.onclick=function(){lessonsScreen(b.dataset.l)}})}
-function calScreen(sel){tb(0);window.scrollTo(0,0);var d=sel?pday(sel):new Date();CAL={y:d.getFullYear(),m:d.getMonth(),sel:sel||ymd(new Date())};calPaint()}
+function calScreen(sel){tb(0);A.scrollTop=0;var d=sel?pday(sel):new Date();CAL={y:d.getFullYear(),m:d.getMonth(),sel:sel||ymd(new Date())};calPaint()}
 function calPaint(){var S=dset(),now=new Date(),td=ymd(now),H=P.hist||{},HA=P.ha||{},y=CAL.y,m=CAL.m,all=Object.keys(S).map(pday).sort(function(a,b){return a-b}),
  mn=all.length?new Date(all[0].getFullYear(),all[0].getMonth(),1):new Date(now.getFullYear(),now.getMonth(),1),mx=new Date(now.getFullYear(),now.getMonth(),1),cur=new Date(y,m,1),
  first=(cur.getDay()+6)%7,nd=new Date(y,m+1,0).getDate(),cells="",cnt=0,i;
@@ -1490,7 +1488,7 @@ function lessonsScreen(lv){tb(0);var pf=LS.filter(function(l,i){return P[i]!=nul
   h+='<button class="btn'+(open?'':' lock')+(i===cu?' cur':'')+(P[i]!=null?sk(P[i]):'')+'" data-q="'+i+'"'+(open?'':' disabled')+'><div class="row"><span class="ln"><em>'+(i+1)+'</em>'+l.t+'</span><span class="mut">'+(P[i]!=null?(P[i]>=100?'<span class="gd">🏆 100%</span>':(P[i]>=PASS?'✓ ':'↻ ')+Math.round(P[i])+'%'):open?(i===cu?'Weiter ▶':'Start'):'🔒')+'</span></div></button>'});
  h+='</div>';OUT.forEach(function(o){h+='<div id="lv-'+o[0]+'"><h2>'+o[0]+'</h2><div class="card" style="padding:16px;text-align:left"><b>in Planung</b><div class="mut sm">'+o[1]+'</div></div></div>'});
  A.innerHTML=h;G("bk").onclick=home;Array.prototype.forEach.call(A.querySelectorAll("[data-q]"),function(b){b.onclick=function(){li=+b.dataset.q;ei=0;sc=0;tot=0;ovw(1)}});
- if(lv){var e=G("lv-"+lv);if(e)setTimeout(function(){e.scrollIntoView()},30)}else window.scrollTo(0,0)}
+ if(lv){var e=G("lv-"+lv);if(e)setTimeout(function(){e.scrollIntoView()},30)}else A.scrollTop=0}
 
 ["numMenu","packs","dialogs","stories"].forEach(function(nm){var f=window[nm];window[nm]=function(){var r=f.apply(this,arguments);NAV=window[nm];return r}});
 home();
