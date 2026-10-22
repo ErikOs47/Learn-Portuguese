@@ -637,7 +637,7 @@ function step(){tb(-1);
  if(e.k==="d")h+='<div class="mut">Höre zu und schreibe, was du hörst:</div><button class="btn p" id="pl">🔊 Abspielen</button><button class="btn" id="sl">🐢 Langsam</button><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false"><button class="btn p" id="ck">Prüfen</button>';
  if(e.k==="o")h+='<div class="mut">Setze den Satz zusammen (Antwort antippen = zurücksetzen):</div><div class="big">'+e.q+'</div><div class="card" id="ans" style="min-height:56px;padding:12px;margin:8px 0;text-align:center"></div><div id="chips" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center"></div><button class="btn p" id="ck">Prüfen</button>';
  if(e.k==="x")h+='<div class="mut">Tippe die zusammengehörigen Paare an</div><div id="mx" style="margin-top:10px"></div>';
- if(e.k==="w")h+='<div class="mut">Schreibe auf Portugiesisch:</div><div class="big">'+e.q+'</div><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false"><button class="btn p" id="ck">Prüfen</button>';
+ if(e.k==="w")h+='<div class="mut">'+(e.dn?"Übersetze ins Deutsche:":"Schreibe auf Portugiesisch:")+'</div><div class="big">'+e.q+'</div><input id="in" autocapitalize="off" autocorrect="off" spellcheck="false"><button class="btn p" id="ck">Prüfen</button>';
  h+='<div class="fb" id="fb"></div></div><div id="nx"></div>';
  A.innerHTML=h;
  document.getElementById("bk").onclick=function(){(li<0&&BK||home)()};
@@ -666,7 +666,7 @@ function step(){tb(-1);
    if(!right)Array.prototype.forEach.call(op.children,function(c){if(c.textContent===e.o[e.a])c.classList.add("ok")});
    fb(right,e.n);next()};op.appendChild(b)})}
  if(e.k==="w"||e.k==="d"){if(!e._r)tot++;var inp=document.getElementById("in");document.getElementById("ck").onclick=function(){
-  var v=norm(inp.value),right=e.a.indexOf(v)>=0,near=!right&&e.a.some(function(a){return a.length>5&&lev(a,v)<2});var fst=!e._r,ob=null;if(right||near){if(fst){sc=Math.min(sc+1,tot);good(e)}}else{retry(e);if(v&&e.k==="w"){ob=document.createElement("button");ob.className="btn";ob.textContent="✓ Meine Antwort war auch richtig";ob.onclick=function(){alt(e,v);if(fst){sc=Math.min(sc+1,tot);var qi=Q.lastIndexOf(e);if(qi>ei)Q.splice(qi,1);unerr(e)}ob.remove();fb(true,"Gespeichert – diese Antwort gilt künftig.")}}}inp.disabled=true;this.hidden=true;fb(right||near,(near?"Fast – achte auf die Schreibweise. ":"")+(e.n||""));next();if(ob)document.getElementById("nx").appendChild(ob)}}
+  var v=(e.dn?dnorm:norm)(inp.value),right=e.a.indexOf(v)>=0,near=!right&&e.a.some(function(a){return e.dn?a.length>3&&lev(a,v)<=Math.max(1,Math.floor(a.length/7)):a.length>5&&lev(a,v)<2});var fst=!e._r,ob=null;if(right||near){if(fst){sc=Math.min(sc+1,tot);good(e)}}else{retry(e);if(v&&e.k==="w"){ob=document.createElement("button");ob.className="btn";ob.textContent="✓ Meine Antwort war auch richtig";ob.onclick=function(){alt(e,v);if(fst){sc=Math.min(sc+1,tot);var qi=Q.lastIndexOf(e);if(qi>ei)Q.splice(qi,1);unerr(e)}ob.remove();fb(true,"Gespeichert – diese Antwort gilt künftig.")}}}inp.disabled=true;this.hidden=true;fb(right||near,(near?"Fast – achte auf die Schreibweise. ":"")+(e.n||""));next();if(ob)document.getElementById("nx").appendChild(ob)}}
 }
 function fb(r,n){var f=document.getElementById("fb");f.textContent=(r?"✓ Richtig. ":"✗ Nicht ganz. ")+(n||"");f.style.color=r?"var(--ok)":"var(--bad)"}
 function next(){mark();cnt();var n=document.getElementById("nx");n.innerHTML='<button class="btn p" id="go">Weiter</button>';document.getElementById("go").onclick=function(){ei++;step()}}
@@ -705,8 +705,10 @@ function refOv(){var h='<input id="rs" type="search" placeholder="Suchen (z. B. 
  G("rc").innerHTML=h+(lv?'</div>':'')+'</div>'+(lock?'<div class="nt">🔒 '+lock+' weitere Übersichten werden freigeschaltet, sobald du die nächsten Lektionen abschließt.</div>':'');
  var f=function(){var q=norm(G("rs").value),hit=[];Array.prototype.forEach.call(G("ovl").querySelectorAll(".rf"),function(d){var ok=!q||norm(d.textContent).indexOf(q)>=0;d.hidden=!ok;if(q&&ok)hit.push(d)});hit.forEach(function(d){d.open=hit.length<=2});Array.prototype.forEach.call(G("ovl").querySelectorAll(".ovg"),function(g){g.hidden=!g.querySelector(".rf:not([hidden])")})};
  G("rs").oninput=f;if(RQ){G("rs").value=RQ;f()}}
+function dnorm(s){return norm(String(s).replace(/ß/g,"ss").replace(/([aou])\u0308/g,"$1").replace(/[äöü]/gi,function(c){return c[0]}).replace(/ae/gi,"a").replace(/oe/gi,"o").replace(/ue/gi,"u")).replace(/^(der|die|das|ein|eine|einen) /,"")}
+function deAns(de,k){var o=[];String(de).replace(/\([^)]*\)/g,"").split("/").forEach(function(x){x=dnorm(x);if(x&&o.indexOf(x)<0)o.push(x)});((P.alt||{})[k]||[]).forEach(function(x){if(o.indexOf(x)<0)o.push(x)});return o}
 function tx(e){var r=tx0(e);if(r!==e)r._lt=e._lt;return r}
-function tx0(e){if(e.k==="l")return{k:"m",tg:"Lesen statt Hören",q:e.p,o:e.o,a:e.a,_r:e._r};if(e.k==="d")return{k:"w",tg:"Abschreiben statt Hören",q:e.p,a:[norm(e.p)],n:"Richtig: "+e.p,_r:e._r};if(e.k==="p")return{k:"t",tg:"Transkript"};return e}
+function tx0(e){if(e.k==="l")return{k:"m",tg:"Lesen statt Hören",q:e.p,o:e.o,a:e.a,_r:e._r};if(e.k==="d"&&e.de)return{k:"w",tg:"Übersetzen statt Hören",dn:1,q:e.p,a:deAns(e.de,e.p),n:"Richtig: "+e.de,_r:e._r};if(e.k==="d"){var o=e.p.split(" ");return o.length>1?{k:"o",tg:"Satzbau statt Hören",q:"Bringe die Wörter in die richtige Reihenfolge",p:e.p,_r:e._r}:{k:"w",tg:"Lesen statt Hören",q:e.p,a:[norm(e.p)],n:"Richtig: "+e.p,_r:e._r}}if(e.k==="p")return{k:"t",tg:"Transkript"};return e}
 function rq(){var l=cl();Q=l.ex.slice();Q.forEach(function(x){x._r=0})}
 function sk(p){return p>=100?" sg":p>=90?" s9":p>=80?" s8":p>=PASS?" s7":""}
 function col(k){return({c:"#2e8f6b",m:"#7b5cc4",l:"#e08a2c",d:"#e08a2c",p:"#e08a2c",q:"#e08a2c",r:"#2a7fc1",w:"#d6527a",o:"#7b5cc4",x:"#2e8f6b",t:"#2a7fc1"})[k]||"var(--ac)"}
@@ -735,7 +737,7 @@ function vsel(){var a=pv();[0,1].forEach(function(i){var s=document.getElementBy
 var Q=[];
 function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++)m[i]=[i];for(j=1;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]}
 function retry(e){var k=ek(e);if(e.k!=="q"&&e.k!=="x"&&exIndex()[k]){P.err=P.err||{};P.err[k]=(P.err[k]||0)+1}if(!e._r){sg(e,0);stt(e.k,0);ktr(e,0);e._r=1;Q.push(e)}save()}
-LS.forEach(function(l){if(l.pod)return;var ex=[];l.ex.filter(function(e){return e.k==="l"}).forEach(function(e,i){ex.push(i%2&&e.p.split(" ").length>2?{k:"o",q:e.o[e.a],p:e.p}:{k:"d",p:e.p})});
+LS.forEach(function(l){if(l.pod)return;var ex=[];l.ex.filter(function(e){return e.k==="l"}).forEach(function(e,i){ex.push(i%2&&e.p.split(" ").length>2?{k:"o",q:e.o[e.a],p:e.p}:{k:"d",p:e.p,de:e.o[e.a]})});
  var cs=l.ex.filter(function(e){return e.k==="c"&&e.p.indexOf("/")<0&&e.d.indexOf("/")<0&&e.p.indexOf("…")<0}).slice(0,4);
  var wi=l.ex.findIndex(function(e){return e.k==="w"});if(wi<0)wi=l.ex.length;l.ex.splice.apply(l.ex,[wi,0].concat(ex));
  if(cs.length>2){var ci=0;l.ex.forEach(function(e,i){if(e.k==="c")ci=i+1});l.ex.splice(ci,0,{k:"x",pairs:cs.map(function(c){return[c.p,c.d]})})}});
@@ -743,7 +745,7 @@ try{navigator.storage.persist()}catch(e){}
 try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
 /* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
-var APPV="22.10.2026 · Nachschlagen",PLC=0,RT=-1,RQ="";
+var APPV="22.10.2026 · Leise-Übersetzen",PLC=0,RT=-1,RQ="";
 var G=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
