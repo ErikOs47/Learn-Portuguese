@@ -10,6 +10,43 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="icon" type="image/png" href="icon-192.png?v=2">
 <title>Português (PT) lernen</title>
+<!-- Startbild für die Home-Bildschirm-App (iOS zeigt es, bis die Seite geladen ist) -->
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/light-750x1334.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1170x2532.png">
+<link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1179x2556.png">
+<link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1206x2622.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/light-828x1792.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1242x2688.png">
+<link rel="apple-touch-startup-image" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1260x2736.png">
+<link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1284x2778.png">
+<link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1290x2796.png">
+<link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/light-1320x2868.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-750x1334.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1170x2532.png">
+<link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1179x2556.png">
+<link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1206x2622.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-828x1792.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1242x2688.png">
+<link rel="apple-touch-startup-image" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1260x2736.png">
+<link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1284x2778.png">
+<link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1290x2796.png">
+<link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) and (prefers-color-scheme: dark)" href="splash/dark-1320x2868.png">
+<script>try{var t=(JSON.parse(localStorage.getItem("pt-pt-v1"))||{}).theme;if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+/* Ladebildschirm: wird angezeigt, bis die App fertig gestartet ist */
+html{background:#f3f4fb}
+#spl{position:fixed;inset:0;z-index:999;background:#f3f4fb;color:#141a2e;transition:opacity .25s}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]){background:#0b0d17}#spl{background:#0b0d17;color:#eceefb}}
+html[data-theme="dark"],html[data-theme="dark"] #spl{background:#0b0d17;color:#eceefb}
+html[data-theme="light"] #spl{background:#f3f4fb;color:#141a2e}
+#spl.out{opacity:0;pointer-events:none}
+#spl .in{position:absolute;left:0;right:0;top:calc(50% - 106px);text-align:center;font:700 26px/1.2 -apple-system,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em}
+#spl svg{display:block;width:96px;height:96px;margin:0 auto 18px}
+#spl i{display:block;width:22px;height:22px;margin:22px auto 0;border:3px solid rgba(91,91,240,.25);border-top-color:#5b5bf0;border-radius:50%;animation:spl 0.8s linear infinite}
+@keyframes spl{to{transform:rotate(360deg)}}
+</style>
 <style>
 :root{--bg:#f6f5f1;--card:#fff;--tx:#1d1d1b;--mut:#6b6a66;--ac:#2f6f5e;--acx:#fff;--bd:#e2e0d9;--bad:#b3402f;--ok:#2f6f5e}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161715;--card:#222320;--tx:#efeee9;--mut:#9a9890;--ac:#5fb59c;--acx:#10211b;--bd:#34352f;--bad:#e07a68;--ok:#5fb59c}}
@@ -212,6 +249,7 @@ label.row{cursor:pointer}
 </style>
 </head>
 <body>
+<div id="spl"><div class="in"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="sgb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset=".55" stop-color="#7c5cf0"/><stop offset="1" stop-color="#a66bf5"/></linearGradient><linearGradient id="sgp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="512" height="512" rx="116" fill="url(#sgb)"/><path d="M186 104H326A92 92 0 0 1 418 196V262A92 92 0 0 1 326 354H252L166 432L192 354H186A92 92 0 0 1 94 262V196A92 92 0 0 1 186 104Z" fill="#fff"/><g transform="translate(256 229) scale(1.38)" fill="url(#sgp)"><ellipse rx="17" ry="66"/><ellipse rx="17" ry="66" transform="rotate(45)"/><ellipse rx="17" ry="66" transform="rotate(90)"/><ellipse rx="17" ry="66" transform="rotate(135)"/><circle r="25" fill="#fff"/><circle r="15" fill="url(#sgp)"/></g></svg>Português<i></i></div></div>
 <main id="app"></main>
 <nav id="tb"></nav>
 <script>
@@ -745,7 +783,7 @@ try{navigator.storage.persist()}catch(e){}
 try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
 /* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
-var APPV="22.10.2026 · Leise-Übersetzen",PLC=0,RT=-1,RQ="";
+var APPV="22.10.2026 · Ladebildschirm",PLC=0,RT=-1,RQ="";
 var G=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
@@ -1532,5 +1570,6 @@ function lessonsScreen(lv){tb(0);var pf=LS.filter(function(l,i){return P[i]!=nul
 ["numMenu","packs","dialogs","stories"].forEach(function(nm){var f=window[nm];window[nm]=function(){var r=f.apply(this,arguments);NAV=window[nm];return r}});
 home();
 </script>
+<script>(function(){var e=document.getElementById("spl");if(!e)return;e.className="out";setTimeout(function(){e.remove()},300)})()</script>
 </body>
 </html>
