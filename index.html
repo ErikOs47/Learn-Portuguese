@@ -126,6 +126,13 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
 .bdg div{border-radius:20px}.nt{border-radius:14px}
 table{border-radius:14px}th{text-transform:uppercase;letter-spacing:.06em;font-size:11px}
 .back{font-weight:600;color:var(--ac);padding:6px 0}
+.nsg[hidden]{display:none}.nsg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.nst{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:var(--card);border:none;border-radius:20px;box-shadow:var(--sh);padding:14px 14px 12px;font:inherit;color:var(--tx);min-width:0}
+.nst span{font-size:26px;line-height:1;margin-bottom:8px}.nst b{font-size:16px}.nst small{font-size:12px;color:var(--mut)}.nst:active{transform:scale(.97)}
+.card.nsl{padding:0 16px;margin:8px 0}.nsl .item:last-child{border-bottom:none}.rf .item:last-child{border-bottom:none}
+.nsi{width:100%;background:none;border:none;border-bottom:1px solid var(--bd);font:inherit;color:inherit;text-align:left;cursor:pointer}
+.nsk{background:none;border:none;color:var(--ac);font:inherit;font-weight:600;padding:2px 0 6px}
+input[type=search]{-webkit-appearance:none;appearance:none}
 .tag{font-weight:700;letter-spacing:.08em}
 
 /* audio controls */
@@ -678,7 +685,7 @@ function due(){var n=Date.now(),s=P.srs||{};return Object.keys(s).filter(functio
 function calc(c,g){var e=c.ease,v=c.iv;if(g===0)return{ease:Math.max(1.3,e-.2),iv:0,m:1};if(v===0)v=g===1?1:g===2?2:4;else{v=g===1?v*1.2:g===2?v*e:v*e*1.3;e+=g===3?.15:g===1?-.15:0}return{ease:Math.max(1.3,e),iv:Math.max(1,Math.round(v)),m:0}}
 var VL={t:"Wiederholung",ex:[]};
 function cl(){return li<0?VL:LS[li]}
-function tb(a){var n=document.getElementById("tb");n.style.display=a<0?"none":"flex";if(a<0)return;PLC=0;KT=null;var T=[["🏠","Start",home],["🔁","Wiederholen",hub],["💬","Chat",chat],["📖","Nachschlagen",ref]];NAV=T[a][2];n.innerHTML="";T.forEach(function(t,i){var b=document.createElement("button");b.className=i===a?"on":"";b.innerHTML="<b>"+t[0]+"</b>"+t[1];b.onclick=function(){t[2]()};n.appendChild(b)})}
+function tb(a){var n=document.getElementById("tb");n.style.display=a<0?"none":"flex";if(a<0)return;PLC=0;KT=null;var T=[["🏠","Start",home],["🔁","Wiederholen",hub],["💬","Chat",chat],["📖","Nachschlagen",refTab]];NAV=T[a][2];n.innerHTML="";T.forEach(function(t,i){var b=document.createElement("button");b.className=i===a?"on":"";b.innerHTML="<b>"+t[0]+"</b>"+t[1];b.onclick=function(){t[2]()};n.appendChild(b)})}
 function hub(){tb(1);var d=due().length,n=Object.keys(P.srs||{}).length;
  A.innerHTML='<h1>Wiederholen</h1><div class="mut">'+n+' Wörter im Training · '+d+' fällig</div><h2>Üben</h2><button class="btn" data-m="k">🗂 Karteikarten <span class="mut">('+d+' fällig)</span></button><button class="btn" data-m="s">✍️ Schreiben <span class="mut">Deutsch → Portugiesisch</span></button><button class="btn" data-m="h">🎧 Hören <span class="mut">Wort hören, Bedeutung wählen</span></button><button class="btn" data-m="g">🧩 Grammatik &amp; Sätze <span class="mut">aus deinen Lektionen</span></button><button class="btn" data-m="e">🎯 Fehler-Training <span class="mut">('+Object.keys(P.err||{}).length+' Schwächen)</span></button><h2>Mehr</h2><button class="btn" data-x="z">🔢 Zahlen &amp; Uhrzeit</button><button class="btn" data-x="v">🔤 Verb-Trainer</button><button class="btn" data-x="d">🎭 Dialoge</button><button class="btn" data-x="s">🗣 Shadowing</button><button class="btn" data-x="g">📖 Kurzgeschichten</button><button class="btn" data-x="p">🧳 Themenpakete</button><button class="btn" data-x="a">👄 Aussprache</button>';
  Array.prototype.forEach.call(A.querySelectorAll("[data-m]"),function(b){b.onclick=function(){drill(b.dataset.m)}});Array.prototype.forEach.call(A.querySelectorAll("[data-x]"),function(b){b.onclick={z:numMenu,v:verbTrainer,d:dialogs,s:shadow,g:stories,p:packs,a:pronDrill}[b.dataset.x]})}
@@ -691,11 +698,13 @@ function drill(m){var sr=P.srs||{},ks=Object.keys(sr),ex=[];if(m==="k"){rev();re
  if(ex.length<(m==="e"?1:3)){tb(1);A.innerHTML='<div class="card"><div class="big">Noch zu wenig</div><p class="mut" style="text-align:center">Hier ist noch nicht genug Material. Schließe Lektionen ab oder mache Fehler, dann füllt sich das hier.</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=hub;return}
  VL.ex=ex;BK=NAV;li=-1;ei=0;sc=0;tot=0;rq();step()}
 function vfin(){if(PLC){plcFin();return}if(KT){ktFin();return}var p=tot?Math.min(100,Math.round(sc/tot*100)):100;mark();if(p>=100)boom(1);tb(1);A.innerHTML='<div class="card"><div class="big">Geschafft 🎉</div><p style="text-align:center">'+sc+' von '+tot+' richtig ('+p+' %)</p><button class="btn p" id="hb">Zurück</button></div>';document.getElementById("hb").onclick=function(){(BK||hub)()}}
-function refOv(){var h='<div class="mut" style="margin:8px 0">Alle Übersichten deiner freigeschalteten Lektionen</div><input id="rs" placeholder="Suchen (z. B. ser, Artikel, estar)" style="margin:12px 0"><div>',lv="";
- LS.forEach(function(l,i){if(!l.ov)return;var open=i===0||P[i-1]>=PASS;if(l.lv!==lv){lv=l.lv;h+='<h2>'+lv+'</h2>'}
-  h+=open?'<details class="rf"><summary>'+(i+1)+'. '+l.t+'</summary>'+l.ov+'</details>':'<div class="mut rf" style="padding:12px 16px">🔒 '+(i+1)+'. nach Abschluss von Lektion '+i+'</div>'});
- document.getElementById("rc").innerHTML=h+'</div>';
- document.getElementById("rs").oninput=function(){var q=norm(this.value);Array.prototype.forEach.call(document.querySelectorAll(".rf"),function(d){d.hidden=!!q&&norm(d.textContent).indexOf(q)<0})}}
+function ovOpen(i){return i===0||P[i-1]>=PASS}
+function refOv(){var h='<input id="rs" type="search" placeholder="Suchen (z. B. ser, Artikel, estar)"><div id="ovl">',lv="",lock=0,n=0;
+ LS.forEach(function(l,i){if(!l.ov)return;if(!ovOpen(i)){lock++;return}n++;if(l.lv!==lv){h+=(lv?'</div>':'')+'<div class="ovg"><h2>'+l.lv+'</h2>';lv=l.lv}
+  h+='<details class="rf"><summary>'+(i+1)+'. '+l.t+'</summary>'+l.ov+'</details>'});
+ G("rc").innerHTML=h+(lv?'</div>':'')+'</div>'+(lock?'<div class="nt">🔒 '+lock+' weitere Übersichten werden freigeschaltet, sobald du die nächsten Lektionen abschließt.</div>':'');
+ var f=function(){var q=norm(G("rs").value),hit=[];Array.prototype.forEach.call(G("ovl").querySelectorAll(".rf"),function(d){var ok=!q||norm(d.textContent).indexOf(q)>=0;d.hidden=!ok;if(q&&ok)hit.push(d)});hit.forEach(function(d){d.open=hit.length<=2});Array.prototype.forEach.call(G("ovl").querySelectorAll(".ovg"),function(g){g.hidden=!g.querySelector(".rf:not([hidden])")})};
+ G("rs").oninput=f;if(RQ){G("rs").value=RQ;f()}}
 function tx(e){var r=tx0(e);if(r!==e)r._lt=e._lt;return r}
 function tx0(e){if(e.k==="l")return{k:"m",tg:"Lesen statt Hören",q:e.p,o:e.o,a:e.a,_r:e._r};if(e.k==="d")return{k:"w",tg:"Abschreiben statt Hören",q:e.p,a:[norm(e.p)],n:"Richtig: "+e.p,_r:e._r};if(e.k==="p")return{k:"t",tg:"Transkript"};return e}
 function rq(){var l=cl();Q=l.ex.slice();Q.forEach(function(x){x._r=0})}
@@ -919,13 +928,35 @@ function packs(){tb(1);A.innerHTML='<button class="back" id="bk">‹ Wiederholen
  Array.prototype.forEach.call(A.querySelectorAll("[data-p]"),function(b){b.onclick=function(){go(shuf(PK[+b.dataset.p].w).map(function(x){var w=x.v;return{k:"w",q:w[1],a:ansList(w[0],w[1]),n:"Richtig: "+w[0]}}))}})}
 
 /* ---- Nachschlagen ---- */
-function ref(){tb(3);var T=["Übersichten","Wörterbuch","Verben","Aussprache","PT ↔ BR","Floskeln"];A.innerHTML='<h1>Nachschlagen</h1><div class="seg">'+T.map(function(t,i){return'<button data-r="'+i+'" class="'+(i===RT?'on':'')+'">'+t+'</button>'}).join("")+'</div><div id="rc"></div>';
- Array.prototype.forEach.call(A.querySelectorAll("[data-r]"),function(b){b.onclick=function(){RT=+b.dataset.r;ref()}});[refOv,refDict,refVerbs,refPron,refBR,refPhr][RT]()}
-function refDict(){var u=vocab().concat(PK.reduce(function(a,k){return a.concat(k.w.map(function(w){return{p:w[0],d:w[1],pack:k.t}}))},[])),rc=G("rc");rc.innerHTML='<input id="ds" placeholder="Suchen (Portugiesisch oder Deutsch)" style="margin:12px 0"><div id="dlst"></div><h2>Eigene Karte</h2><input id="cp" placeholder="Portugiesisch"><input id="cd" placeholder="Deutsch"><button class="btn p" id="ca">Karte hinzufügen</button><div class="mut" id="cm"></div>';
- function paint(){var q=norm(G("ds").value),l=u.filter(function(x){return!q||norm(x.p+" "+x.d).indexOf(q)>=0}).slice(0,80);G("dlst").innerHTML=l.map(function(x){return'<div class="item"><div><b>'+esc(x.p)+'</b><div class="mut">'+esc(x.d)+' · '+(x.pack?esc(x.pack):'L'+(x.l+1))+'</div></div><div><button class="ib" data-say="'+esc(x.s||x.p)+'">🔊</button>'+(P.srs&&P.srs[x.p]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(x.p)+'|'+esc(x.d)+'">➕</button>')+'</div></div>'}).join("")||'<p class="mut">Nichts gefunden.</p>';wire(G("dlst"))}
- G("ds").oninput=paint;paint();
+var RS=[["📑","Übersichten",refOv],["📚","Wörterbuch",refDict],["🔤","Verben",refVerbs],["👄","Aussprache",refPron],["🇵🇹","PT ↔ BR",refBR],["💬","Floskeln",refPhr]];
+function refTab(){RT=-1;RQ="";ref()}
+function ref(){tb(3);NAV=ref;A.scrollTop=0;if(RT<0){refHome();return}
+ A.innerHTML='<button class="back" id="rb">‹ Nachschlagen</button><h1>'+RS[RT][1]+'</h1><div id="rc"></div>';G("rb").onclick=refTab;RS[RT][2]();RQ=""}
+function wireR(r){Array.prototype.forEach.call(r.querySelectorAll("[data-r]"),function(b){b.onclick=function(){RT=+b.dataset.r;RQ=b.dataset.q||"";ref()}})}
+function refHome(){var un=0,to=0;LS.forEach(function(l,i){if(l.ov){to++;if(ovOpen(i))un++}});var c=[un+" von "+to+" offen",dictAll().length+" Wörter",Object.keys(VB).length+" Verben",PRS.length+" Regeln",BRT.length+" Wortpaare",PHR.length+" Floskeln"];
+ A.innerHTML='<h1>Nachschlagen</h1><input id="gs" type="search" placeholder="🔍 Alles durchsuchen" style="margin:10px 0 4px"><div id="gr"></div><div class="nsg" id="rg">'+RS.map(function(s,i){return'<button class="nst" data-r="'+i+'"><span>'+s[0]+'</span><b>'+s[1]+'</b><small>'+c[i]+'</small></button>'}).join("")+'</div>';
+ wireR(G("rg"));G("gs").oninput=function(){var raw=this.value.trim(),q=norm(raw);G("rg").hidden=!!q;G("gr").innerHTML=q?refFind(q,raw):"";wire(G("gr"));wireR(G("gr"))}}
+function refFind(q,raw){var g=[],M=function(t){return norm(t).indexOf(q)>=0},
+ grp=function(i,l,row){if(!l.length)return;g.push('<h2>'+RS[i][1]+' · '+l.length+'</h2><div class="card nsl">'+l.slice(0,4).map(row).join("")+'</div>'+(l.length>4?'<button class="nsk" data-r="'+i+'" data-q="'+esc(raw)+'">Alle '+l.length+' anzeigen ›</button>':''))},
+ lnk=function(i,q,t,d){return'<button class="item nsi" data-r="'+i+'" data-q="'+esc(q)+'"><div><b>'+t+'</b>'+(d?'<div class="mut">'+d+'</div>':'')+'</div><span class="mut">›</span></button>'};
+ grp(1,dictAll().filter(function(x){return M(x.p+" "+x.d)}),dRow);
+ grp(2,Object.keys(VB).filter(function(k){return M(k+" "+VB[k][0])}),function(k){return lnk(2,k,esc(k),esc(VB[k][0]))});
+ grp(5,PHR.filter(function(p){return M(p[1]+" "+p[2])}),phRow);
+ grp(4,BRT.filter(function(r){return M(r.join(" "))}),brRow);
+ grp(0,LS.map(function(l,i){return[l,i]}).filter(function(x){return x[0].ov&&ovOpen(x[1])&&M(x[0].t+" "+x[0].ov.replace(/<[^>]*>/g," "))}),function(x){return lnk(0,raw,(x[1]+1)+'. '+x[0].t)});
+ grp(3,PRS.filter(function(r){return M(r.join(" "))}),prRow);
+ return g.join("")||'<p class="mut">Nichts gefunden.</p>'}
+function dictAll(){return vocab().concat(PK.reduce(function(a,k){return a.concat(k.w.map(function(w){return{p:w[0],d:w[1],pack:k.t}}))},[]))}
+function dRow(x){return'<div class="item"><div><b>'+esc(x.p)+'</b><div class="mut">'+esc(x.d)+' · '+(x.pack?esc(x.pack):'L'+(x.l+1))+'</div></div><div style="white-space:nowrap"><button class="ib" data-say="'+esc(x.s||x.p)+'">🔊</button>'+(P.srs&&P.srs[x.p]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(x.p)+'|'+esc(x.d)+'">➕</button>')+'</div></div>'}
+function refDict(){var u=dictAll(),gs=[],gm={},rc=G("rc");u.forEach(function(x){var k=x.pack?"p"+x.pack:"l"+x.l;if(!gm[k]){gm[k]={t:x.pack?esc(x.pack):(x.l+1)+'. '+LS[x.l].t,pk:!!x.pack,w:[]};gs.push(gm[k])}gm[k].w.push(x)});
+ rc.innerHTML='<input id="ds" type="search" placeholder="Suchen (Portugiesisch oder Deutsch)" style="margin:4px 0 8px"><div class="mut" id="dn" style="margin:4px 0"></div><div id="dlst"></div><details class="rf" style="margin-top:18px"><summary>➕ Eigene Karte anlegen</summary><input id="cp" placeholder="Portugiesisch"><input id="cd" placeholder="Deutsch" style="margin:8px 0"><button class="btn p" id="ca">Karte hinzufügen</button><div class="mut" id="cm" style="margin-bottom:10px"></div></details>';
+ function paint(){var q=norm(G("ds").value);
+  if(q){var l=u.filter(function(x){return norm(x.p+" "+x.d).indexOf(q)>=0});G("dn").textContent=l.length+" Treffer";G("dlst").innerHTML=l.length?'<div class="card nsl">'+l.slice(0,80).map(dRow).join("")+'</div>'+(l.length>80?'<p class="mut">… und '+(l.length-80)+' weitere. Suche genauer.</p>':''):'<p class="mut">Nichts gefunden.</p>';wire(G("dlst"));return}
+  G("dn").textContent=u.length+" Wörter, sortiert nach Lektionen und Themen";var h="",sec=null;gs.forEach(function(g,i){if(g.pk!==sec){sec=g.pk;h+='<h2>'+(sec?'Wortpakete':'Aus den Lektionen')+'</h2>'}h+='<details class="rf" data-g="'+i+'"><summary>'+g.t+' <span class="mut">('+g.w.length+')</span></summary></details>'});G("dlst").innerHTML=h;
+  Array.prototype.forEach.call(G("dlst").querySelectorAll("[data-g]"),function(d){d.ontoggle=function(){if(!d.open||d.dataset.f)return;d.dataset.f=1;d.insertAdjacentHTML("beforeend",gs[+d.dataset.g].w.map(dRow).join(""));wire(d)}})}
+ G("ds").value=RQ;G("ds").oninput=paint;paint();
  G("ca").onclick=function(){var p=G("cp").value.trim(),d=G("cd").value.trim();if(!p||!d){G("cm").textContent="Bitte beide Felder ausfüllen.";return}addCard(p,d);G("cp").value=G("cd").value="";G("cm").textContent="Gespeichert ✓ – kommt in die Wiederholung.";paint()}}
-function refVerbs(){var rc=G("rc"),all=Object.keys(VB),more=all.filter(function(k){return VCORE.indexOf(k)<0}).sort(function(a,b){return a.localeCompare(b,"pt")}),cur="falar";
+function refVerbs(){var rc=G("rc"),all=Object.keys(VB),more=all.filter(function(k){return VCORE.indexOf(k)<0}).sort(function(a,b){return a.localeCompare(b,"pt")}),cur=VB[RQ]?RQ:"falar";
  var tbl=function(t,a){var h='<table><tr><th>'+t+'</th><th></th></tr>';PL.forEach(function(p,i){h+='<tr><td>'+p+'</td><td><b>'+a[i]+'</b></td></tr>'});return h+'</table>'};
  var E=function(t,rows,ex,note){var h='<details class="rf"><summary>'+t+'</summary><table><tr><th></th><th>-ar</th><th>-er</th><th>-ir</th></tr>';rows.forEach(function(r,i){h+='<tr><td>'+PL[i]+'</td><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'});h+='</table>';if(ex)h+='<div class="mut" style="font-size:14px">'+ex+'</div>';if(note)h+='<div class="nt">'+note+'</div>';return h+'</details>'};
  var FUT=["-ei","-ás","-á","-emos","-ão"],CON=["-ia","-ias","-ia","-íamos","-iam"];
@@ -942,14 +973,18 @@ function refVerbs(){var rc=G("rc"),all=Object.keys(VB),more=all.filter(function(
   h+='<details class="rf"><summary>Imperfeito (Gewohnheit, Beschreibung)</summary>'+tbl("Imperfeito",T.imp)+'</details><details class="rf"><summary>Futuro (Zukunft)</summary>'+tbl("Futuro",T.fut)+'</details><details class="rf"><summary>Condicional (würde …)</summary>'+tbl("Condicional",T.con)+'</details>';
   h+='<div class="mut" style="margin:10px 0">Partizip: <b>'+T.part+'</b> (z. B. „tenho '+T.part+'“)</div><button class="btn" id="vp">🔊 Alle Formen anhören</button>'+(P.srs&&P.srs[v]?'<span class="mut">✓ „'+v+'“ ist im Training</span>':'<button class="btn" id="va">➕ „'+v+'“ ins Training</button>');
   G("vt").innerHTML=h;G("vp").onclick=function(){say(PL.map(function(p,i){return p.split(" / ")[0]+" "+f[i]}).join(". "))};if(G("va"))G("va").onclick=function(){addCard(v,VB[v][0]);paint()}}
- function fill(keep){var st=G("vl").scrollTop,q=norm(G("vq").value),fl=function(k){return!q||norm(k+" "+VB[k][0]).indexOf(q)>=0},op=function(k){return'<div data-v="'+k+'" style="padding:11px 14px;border-bottom:1px solid var(--bd);cursor:pointer;'+(k===cur?'background:var(--ac);color:var(--acx);font-weight:600':'')+'">'+k+' <span style="opacity:.75">– '+esc(VB[k][0])+'</span></div>'},hd=function(t){return'<div class="mut" style="padding:8px 14px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.05em">'+t+'</div>'},a=VCORE.filter(fl),b=more.filter(fl),o="";
+ function fill(keep){var st=G("vl").scrollTop,q=norm(G("vq").value),fl=function(k){return!q||norm(k+" "+VB[k][0]).indexOf(q)>=0},op=function(k){return'<div data-v="'+k+'"'+(k===cur?' class="vs"':'')+' style="padding:11px 14px;border-bottom:1px solid var(--bd);cursor:pointer;'+(k===cur?'background:var(--ac);color:var(--acx);font-weight:600':'')+'">'+k+' <span style="opacity:.75">– '+esc(VB[k][0])+'</span></div>'},hd=function(t){return'<div class="mut" style="padding:8px 14px 4px;font-size:12px;text-transform:uppercase;letter-spacing:.05em">'+t+'</div>'},a=VCORE.filter(fl),b=more.filter(fl),o="";
   if(a.length)o+=hd("Grundverben")+a.map(op).join("");if(b.length)o+=hd("Weitere Verben (A–Z)")+b.map(op).join("");
   G("vl").innerHTML=o||'<div class="mut" style="padding:14px">Nichts gefunden.</div>';
   if(q&&a.concat(b).length&&a.concat(b).indexOf(cur)<0){cur=(a.concat(b))[0];fill();return}if(keep)G("vl").scrollTop=st;
   Array.prototype.forEach.call(G("vl").querySelectorAll("[data-v]"),function(d){d.onclick=function(){cur=d.dataset.v;fill(1)}});paint()}
- G("vq").oninput=function(){fill()};fill()}
-function refPron(){var h='<div class="mut" style="margin:12px 0">Europäisches Portugiesisch – Vergleich mit dem Deutschen.</div><table>';PRS.forEach(function(r){h+='<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td></tr>'});G("rc").innerHTML=h+'</table><button class="btn p" id="pd">👄 Lautpaare üben</button>';G("pd").onclick=pronDrill}
-function refBR(){var h='<div class="mut" style="margin:12px 0">Wo sich Portugal und Brasilien unterscheiden – die App lehrt Portugal.</div><table><tr><th></th><th>🇵🇹 Portugal</th><th>🇧🇷 Brasilien</th></tr>';BRT.forEach(function(r){h+='<tr><td>'+esc(r[0])+'</td><td><b>'+esc(r[1])+'</b></td><td>'+esc(r[2])+'</td></tr>'});G("rc").innerHTML=h+'</table>'}
+ G("vq").oninput=function(){fill()};if(RQ&&!VB[RQ])G("vq").value=RQ;fill();if(VB[RQ])setTimeout(function(){var e=G("vl").querySelector(".vs");if(e)G("vl").scrollTop=e.offsetTop-G("vl").offsetTop-60},0)}
+function prRow(r){return'<div class="item"><div><b>'+esc(r[0])+'</b><div class="mut">'+esc(r[1])+'</div></div></div>'}
+function brRow(r){return'<div class="item"><div><div class="mut sm">'+esc(r[0])+'</div><b>🇵🇹 '+esc(r[1])+'</b><div class="mut">🇧🇷 '+esc(r[2])+'</div></div><button class="ib" data-say="'+esc(r[1])+'">🔊</button></div>'}
+function refPron(){G("rc").innerHTML='<div class="mut" style="margin:4px 0 10px">Europäisches Portugiesisch im Vergleich mit dem Deutschen.</div><button class="btn p" id="pd">👄 Lautpaare üben</button><div class="card nsl">'+PRS.map(prRow).join("")+'</div>';G("pd").onclick=pronDrill}
+function refBR(){G("rc").innerHTML='<div class="mut" style="margin:4px 0 10px">Die App lehrt Portugal 🇵🇹. Die brasilianische Variante 🇧🇷 steht nur zum Wiedererkennen dabei.</div><input id="bs" type="search" placeholder="Suchen (Deutsch oder Portugiesisch)"><div class="card nsl" id="bl"></div>';
+ function paint(){var q=norm(G("bs").value),l=BRT.filter(function(r){return!q||norm(r.join(" ")).indexOf(q)>=0});G("bl").innerHTML=l.map(brRow).join("")||'<p class="mut">Nichts gefunden.</p>';wire(G("bl"))}
+ G("bs").value=RQ;G("bs").oninput=paint;paint()}
 
 /* ---- Einstellungen, Sicherung, Einstufung ---- */
 function dlFile(){var b=new Blob([JSON.stringify(P)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="portugues-fortschritt.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},3000)}
@@ -1375,9 +1410,11 @@ PHR.push.apply(PHR,[
 ["Redewendungen","gato escaldado de água fria tem medo","gebranntes Kind scheut das Feuer"],
 ["Redewendungen","de pequenino se torce o pepino","früh krümmt sich, was ein Häkchen werden will"]
 ]);
+function phRow(p){return'<div class="item"><div><b>'+esc(p[1])+'</b><div>'+esc(p[2])+'</div>'+(p[3]?'<div class="mut" style="font-size:13px">'+esc(p[3])+'</div>':'')+'</div><div style="white-space:nowrap"><button class="ib" data-say="'+esc(p[1])+'">🔊</button>'+(P.srs&&P.srs[p[1]]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(p[1])+'|'+esc(p[2])+'">➕</button>')+'</div></div>'}
 function refPhr(){var cats=[],rc=G("rc");PHR.forEach(function(p){if(cats.indexOf(p[0])<0)cats.push(p[0])});
- rc.innerHTML='<div class="mut" style="margin:12px 0">Wörter, Wendungen und Redensarten nach Themen. Tippe auf ein Thema oder suche.</div><input id="fs" placeholder="Suchen" style="margin-bottom:8px"><button class="btn p" id="fd">🎯 Floskeln üben</button><div id="fl"></div>';
- function paint(){var q=norm(G("fs").value),h="";cats.forEach(function(c){var l=PHR.filter(function(p){return p[0]===c&&(!q||norm(p[1]+" "+p[2]).indexOf(q)>=0)});if(!l.length)return;h+='<details class="rf"'+(q?' open':'')+'><summary>'+c+' <span class="mut">('+l.length+')</span></summary>';l.forEach(function(p){h+='<div class="item"><div><b>'+esc(p[1])+'</b><div>'+esc(p[2])+'</div>'+(p[3]?'<div class="mut" style="font-size:13px">'+esc(p[3])+'</div>':'')+'</div><div style="white-space:nowrap"><button class="ib" data-say="'+esc(p[1])+'">🔊</button>'+(P.srs&&P.srs[p[1]]?'<span class="mut">✓</span>':'<button class="ib" data-add="'+esc(p[1])+'|'+esc(p[2])+'">➕</button>')+'</div></div>'});h+='</details>'});G("fl").innerHTML=h||'<p class="mut">Nichts gefunden.</p>';wire(G("fl"))}
+ rc.innerHTML='<div class="mut" style="margin:4px 0 10px">'+PHR.length+' Wörter, Wendungen und Redensarten in '+cats.length+' Themen</div><input id="fs" type="search" placeholder="Suchen" style="margin-bottom:8px"><button class="btn p" id="fd">🎯 Floskeln üben</button><div id="fl"></div>';
+ function paint(){var q=norm(G("fs").value),h="";cats.forEach(function(c){var l=PHR.filter(function(p){return p[0]===c&&(!q||norm(p[1]+" "+p[2]).indexOf(q)>=0)});if(!l.length)return;h+='<details class="rf"'+(q?' open':'')+'><summary>'+c+' <span class="mut">('+l.length+')</span></summary>'+l.map(phRow).join("")+'</details>'});G("fl").innerHTML=h||'<p class="mut">Nichts gefunden.</p>';wire(G("fl"))}
+ G("fs").value=RQ;G("fs").oninput=paint;paint();
  G("fs").oninput=paint;paint();
  G("fd").onclick=function(){var all=PHR.map(function(p){return p[2]});go(shuf(PHR).slice(0,10).map(function(x){var p=x.v,o=[p[2]].concat(shuf(all.filter(function(d){return d!==p[2]})).slice(0,2).map(function(y){return y.v}));return{k:"l",p:p[1],o:o,a:0,n:p[1]+" = "+p[2]}}))}}
 
