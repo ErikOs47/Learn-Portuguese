@@ -428,7 +428,7 @@ var LS=[
 {k:"l",p:"A minha mãe é médica",o:["Meine Mutter ist Ärztin","Meine Schwester ist Ärztin","Meine Mutter ist müde"],a:0},
 {k:"l",p:"Tenho um irmão e uma irmã",o:["Ich habe einen Bruder und eine Schwester","Ich habe zwei Brüder","Ich habe eine Familie"],a:0},
 {k:"r",x:"A minha família é pequena. O meu pai é alto e a minha mãe é baixa. Tenho uma irmã. A casa da minha irmã é azul.",q:"Welche Farbe hat das Haus der Schwester?",o:["Blau","Rot","Grün"],a:0},
-{k:"w",q:"Meine Schwester ist klein.",a:["a minha irma e pequena","a minha irma e baixa"],n:"A minha irmã é pequena / baixa."},
+{k:"w",q:"Meine Schwester ist klein.",a:["a minha irma e pequena","a minha irma e baixa"],n:"A minha irmã é pequena. (auch: baixa)"},
 {k:"w",q:"Ich habe einen Bruder.",a:["tenho um irmao","eu tenho um irmao"],n:"Tenho um irmão."}]},
 {lv:"A1",t:"Essen, Einkaufen & gostar de",ov:"<table><tr><th>gostar de</th><th>Deutsch</th></tr><tr><td>eu gosto de</td><td>ich mag</td></tr><tr><td>tu gostas de</td><td>du magst</td></tr><tr><td>ele / ela gosta de</td><td>er / sie mag</td></tr><tr><td>nós gostamos de</td><td>wir mögen</td></tr><tr><td>eles / vocês gostam de</td><td>sie / ihr mögt</td></tr></table><table><tr><th>o pão</th><th>Brot</th></tr><tr><td>o queijo</td><td>Käse</td></tr><tr><td>o peixe</td><td>Fisch</td></tr><tr><td>a carne</td><td>Fleisch</td></tr><tr><td>a fruta</td><td>Obst</td></tr><tr><td>o leite</td><td>Milch</td></tr></table><div class=nt>„Gostar“ verlangt immer „de“; mit Artikel verschmilzt es: gosto do queijo, gosto da fruta.</div>",ex:[
 {k:"c",p:"gostar de",d:"mögen"},{k:"c",p:"o pão",d:"das Brot"},{k:"c",p:"o queijo",d:"der Käse"},{k:"c",p:"o peixe",d:"der Fisch"},{k:"c",p:"a fruta",d:"das Obst"},
@@ -962,7 +962,7 @@ try{navigator.storage.persist()}catch(e){}
 try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
 /* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
-var APPV="13.11.2026 (3) · PiCoPa",PLC=0,RT=-1,RQ="";
+var APPV="16.11.2026 · PiCoPa",PLC=0,RT=-1,RQ="";
 var G=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
