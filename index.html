@@ -753,7 +753,7 @@ var LID=["a1-ser","a1-ter","a1-artikel","a1-estar","a1-pod1","a1-verben","a1-zah
   LS.splice(e+1,0,{id:x.id,tp:x.b,sub:1,lv:b.lv,t:x.t,ex:x.ex,ov:vt+(x.nt?'<div class="nt">'+x.nt+"</div>":"")+'<details class="rf"><summary>Regeln aus „'+b.t+'“</summary>'+b.ov+"</details>"})})})();
 function tpTitle(l){return l.sub?l.t.replace(/^[^:]+:\s*/,""):l.pod?l.t:"Grundlagen"}
 function migrate(){try{if(!P.idv){Object.keys(P).forEach(function(k){if(/^\d+$/.test(k)){var id=LID[+k];if(id&&P[id]==null)P[id]=P[k];delete P[k]}});P.idv=1}LS.forEach(function(l){if(P[l.id]>100)P[l.id]=100});if(P.kt)Object.keys(P.kt).forEach(function(k){if(P.kt[k]>100)P.kt[k]=100});if(!P.inst)P.inst=Date.now()}catch(e){}}
-var OUT=[["B1 · weitere Lektionen","Conjuntivo der Vergangenheit, Konditional, Passiv, längere Texte"],["B2","Konditional, Passiv, Nachrichten & Podcasts"],["C1","Nuancen, Register, Argumentation, Originalquellen"]];
+var OUT=[["B1 · weitere Lektionen","Indirekte Rede, persönlicher Infinitiv, Gerúndio, längere Texte"],["B2","Konditional, Passiv, Nachrichten & Podcasts"],["C1","Nuancen, Register, Argumentation, Originalquellen"]];
 var P={};try{P=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
 migrate();save();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){}}

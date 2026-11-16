@@ -8,7 +8,7 @@ Ausführliche Doku: **[docs/PROJEKT.md](docs/PROJEKT.md)** (Architektur, Datenmo
 | Datei | Inhalt |
 |---|---|
 | `index.html` | Die ganze App: CSS, Logik, die 33 Grundlagen-Lektionen (`LS`) und alle übrigen Daten (Verben, Floskeln, Themenpakete …) |
-| `inhalte.js` | Zusatzinhalte: 62 Vertiefungslektionen, 3 neue B1-Themen, Dialoge, Geschichten. Wird **vor** dem Hauptskript geladen |
+| `inhalte.js` | Zusatzinhalte: 3 Vertiefungslektionen pro Thema, 6 zusätzliche B1-Themen, Dialoge, Geschichten. Wird **vor** dem Hauptskript geladen |
 | `sw.js` | Service Worker (Netz zuerst, Cache als Rückfall) |
 | `tools/` | Prüfskripte (Playwright) |
 
@@ -27,7 +27,7 @@ python3 -m http.server 8765 &        # im Repo-Ordner
 node tools/check-data.js             # Lektionsdaten: Antwortindizes, Musterlösungen, Dubletten
 node tools/play-all.js               # alle Lektionen durchspielen + alle Ansichten öffnen
 ```
-Beide müssen ohne Meldungen enden („Alle 98 Lektionen mit 100 % durchgespielt“, „Keine Laufzeitfehler“). Playwright ist in der Cloud-Umgebung vorinstalliert. Syntax schnell prüfen: Hauptskript aus `index.html` extrahieren und `node --check` darauf.
+Beide müssen ohne Meldungen enden („Alle 141 Lektionen mit 100 % durchgespielt“, „Keine Laufzeitfehler“). Playwright ist in der Cloud-Umgebung vorinstalliert. Syntax schnell prüfen: Hauptskript aus `index.html` extrahieren und `node --check` darauf.
 
 ## Neue Lektion anlegen
 In `inhalte.js` mit `L("basis-id","neue-id","Titel",[…Aufgaben…],"optionaler Hinweis")`. Richtige Antwort steht in der Kurzschreibweise **immer an erster Stelle** (wird beim Anzeigen gemischt). Schreibaufgaben `w(…)`: **alle** gültigen Varianten mit `|` angeben, die erste ist die angezeigte Musterlösung. Details und Aufgabentypen: docs/PROJEKT.md → „Datenmodell“.
