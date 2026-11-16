@@ -1,11 +1,11 @@
 # PiCoPa – Projektdokumentation
 
-Stand: 16.11.2026 · Branch `claude/busy-rubin-a6smde` · offener PR #10 (Design, 98 Lektionen, Premium-Stimmen)
+Stand: 16.11.2026 · Branch `claude/busy-rubin-a6smde`
 
 ## 1. Was die App ist
 - Lern-App für **europäisches Portugiesisch**, Oberfläche Deutsch, Ziel „Schritt für Schritt bis C1“.
 - Wird auf dem iPhone über Safari → „Zum Home-Bildschirm“ als PWA benutzt. Kein Server, kein Konto, alle Daten im Gerät (`localStorage`).
-- Umfang: A1 41 Lektionen (15 Themen), A2 38 (14), B1 19 (7), dazu Karteikarten (SRS), Fehler-Training, Verb-Trainer, Zahlen-Trainer, Dialoge, Geschichten, Shadowing, Chat (offline-Bot „Tiago“ oder KI), Nachschlagen (Wörterbuch, 126 Verben, Aussprache, PT↔BR, 291 Floskeln), Statistik.
+- Umfang: 141 Lektionen. A1 54 (13 Themen à 4 + 2 Hörlektionen), A2 50 (12 à 4 + 2), B1 37 (9 à 4 + 1), dazu Karteikarten (SRS), Fehler-Training, Verb-Trainer, Zahlen-Trainer, Dialoge, Geschichten, Shadowing, Chat (offline-Bot „Tiago“ oder KI), Nachschlagen (Wörterbuch, 126 Verben, Aussprache, PT↔BR, 291 Floskeln), Statistik.
 
 ## 2. Architektur
 
@@ -88,7 +88,7 @@ Lektion: `{id, tp, sub?, pod?, lv:"A1|A2|B1", t, ov (HTML), ex:[Aufgaben]}`. `tp
 
 ## 5. Bekannte Schwachstellen
 1. **Monolith:** `index.html` ≈ 320 KB, ~190 globale Funktionen, kurze globale Namen. Namenskollisionen sind real passiert (lokale Variable `near` verdeckte gleichnamige Funktion; Ersetzen von `P[i]` traf `VBP[i]`).
-2. **Inhalte nicht muttersprachlich geprüft.** Die 62 Vertiefungen, 3 B1-Themen, 6 Dialoge, 5 Geschichten wurden von KI geschrieben und automatisch geprüft, aber nicht von einem Muttersprachler. Die 291 Floskeln wurden nie inhaltlich gegengelesen.
+2. **Inhalte nicht muttersprachlich geprüft.** Alle Vertiefungen (103), die 6 neuen B1-Themen, 6 Dialoge und 5 Geschichten wurden von KI geschrieben und automatisch geprüft, aber nicht von einem Muttersprachler. Die 291 Floskeln wurden nie inhaltlich gegengelesen.
 3. **Premium-Stimmen teilweise ungetestet:** Google nur gegen einen simulierten Dienst getestet (CORS live bestätigt); **Azure gar nicht** (Netz der Cloud-Umgebung blockiert es); Abspielen auf echtem iPhone ungetestet. Cache `pt-tts` wächst unbegrenzt (nur manuell löschbar).
 4. **Spracherkennung** auf iPhone als Home-Bildschirm-App unsicher; nicht auf echtem Gerät getestet.
 5. **API-Schlüssel** (KI-Chat, Stimmen) im Klartext in `localStorage`, Aufrufe direkt aus dem Browser. Für eine Privat-App akzeptiert; Nutzer soll Schlüssel beim Anbieter einschränken.
@@ -98,11 +98,10 @@ Lektion: `{id, tp, sub?, pod?, lv:"A1|A2|B1", t, ov (HTML), ex:[Aufgaben]}`. `tp
 9. Kein automatischer Test im Repo außer `tools/`; keine CI.
 
 ## 6. Offene To-dos
-- [ ] PR #10 prüfen und mergen.
 - [ ] Auf echtem iPhone testen: Premium-Stimmen (Google mit echtem Schlüssel, Azure), Audio-Freigabe, Spracherkennung, Ladezeit mit `inhalte.js`.
 - [ ] Muttersprachliche Durchsicht: `inhalte.js` und Floskeln.
-- [ ] Pro Thema auf 4–5 Lektionen ausbauen (Wunsch des Nutzers war 3–5; umgesetzt sind 3).
-- [ ] B1 vervollständigen: Conjuntivo der Vergangenheit, Konditional, Passiv; danach B2/C1 (stehen als „in Planung“ in `OUT`).
+- [ ] Optional 5. Lektion pro Thema (Wunsch des Nutzers: 3–5; umgesetzt sind 4).
+- [ ] B1 abrunden: indirekte Rede, persönlicher Infinitiv, Gerúndio; danach B2/C1 (stehen als „in Planung“ in `OUT`).
 - [ ] Größengrenze/Aufräumen für Cache `pt-tts`.
 - [ ] Optional: „Weiter“-Logik für Bestandsnutzer überdenken (z. B. auf das aktuelle Thema zeigen).
 - [ ] Optional: Hauptskript in mehrere Dateien aufteilen (ohne Build: mehrere `<script>`-Tags, Reihenfolge beachten, alle in `sw.js` vorab cachen).
@@ -112,3 +111,4 @@ Lektion: `{id, tp, sub?, pod?, lv:"A1|A2|B1", t, ov (HTML), ex:[Aufgaben]}`. `tp
 - `d090336` Neues Design (ein Stylesheet, SVG-Icons), inhaltliche und technische Fehler behoben.
 - `4056fe9` 98 Lektionen, Fortschritt per ID, strengere Tippfehler-Regel, Satzbau ohne Hinweise, Ausspracheprüfung, Sicherungs-Erinnerung.
 - `8e8cd2f` Premium-Stimmen; Service Worker fängt nur noch eigene Dateien ab.
+- PR #10 und #11 gemergt. Danach `ae41be3`: 4. Lektion für jedes Thema, neue B1-Themen Conjuntivo der Vergangenheit, Condicional, Passiv (141 Lektionen).

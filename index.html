@@ -962,7 +962,7 @@ try{navigator.storage.persist()}catch(e){}
 try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
 /* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
-var APPV="16.11.2026 · PiCoPa",PLC=0,RT=-1,RQ="";
+var APPV="16.11.2026 (2) · PiCoPa",PLC=0,RT=-1,RQ="";
 var G=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
