@@ -962,7 +962,7 @@ try{navigator.storage.persist()}catch(e){}
 try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=vsel}catch(e){}
 /* ===== v3: Chat, Trainer, Nachschlagen, Einstellungen ===== */
-var APPV="16.11.2026 (2) · PiCoPa",PLC=0,RT=-1,RQ="";
+var APPV="16.11.2026 (3) · PiCoPa",PLC=0,RT=-1,RQ="";
 var G=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function applyTheme(){var r=document.documentElement;if(P.theme==="light"||P.theme==="dark")r.setAttribute("data-theme",P.theme);else r.removeAttribute("data-theme")}
@@ -1384,7 +1384,7 @@ function ktFin(){var lv=KT.lv,t=KT.t,p=tot?Math.min(100,Math.round(sc/tot*100)):
  Array.prototype.forEach.call(A.querySelectorAll("[data-w]"),function(b){b.onclick=function(){li=+b.dataset.w;ei=0;sc=0;tot=0;ovw(1)}})}
 
 /* ---- Floskeln ---- */
-var PHR=[["Reaktionen","pois","ja, genau (zustimmend)","Sehr häufig. „Pois é“ = so ist es / tja. „Pois não?“ sagt die Verkäuferin: Bitte, was darf es sein?"],["Reaktionen","pois é","stimmt, so ist es","Man stimmt zu oder seufzt über etwas Unabänderliches."],["Reaktionen","está bem","einverstanden, okay","Auch „está bom“. Umgangssprachlich: „tá bem“."],["Reaktionen","com certeza","sicher, gern","Antwort auf Bitten und Fragen."],["Reaktionen","claro que sim","natürlich","Auch kurz: „claro“."],["Reaktionen","a sério?","wirklich?","Auch „a sério!“ = im Ernst."],["Reaktionen","que pena","wie schade",""],["Reaktionen","que bom","wie schön",""],["Reaktionen","ainda bem","zum Glück","„Ainda bem que vieste“ = zum Glück bist du gekommen."],["Reaktionen","nem pensar","kommt nicht in Frage",""],["Reaktionen","tens razão","du hast recht","Höflich: „tem razão“."],["Reaktionen","não faz mal","macht nichts","Antwort auf eine Entschuldigung."],["Reaktionen","não há problema","kein Problem",""],["Reaktionen","estou a ver","ich verstehe / ich sehe","Zeigt, dass man folgt."],["Reaktionen","não faço ideia","ich habe keine Ahnung",""],["Gespräch","já agora","übrigens, wenn wir schon dabei sind","Beliebtes Verbindungswort: „Já agora, onde fica o hotel?“"],["Gespräch","se calhar","vielleicht, womöglich","„Se calhar vou ao cinema.“"],["Gespräch","ora bem","also gut, na dann","Leitet eine Überlegung oder einen neuen Punkt ein."],["Gespräch","então","also / dann / na?","„Então, tudo bem?“ = Na, alles gut?"],["Gespräch","pronto","also gut, okay, fertig","Schließt ein Thema ab, oft mit einem Schulterzucken."],["Gespräch","olha","schau mal, hör mal","Zieht die Aufmerksamkeit auf sich."],["Gespräch","ó pá","Mensch! / Mann! (umgangssprachlich)","Unter Freunden. Nicht zu Fremden sagen."],["Gespräch","um bocadinho","ein bisschen","Auch: „Espera um bocadinho.“"],["Gespräch","vá lá","komm schon","Ermunterung oder Bitte."],["Gespräch","deixa lá","lass gut sein","„Deixa lá, não faz mal.“"],["Umgangssprache","fixe","cool, super","Sehr typisch für Portugal, in Brasilien sagt man „legal“."],["Umgangssprache","giro / gira","hübsch, nett, süß","„Que casa gira!“"],["Umgangssprache","bué","sehr, richtig viel (Jugendsprache)","„Bué bom“ = richtig gut."],["Umgangssprache","está combinado","abgemacht","Zum Verabreden."],["Höflichkeit","com licença","Entschuldigung (beim Durchgehen), mit Erlaubnis","Wenn man sich vorbeidrängt oder fragt, ob man etwas darf."],["Höflichkeit","de nada","gern geschehen","Auch „não tem de quê“."],["Höflichkeit","muito prazer","sehr erfreut",""],["Höflichkeit","tudo bem?","alles gut?","Antwort: „Tudo bem, e contigo?“"],["Höflichkeit","até já","bis gleich",""],["Höflichkeit","até logo","bis später",""],["Höflichkeit","boa viagem","gute Reise",""],["Höflichkeit","bom apetite","guten Appetit",""],["Höflichkeit","saúde","Prost! / Gesundheit!",""],["Höflichkeit","parabéns","herzlichen Glückwunsch",""],["Alltag","a conta, por favor","die Rechnung, bitte","Im Restaurant."],["Alltag","quanto é?","wie viel macht das?","Beim Bezahlen."],["Alltag","fico com isto","ich nehme das","Beim Einkaufen."],["Alltag","tem troco?","haben Sie Wechselgeld?",""]];
+var PHR=[["Reaktionen","pois","ja, genau (zustimmend)","Sehr häufig. „Pois é“ = so ist es / tja. Als Nachfrage nach einem verneinten Satz: „Não é caro, pois não?“ = Es ist nicht teuer, oder? Im Geschäft fragt man in Portugal „Diga?“ oder „Faça favor.“"],["Reaktionen","pois é","stimmt, so ist es","Man stimmt zu oder seufzt über etwas Unabänderliches."],["Reaktionen","está bem","einverstanden, okay","Umgangssprachlich: „tá bem“. „Está bom“ heißt dagegen meist „es schmeckt / es ist gut“."],["Reaktionen","com certeza","sicher, gern","Antwort auf Bitten und Fragen."],["Reaktionen","claro que sim","natürlich","Auch kurz: „claro“."],["Reaktionen","a sério?","wirklich?","Auch „a sério!“ = im Ernst."],["Reaktionen","que pena","wie schade",""],["Reaktionen","que bom","wie schön",""],["Reaktionen","ainda bem","zum Glück","„Ainda bem que vieste“ = zum Glück bist du gekommen."],["Reaktionen","nem pensar","kommt nicht in Frage",""],["Reaktionen","tens razão","du hast recht","Höflich: „tem razão“."],["Reaktionen","não faz mal","macht nichts","Antwort auf eine Entschuldigung."],["Reaktionen","não há problema","kein Problem",""],["Reaktionen","estou a ver","ich verstehe / ich sehe","Zeigt, dass man folgt."],["Reaktionen","não faço ideia","ich habe keine Ahnung",""],["Gespräch","já agora","übrigens, wenn wir schon dabei sind","Beliebtes Verbindungswort: „Já agora, onde fica o hotel?“"],["Gespräch","se calhar","vielleicht, womöglich","„Se calhar vou ao cinema.“"],["Gespräch","ora bem","also gut, na dann","Leitet eine Überlegung oder einen neuen Punkt ein."],["Gespräch","então","also / dann / na?","„Então, tudo bem?“ = Na, alles gut?"],["Gespräch","pronto","also gut, okay, fertig","Schließt ein Thema ab, oft mit einem Schulterzucken."],["Gespräch","olha","schau mal, hör mal","Zieht die Aufmerksamkeit auf sich."],["Gespräch","ó pá","Mensch! / Mann! (umgangssprachlich)","Unter Freunden. Nicht zu Fremden sagen."],["Gespräch","um bocadinho","ein bisschen","Auch: „Espera um bocadinho.“"],["Gespräch","vá lá","komm schon","Ermunterung oder Bitte."],["Gespräch","deixa lá","lass gut sein","„Deixa lá, não faz mal.“"],["Umgangssprache","fixe","cool, super","Sehr typisch für Portugal, in Brasilien sagt man „legal“."],["Umgangssprache","giro / gira","hübsch, nett, süß","„Que casa gira!“"],["Umgangssprache","bué","sehr, richtig viel (Jugendsprache)","„Bué bom“ = richtig gut."],["Umgangssprache","está combinado","abgemacht","Zum Verabreden."],["Höflichkeit","com licença","Entschuldigung (beim Durchgehen), mit Erlaubnis","Wenn man sich vorbeidrängt oder fragt, ob man etwas darf."],["Höflichkeit","de nada","gern geschehen","Auch „não tem de quê“."],["Höflichkeit","muito prazer","sehr erfreut",""],["Höflichkeit","tudo bem?","alles gut?","Antwort: „Tudo bem, e contigo?“"],["Höflichkeit","até já","bis gleich",""],["Höflichkeit","até logo","bis später",""],["Höflichkeit","boa viagem","gute Reise",""],["Höflichkeit","bom apetite","guten Appetit",""],["Höflichkeit","saúde","Prost! / Gesundheit!",""],["Höflichkeit","parabéns","herzlichen Glückwunsch",""],["Alltag","a conta, por favor","die Rechnung, bitte","Im Restaurant."],["Alltag","quanto é?","wie viel macht das?","Beim Bezahlen."],["Alltag","fico com isto","ich nehme das","Beim Einkaufen."],["Alltag","tem troco?","haben Sie Wechselgeld?",""]];
 /* ---- Mehr Floskeln (v7) ---- */
 PHR.push.apply(PHR,[
 ["Begrüßen & Verabschieden","bem-vindo / bem-vinda","willkommen","Männlich / weiblich, je nach angesprochener Person."],
@@ -1394,7 +1394,7 @@ PHR.push.apply(PHR,[
 ["Begrüßen & Verabschieden","e consigo?","und bei Ihnen?","Höfliche Gegenfrage nach „Tudo bem?“."],
 ["Begrüßen & Verabschieden","até amanhã","bis morgen"],
 ["Begrüßen & Verabschieden","até à próxima","bis zum nächsten Mal"],
-["Begrüßen & Verabschieden","adeus","auf Wiedersehen","Klingt endgültiger als „até logo“. Auch beim Verabschieden an der Tür üblich."],
+["Begrüßen & Verabschieden","adeus","auf Wiedersehen, tschüss","In Portugal ein ganz normaler Abschiedsgruß, auch im Geschäft. In Brasilien klingt es dagegen endgültig."],
 ["Begrüßen & Verabschieden","tchau","tschüss","Auch in Portugal verbreitet, locker."],
 ["Begrüßen & Verabschieden","fica bem","mach’s gut","Herzlicher, informeller Abschied."],
 ["Begrüßen & Verabschieden","cuida-te","pass auf dich auf"],
@@ -1440,7 +1440,7 @@ PHR.push.apply(PHR,[
 ["Restaurant & Café","bem passado / mal passado","durchgebraten / blutig (beim Steak)"],
 ["Restaurant & Café","pode trazer a conta?","können Sie die Rechnung bringen?"],
 ["Restaurant & Café","pode ficar com o troco","stimmt so","Trinkgeld ist freiwillig, 5–10 % sind üblich."],
-["Restaurant & Café","a conta é para dividir","wir zahlen getrennt","Wörtlich: Die Rechnung ist zum Teilen."],
+["Restaurant & Café","pode dividir a conta?","können Sie die Rechnung aufteilen?","Für getrennte Rechnungen pro Person: „contas separadas, por favor“."],
 ["Einkaufen & Bezahlen","só estou a ver, obrigado","ich schaue nur, danke"],
 ["Einkaufen & Bezahlen","tem em tamanho maior / menor?","haben Sie es eine Größe größer / kleiner?"],
 ["Einkaufen & Bezahlen","tem mais barato?","haben Sie etwas Günstigeres?"],
@@ -1475,7 +1475,7 @@ PHR.push.apply(PHR,[
 ["Unterwegs & Verkehr","o comboio está atrasado","der Zug hat Verspätung"],
 ["Unterwegs & Verkehr","foi cancelado","er ist ausgefallen"],
 ["Unterwegs & Verkehr","perdi o autocarro","ich habe den Bus verpasst"],
-["Unterwegs & Verkehr","tenho de validar o bilhete?","muss ich die Fahrkarte entwerten?","In Bus und Bahn gibt es oft Validierer; in Lissabon und Porto wird die Viva-Karte beim Einsteigen gescannt."],
+["Unterwegs & Verkehr","tenho de validar o bilhete?","muss ich die Fahrkarte entwerten?","In Bus und Bahn gibt es oft Validierer; in Lissabon (Karte Navegante bzw. Viva Viagem) und Porto (Karte Andante) hält man die Karte beim Einsteigen an das Lesegerät."],
 ["Unterwegs & Verkehr","para o aeroporto, por favor","zum Flughafen, bitte","Satz für das Taxi."],
 ["Unterwegs & Verkehr","pode deixar-me aqui?","können Sie mich hier absetzen?"],
 ["Unterwegs & Verkehr","encher o depósito","volltanken"],
@@ -1500,7 +1500,7 @@ PHR.push.apply(PHR,[
 ["Arzt & Notfall","tenho uma consulta às dez","ich habe um zehn einen Termin"],
 ["Arzt & Notfall","tenho de tomar este medicamento","ich muss dieses Medikament nehmen"],
 ["Arzt & Notfall","chame uma ambulância!","rufen Sie einen Krankenwagen!"],
-["Arzt & Notfall","o número de emergência é o 112","die Notrufnummer ist 112","Gilt in ganz Europa, auch in Portugal."],
+["Arzt & Notfall","o número de emergência é o 112","die Notrufnummer ist 112","Gilt in der ganzen EU, auch in Portugal."],
 ["Arzt & Notfall","socorro!","Hilfe!"],
 ["Arzt & Notfall","cuidado!","Vorsicht!"],
 ["Arzt & Notfall","é urgente","es ist dringend"],
@@ -1614,7 +1614,7 @@ PHR.push.apply(PHR,[
 ["Feste & Wünsche","os meus pêsames","mein Beileid"],
 ["Feste & Wünsche","obrigado pelo convite","danke für die Einladung"],
 ["Feste & Wünsche","foi um prazer","es war mir ein Vergnügen"],
-["Feste & Wünsche","força!","kopf hoch! / viel Kraft!"],
+["Feste & Wünsche","força!","Kopf hoch! / Viel Kraft!"],
 ["Redewendungen","ficar a ver navios","leer ausgehen","Wörtlich: Schiffe ansehen bleiben."],
 ["Redewendungen","custar os olhos da cara","ein Vermögen kosten"],
 ["Redewendungen","estar à nora","ratlos sein, nicht durchblicken"],
